@@ -67,6 +67,8 @@ code { font-family: var(--f-mono); font-size: .82em; background: var(--accent-so
 .hx > .rim, .hx > .im { position: absolute; clip-path: var(--hex); }
 .hx > .rim { inset: 0; background: conic-gradient(from var(--hex-angle), var(--glow-a), var(--glow-a-40), var(--glow-b), var(--glow-a)); }
 .hx > .im { inset: var(--b, 2px); background-color: var(--rule); background-repeat: no-repeat; }
+.hx > .im > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .3s ease; }
+.hx > .im > img.ok { opacity: 1; }
 .hx.v::after { content: ""; position: absolute; right: 2%; bottom: 4%; width: 30%; height: 30%; max-width: 18px; max-height: 18px; min-width: 12px; min-height: 12px; border-radius: 50%; background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.2 8.3 6.8 10.8 11.8 5.6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 72% no-repeat; box-shadow: 0 0 0 2px var(--paper); }
 a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim, .grail:hover .hx > .rim { animation: hex-rotate 4s linear infinite; }
 a.hx:focus-visible { outline: none; }
@@ -212,14 +214,14 @@ h2:hover .anchor, .anchor:focus-visible { opacity: 1; }
 .brow .hx { width: 34px; height: 34px; }
 .brow .bn { min-width: 0; display: grid; }
 .brow .bn b { font: 600 15.5px/1.25 var(--f-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.brow .bn span { font: 500 12px var(--f-mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; }
-.brow .track { display: block; height: 12px; min-width: 0; }
+.brow .bn span { font: 500 12px var(--f-mono); color: var(--ink-2); text-transform: uppercase; letter-spacing: .05em; }
+.brow .track { display: block; height: 12px; min-width: 0; background: var(--wash); border-radius: 0 6px 6px 0; }
 .brow .fill { display: block; height: 100%; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 3px; }
-.brow.hi .fill { background: var(--bar-hi); }
+.brow.hi .fill { background: linear-gradient(90deg, var(--glow-a), var(--glow-b)); }
 .brow.mute .fill { background: var(--bar-mute); }
 .brow .bv { text-align: right; display: grid; }
 .brow .bv b { font: 800 24px/1 var(--f-display); font-variant-numeric: tabular-nums; }
-.brow .bv span { font: 12px var(--f-mono); color: var(--ink-3); white-space: nowrap; }
+.brow .bv span { font: 500 13.5px var(--f-ui); color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
 @media (max-width: 620px) {
   .brow { grid-template-columns: 30px minmax(0, 1fr) auto; grid-template-areas: "h n v" "h t t"; row-gap: 6px; }
   .brow .hx { grid-area: h; width: 30px; height: 30px; align-self: start; }
@@ -233,7 +235,8 @@ h2:hover .anchor, .anchor:focus-visible { opacity: 1; }
 .grail div { min-width: 0; display: grid; gap: 2px; }
 .grail b { font: 600 15px/1.25 var(--f-ui); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .grail span.gv { font: 800 26px/1 var(--f-display); margin-top: 4px; color: var(--ink); }
-.grail span { font: 12px/1.4 var(--f-mono); color: var(--ink-3); }
+.grail .gs { display: grid; gap: 1px; margin-top: 6px; font: 500 14.5px/1.35 var(--f-ui); color: var(--ink-2); }
+.grail .gs strong { color: var(--ink); font-weight: 650; font-variant-numeric: tabular-nums; }
 .comb, .singles { position: relative; width: 100%; }
 .comb .hx, .singles .hx { position: absolute; }
 .singles a.hx { transition: transform .38s cubic-bezier(.2, .9, .25, 1.15), filter .3s ease; will-change: transform; }
@@ -278,7 +281,7 @@ input[type="search"] { flex: 1 1 220px; max-width: 360px; }
 .tal { height: 13px; background: var(--accent); -webkit-mask: var(--tally) left center / 18px 13px repeat-x; mask: var(--tally) left center / 18px 13px repeat-x; min-width: 6px; }
 .cell-v { text-align: right; font-variant-numeric: tabular-nums; min-width: 0; }
 .cell-v b { font: 600 15px var(--f-ui); display: block; white-space: nowrap; }
-.cell-v span { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
+.cell-v span { font-size: 13px; color: var(--ink-2); white-space: nowrap; }
 .row.dim .cell-v.rate b { color: var(--ink-3); font-weight: 500; }
 .faces { display: flex; justify-content: flex-end; padding-right: 2px; }
 .faces .hx { width: 32px; height: 32px; margin-left: -7px; }
@@ -535,6 +538,8 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   const fullStyle = (g, px) => { const sh = S.sheet, per = sh.cols * sh.rows, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp);background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
   const lazyBg = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute("style", e.target.dataset.bg); lazyBg.unobserve(e.target); } }), { rootMargin: "500px" });
   const observeBg = (root) => root.querySelectorAll("[data-bg]:not([style])").forEach((el) => lazyBg.observe(el));
+  const imgUrl = (u, px) => { if (!u) return ""; u = u.replace(/^~i\//, "https://i2c.seadn.io/").replace(/^~r\//, "https://raw2.seadn.io/"); if (/\.(mp4|mov|webm)(\?|$)/i.test(u)) return ""; if (u.includes("i2c.seadn.io")) return u + (u.includes("?") ? "&" : "?") + "w=" + Math.ceil(px) + "&auto=format"; return u; };
+  const sharpImg = (u, size) => { const src = imgUrl(u, size * Math.min(3, Math.max(2, devicePixelRatio || 1))); return src ? `<img src="${esc(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onload="this.classList.add('ok')" onerror="this.remove()">` : ""; };
   const borderOf = (size) => Math.max(1.5, Math.round(size * 0.04));
   const inner = (size) => size - borderOf(size) * 2;
   const hexHTML = (style, size, verified, attrs = "") => `<i class="hx${verified ? " v" : ""}" ${attrs} style="--b:${borderOf(size)}px"><i class="rim"></i><i class="im" style="${style}"></i></i>`;
@@ -810,7 +815,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
       <span class="bv"><b>${pct(rate(c))}</b><span>${nf.format(c.c)} of ${nf.format(c.o)}</span></span>
     </button>`).join(""); };
   $("fig-rate").innerHTML = `<div class="bars"><h3 class="flabel">Highest wear rate</h3>${rateRows(rateList.slice(0, 8), "hi")}${core.length ? `<h3 class="flabel">Blue chips</h3>${rateRows(core, "mute")}` : ""}</div>
-    <figcaption><b>Fig. 1</b> Share of each collection's holders wearing it as their profile picture. Collections with at least ${nf.format(S.rateMinOwners)} holders and ${S.rateMinWearers} wearers.</figcaption>`;
+    <figcaption><b>Fig. 1</b> Share of holders wearing it. Collections with ${nf.format(S.rateMinOwners)}+ holders and ${S.rateMinWearers}+ wearers.</figcaption>`;
 
   const g1 = grails[0], g2 = grails[1], g3 = grails[2];
   $("h-grails").textContent = g1 && g1.fu >= 10000 ? "Some people wear their grails" : "The floor on everyone's face";
@@ -820,11 +825,11 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   if (artShare >= 0.15) gr.push(`${pct0(artShare)} of that value is in collections OpenSea files under art.`);
   $("p-grails").innerHTML = gr.map(P_).join("");
   $("fig-grails").innerHTML = `<div class="grails">${grails.map((c) => `
-    <button type="button" class="grail" data-id="${c.id}">${hexHTML("", 84, false, `data-grail="${c.id}"`)}
-      <div><b>${esc(c.n)}</b><span class="gv">${usd(faceValue(c))}</span><span>${nf.format(c.c)} wearing · ${usd(c.fu)} floor</span></div>
+    <button type="button" class="grail" data-id="${c.id}" title="${esc(c.n)}">${hexHTML("", 84, false, `data-grail="${c.id}"`)}
+      <div><b>${esc(shortName(c.n))}</b><span class="gv">${usd(faceValue(c))}</span><span class="gs"><span><strong>${nf.format(c.c)}</strong> wearing</span><span><strong>${usd(c.fu)}</strong> floor</span></span></div>
     </button>`).join("")}</div>
-    <figcaption><b>Fig. 2</b> Collections with the most floor value being worn, floor price times wearers in US dollars. At least 3 wearers.</figcaption>`;
-  $("fig-grails").querySelectorAll("[data-grail]").forEach((el) => { const c = byId(+el.dataset.grail), im = el.querySelector(".im"); im.dataset.bg = sheetStyle(c, 0, inner(84)); lazy.observe(im); });
+    <figcaption><b>Fig. 2</b> Floor value being worn: floor price times wearers, in US dollars.</figcaption>`;
+  $("fig-grails").querySelectorAll("[data-grail]").forEach((el) => { const c = byId(+el.dataset.grail), im = el.querySelector(".im"); im.dataset.bg = sheetStyle(c, 0, inner(84)); im.innerHTML = sharpImg(c.u0, 84); lazy.observe(im); });
 
   if (c2) {
     const [phrase, singular] = oneIn(share2);
@@ -852,7 +857,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   function drawSingles() {
     const Wc = singlesEl.clientWidth, s = Wc < 520 ? 46 : 66, gap = 4, sx = 0.866 * s + gap, sy = sx * 0.866;
     const cols = Math.max(1, Math.floor((Wc - sx / 2 - 0.134 * s) / sx)), ox = Math.max(0, (Wc - (cols * sx + sx / 2 - gap)) / 2) - 0.067 * s;
-    singlesEl.innerHTML = singles.map((c, k) => { const row = Math.floor(k / cols), col = k % cols; return `<a class="hx" href="#${esc(c.s)}" data-id="${c.id}" title="${esc(c.n)}" aria-label="${esc(c.n)}" style="left:${ox + col * sx + (row % 2 ? sx / 2 : 0)}px;top:${row * sy}px;width:${s}px;height:${s}px;--b:${borderOf(s)}px"><i class="rim"></i><i class="im" data-bg="${fullStyle(c.go, inner(s))}"></i></a>`; }).join("") + `<span class="stag" id="stag" hidden></span>`;
+    singlesEl.innerHTML = singles.map((c, k) => { const row = Math.floor(k / cols), col = k % cols; return `<a class="hx" href="#${esc(c.s)}" data-id="${c.id}" title="${esc(c.n)}" aria-label="${esc(c.n)}" style="left:${ox + col * sx + (row % 2 ? sx / 2 : 0)}px;top:${row * sy}px;width:${s}px;height:${s}px;--b:${borderOf(s)}px"><i class="rim"></i><i class="im" data-bg="${fullStyle(c.go, inner(s))}">${sharpImg(c.u0, s)}</i></a>`; }).join("") + `<span class="stag" id="stag" hidden></span>`;
     observeBg(singlesEl);
     const rows = Math.ceil(singles.length / cols); singlesEl.style.height = rows ? (rows - 1) * sy + s + "px" : "0";
   }
@@ -1003,7 +1008,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
       a.setAttribute("aria-label", `${pname(p)}, ${cur.n} #${p[4]}`);
       a.dataset.i = i; a.dataset.k = k;
       a.style.cssText = `left:${x}px;top:${y}px;width:${geo.s}px;height:${geo.s}px;--b:${geo.b}px`;
-      a.innerHTML = `<i class="rim"></i><i class="im" style="${sheetStyle(cur, i, inn)}"></i>`;
+      a.innerHTML = `<i class="rim"></i><i class="im" style="${sheetStyle(cur, i, inn)}">${sharpImg(p[6], geo.s)}</i>`;
       frag.appendChild(a);
     }
     comb.appendChild(frag); drawn = end; setCombHeight();
@@ -1014,7 +1019,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
     comb.querySelectorAll("a.hx").forEach((a) => {
       const [x, y] = posOf(+a.dataset.k);
       a.style.cssText = `left:${x}px;top:${y}px;width:${geo.s}px;height:${geo.s}px;--b:${geo.b}px`;
-      a.querySelector(".im").setAttribute("style", sheetStyle(cur, +a.dataset.i, inn));
+      const im = a.querySelector(".im"); im.style.cssText = sheetStyle(cur, +a.dataset.i, inn);
     });
     setCombHeight();
   }
@@ -1037,7 +1042,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
       for (const [s, c, i] of idx) { if (s.includes(q)) { hits.push([c, i, s.startsWith(q) || s.includes(" " + q) ? 0 : 1]); if (hits.length > 400) break; } }
       hits.sort((a, b) => a[2] - b[2]);
       $("who-note").textContent = hits.length ? `${hits.length > 400 ? "400+" : nf.format(hits.length)} match${hits.length === 1 ? "" : "es"}` : "Nobody by that name is wearing a collection in this census.";
-      $("hits").innerHTML = hits.slice(0, 24).map(([c, i]) => { const p = P[c.id][i]; return `<a class="hit" href="#${esc(c.s)}" data-id="${c.id}" data-i="${i}">${hexHTML(sheetStyle(c, i, inner(50)), 50, p[3])}<div><b>${esc(pname(p))}</b><span>${esc(c.n)} #${esc(p[4])}${p[3] ? " · verified" : ""}</span></div></a>`; }).join("");
+      $("hits").innerHTML = hits.slice(0, 24).map(([c, i]) => { const p = P[c.id][i]; return `<a class="hit" href="#${esc(c.s)}" data-id="${c.id}" data-i="${i}">${hexHTML(sheetStyle(c, i, inner(50)), 50, p[3]).replace('"></i></i>', `">${sharpImg(p[6], 50)}</i></i>`)}<div><b>${esc(pname(p))}</b><span>${esc(c.n)} #${esc(p[4])}${p[3] ? " · verified" : ""}</span></div></a>`; }).join("");
     }).catch(() => { $("who-note").textContent = "Profiles did not load. Reload the page to try again."; });
   });
   $("hits").addEventListener("click", (e) => { const a = e.target.closest(".hit"); if (!a) return; e.preventDefault(); openColl(byId(+a.dataset.id), +a.dataset.i); });

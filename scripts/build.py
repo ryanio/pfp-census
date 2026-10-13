@@ -21,6 +21,9 @@ def img_path(url):
     return p if os.path.exists(p) else None
 
 def pick(p): return p.get("profile_image_url") or p["nft_pfp"].get("image_url")
+def short(u):
+    if not u: return ""
+    return u.replace("https://i2c.seadn.io/", "~i/").replace("https://raw2.seadn.io/", "~r/")
 
 def tok_key(t):
     return (0, int(t), "") if t.isdigit() else (1, 0, t)
@@ -51,12 +54,12 @@ for cid, d in enumerate(colls):
         n = p["nft_pfp"]; ck = (n["chain"], n["contract_address"].lower())
         if ck not in contracts: contracts.append(ck)
         u = p.get("username") or ""; dn = p.get("display_name") or ""
-        rows.append({"r": [u, dn if dn and dn != u else "", p["address"], 1 if p.get("is_verified") else 0, n["token_id"], contracts.index(ck)], "img": pick(p)})
+        rows.append({"r": [u, dn if dn and dn != u else "", p["address"], 1 if p.get("is_verified") else 0, n["token_id"], contracts.index(ck), short(pick(p))], "img": pick(p)})
     rows.sort(key=lambda x: (x["r"][5], tok_key(x["r"][4])))
     sym = sd.get("floor_symbol") or ""
     floor = sd.get("floor") or None
     fu = floor * usd[sym] if floor and sym in usd else None
-    C.append({"id": cid, "s": d["slug"], "n": sd.get("name") or d["slug"], "ch": (sd.get("contracts") or [{}])[0].get("chain") or (contracts[0][0] if contracts else ""),
+    C.append({"u0": None, "id": cid, "s": d["slug"], "n": sd.get("name") or d["slug"], "ch": (sd.get("contracts") or [{}])[0].get("chain") or (contracts[0][0] if contracts else ""),
               "o": sd.get("num_owners") or 0, "f": floor, "fs": sym, "fu": fu, "c": len(rows), "v": sum(x["r"][3] for x in rows),
               "tw": sd.get("twitter") or "", "cat": (sd.get("category") or "").lower(), "logo_url": sd.get("image_url"), "k": [list(x) for x in contracts]})
     P.append(rows)
@@ -86,6 +89,7 @@ def write_sheets(tiles, size, cols, rows, pattern, quality):
         fn = pattern.format(k); sheet.save(os.path.join(SITE, fn), "WEBP", quality=quality, method=6); files.append(fn)
     return files
 
+for c, rows in zip(C, P): c["u0"] = rows[0]["r"][6] if rows else ""
 # full sheets: every face, in collection then token order
 go, tiles = 0, []
 for c, rows in zip(C, P):
