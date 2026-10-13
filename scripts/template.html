@@ -1,0 +1,706 @@
+<title>PFP Census</title>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a census return. Header tally, a Gosper-island map where each collection is a territory of hexagonal faces, a sortable register, and a honeycomb of every face per collection. */
+:root {
+  --paper: #EDF0F4;
+  --sheet: #F8F9FB;
+  --ink: #111A24;
+  --ink-2: #465363;
+  --ink-3: #738193;
+  --rule: #C8D0DA;
+  --form: #0A5BC4;
+  --form-soft: #D7E4F6;
+  --mark: #F2C42B;
+  --mark-ink: #2A2200;
+  --glow-a: #0786FF;
+  --glow-b: #0FBE39;
+  --glow-a-40: rgba(7, 134, 255, .4);
+  --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --gutter: clamp(16px, 4vw, 48px);
+  /* OpenSea's NFT profile picture frame: pointy-top hexagon, corner radius ratio 0.15 */
+  --hex: polygon(43.50% 3.75%, 45.13% 2.93%, 46.75% 2.34%, 48.38% 1.99%, 50.00% 1.87%, 51.62% 1.99%, 53.25% 2.34%, 54.87% 2.93%, 56.50% 3.75%, 86.81% 21.25%, 88.33% 22.25%, 89.65% 23.36%, 90.76% 24.59%, 91.68% 25.94%, 92.39% 27.40%, 92.90% 28.98%, 93.20% 30.68%, 93.30% 32.50%, 93.30% 67.50%, 93.20% 69.32%, 92.90% 71.02%, 92.39% 72.60%, 91.68% 74.06%, 90.76% 75.41%, 89.65% 76.64%, 88.33% 77.75%, 86.81% 78.75%, 56.50% 96.25%, 54.87% 97.07%, 53.25% 97.66%, 51.62% 98.01%, 50.00% 98.13%, 48.38% 98.01%, 46.75% 97.66%, 45.13% 97.07%, 43.50% 96.25%, 13.19% 78.75%, 11.67% 77.75%, 10.35% 76.64%, 9.24% 75.41%, 8.32% 74.06%, 7.61% 72.60%, 7.10% 71.02%, 6.80% 69.32%, 6.70% 67.50%, 6.70% 32.50%, 6.80% 30.68%, 7.10% 28.98%, 7.61% 27.40%, 8.32% 25.94%, 9.24% 24.59%, 10.35% 23.36%, 11.67% 22.25%, 13.19% 21.25%);
+  --tally: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='13' viewBox='0 0 18 13'%3E%3Cg stroke='black' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M2 1.5v10M5 1.5v10M8 1.5v10M11 1.5v10M.5 10 13 3'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0C1117; --sheet: #131A22; --ink: #E4EAF1; --ink-2: #A1AEBD; --ink-3: #718093;
+    --rule: #243040; --form: #5AA8FF; --form-soft: #15263B; --mark: #E8BE35; --mark-ink: #1E1800;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0C1117; --sheet: #131A22; --ink: #E4EAF1; --ink-2: #A1AEBD; --ink-3: #718093;
+  --rule: #243040; --form: #5AA8FF; --form-soft: #15263B; --mark: #E8BE35; --mark-ink: #1E1800;
+  color-scheme: dark;
+}
+@property --hex-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes hex-rotate { from { --hex-angle: 0deg; } to { --hex-angle: 360deg; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 28px 64px; display: grid; gap: 44px; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--form); outline-offset: 2px; }
+.mono { font-family: var(--f-mono); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* hexagon faces, shared */
+.hx { position: relative; display: block; flex: none; }
+.hx > .rim, .hx > .im { position: absolute; clip-path: var(--hex); }
+.hx > .rim { inset: 0; background: conic-gradient(from var(--hex-angle), var(--glow-a), var(--glow-a-40), var(--glow-b), var(--glow-a)); }
+.hx > .im { inset: var(--b, 2px); background-color: var(--rule); background-repeat: no-repeat; }
+.hx.v::after { content: ""; position: absolute; right: 2%; bottom: 4%; width: 32%; height: 32%; max-width: 18px; max-height: 18px; min-width: 12px; min-height: 12px; border-radius: 50%; background: var(--form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.2 8.3 6.8 10.8 11.8 5.6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 72% no-repeat; box-shadow: 0 0 0 2px var(--paper); }
+a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim { animation: hex-rotate 4s linear infinite; }
+a.hx:focus-visible { outline: none; }
+a.hx:focus-visible > .rim { background: var(--mark); }
+@media (prefers-reduced-motion: reduce) { a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim { animation: none; } }
+
+/* header */
+.head { display: grid; gap: 18px; border-bottom: 2px solid var(--ink); padding-bottom: 22px; }
+.source { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.source code { background: var(--form-soft); color: var(--form); padding: 1px 6px; border-radius: 3px; font-family: inherit; overflow-wrap: anywhere; }
+h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(64px, 12vw, 148px); line-height: .82; letter-spacing: -.01em; margin: 0; text-transform: uppercase; text-wrap: balance; }
+.lede { font-size: clamp(17px, 2vw, 21px); max-width: 60ch; margin: 0; color: var(--ink-2); text-wrap: pretty; }
+.lede strong { color: var(--ink); font-weight: 600; }
+.tally { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 6px 0 0; border-top: 1px solid var(--rule); }
+.tally > div { padding: 14px 16px 4px 0; display: grid; gap: 2px; min-width: 0; align-content: start; }
+.tally > div + div { padding-left: 16px; border-left: 1px solid var(--rule); }
+.tally dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.tally dd { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 4.4vw, 52px); line-height: 1; font-variant-numeric: tabular-nums; min-width: 0; }
+.tally dd.txt .nm { font-size: clamp(24px, 3vw, 38px); line-height: .95; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-transform: uppercase; }
+.tally dd small { display: block; font-family: var(--f-body); font-weight: 500; font-size: 13px; color: var(--ink-2); margin-top: 4px; }
+@media (max-width: 760px) { .tally { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tally > div:nth-child(3) { padding-left: 0; border-left: 0; } .tally > div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+
+/* section heads */
+.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 24px; margin-bottom: 14px; }
+h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 4vw, 44px); line-height: .95; text-transform: uppercase; margin: 0; letter-spacing: .005em; }
+.note { font-size: 13px; color: var(--ink-2); margin: 0; max-width: 62ch; }
+
+/* atlas: Gosper island map + legend */
+.atlas { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(250px, 1fr); gap: 20px 40px; align-items: center; }
+.map { position: relative; width: 100%; touch-action: manipulation; }
+.map canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.map canvas.top { cursor: pointer; }
+.tag { position: absolute; transform: translate(-50%, -50%); border: 0; margin: 0; padding: 4px 9px 5px; border-radius: 3px; background: var(--sheet); color: var(--ink); box-shadow: 0 1px 0 var(--rule), 0 4px 14px rgba(10, 20, 30, .22); display: grid; line-height: 1.05; text-align: center; cursor: pointer; max-width: 168px; z-index: 2; }
+.tag b { font-family: var(--f-display); font-weight: 800; font-size: 15px; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tag span { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-2); white-space: nowrap; }
+@media (max-width: 560px) { .tag { padding: 3px 6px 4px; max-width: 120px; } .tag b { font-size: 12px; } .tag span { font-size: 9.5px; } }
+.tag.on, .tag:hover { background: var(--ink); color: var(--paper); }
+.tag.on span, .tag:hover span { color: inherit; opacity: .8; }
+.tip { position: absolute; pointer-events: none; background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 10px; font-size: 13px; line-height: 1.35; box-shadow: 0 6px 20px rgba(0,0,0,.18); white-space: nowrap; z-index: 4; }
+.tip b { font-weight: 600; }
+.tip span { color: var(--ink-2); }
+.legend { display: grid; gap: 2px; align-content: center; min-width: 0; }
+.legend h3 { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin: 0 0 8px; }
+.lg { display: grid; grid-template-columns: 22px 30px minmax(0, 1fr) auto; gap: 10px; align-items: center; width: 100%; text-align: left; font: inherit; color: inherit; background: transparent; border: 0; border-bottom: 1px solid var(--rule); padding: 7px 4px; cursor: pointer; }
+.lg:hover, .lg.on { background: var(--sheet); }
+.lg .r { font-family: var(--f-display); font-weight: 800; font-size: 18px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.lg .hx { width: 30px; height: 30px; --b: 2px; }
+.lg .n { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.lg .c { text-align: right; font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+.lg .c b { color: var(--ink); font-weight: 600; font-size: 14px; }
+@media (max-width: 900px) { .atlas { grid-template-columns: minmax(0, 1fr); } .legend { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); column-gap: 24px; } .legend h3 { grid-column: 1 / -1; } }
+
+/* controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-bottom: 4px; }
+.tabs { display: inline-flex; flex-wrap: wrap; border: 1.5px solid var(--ink); border-radius: 4px; overflow: hidden; }
+.tabs button { font: 600 13px/1 var(--f-body); padding: 10px 14px; border: 0; background: transparent; color: var(--ink); cursor: pointer; letter-spacing: .01em; }
+.tabs button + button { border-left: 1.5px solid var(--ink); }
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.tabs button:hover:not([aria-pressed="true"]) { background: var(--form-soft); }
+select, input[type="search"] { font: 500 14px var(--f-body); color: var(--ink); background: var(--sheet); border: 1.5px solid var(--rule); border-radius: 4px; padding: 8px 10px; min-width: 0; }
+input[type="search"] { flex: 1 1 220px; max-width: 340px; }
+.sort-note { font-size: 13px; color: var(--ink-2); margin: 6px 0 12px; min-height: 1.5em; }
+
+/* register */
+.reg { border-top: 2px solid var(--ink); }
+.reg-head, .row { display: grid; grid-template-columns: 44px minmax(0, 2.4fr) minmax(0, 2.4fr) minmax(0, .9fr) minmax(0, 1.1fr) 150px; gap: 14px; align-items: center; }
+.reg-head { font-family: var(--f-mono); font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); padding: 10px 8px; border-bottom: 1px solid var(--rule); }
+.reg-head .r { text-align: right; }
+.row { width: 100%; text-align: left; font: inherit; color: inherit; background: transparent; border: 0; border-bottom: 1px solid var(--rule); padding: 10px 8px; cursor: pointer; }
+.row:hover { background: var(--sheet); }
+.row .rank { font-family: var(--f-display); font-weight: 800; font-size: 26px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.row:nth-child(-n+4) .rank { color: var(--ink); }
+.who { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.logo { flex: none; width: 40px; height: 40px; border-radius: 6px; background-color: var(--rule); background-repeat: no-repeat; }
+.who-t { min-width: 0; display: grid; }
+.who-t b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chain { font-family: var(--f-mono); font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
+.bar { display: grid; gap: 4px; min-width: 0; }
+.bar-v { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.bar-v b { font-family: var(--f-display); font-weight: 800; font-size: 24px; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar-v span { font-size: 12px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tal { height: 13px; background: var(--form); -webkit-mask: var(--tally) left center / 18px 13px repeat-x; mask: var(--tally) left center / 18px 13px repeat-x; min-width: 6px; }
+.cell-v { text-align: right; font-variant-numeric: tabular-nums; min-width: 0; }
+.cell-v b { font-weight: 600; display: block; white-space: nowrap; }
+.cell-v span { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+.row.dim .cell-v.rate b { color: var(--ink-3); font-weight: 500; }
+.faces { display: flex; justify-content: flex-end; padding-right: 2px; }
+.faces .hx { width: 32px; height: 32px; margin-left: -7px; --b: 1.5px; }
+.more { margin-top: 14px; font: 600 14px var(--f-body); background: transparent; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 4px; padding: 10px 16px; cursor: pointer; }
+.more:hover { background: var(--form-soft); }
+.empty { padding: 28px 8px; color: var(--ink-2); }
+@media (max-width: 980px) {
+  .reg-head, .row { grid-template-columns: 34px minmax(0, 2fr) minmax(0, 1.6fr) minmax(0, .9fr) minmax(0, 1fr); }
+  .c-faces { display: none; }
+}
+@media (max-width: 620px) {
+  .reg-head { display: none; }
+  .row { grid-template-columns: 30px minmax(0, 1fr); grid-template-areas: "rank who" "rank bar"; row-gap: 8px; }
+  .row .rank { grid-area: rank; font-size: 20px; align-self: start; }
+  .row .who { grid-area: who; }
+  .row .bar { grid-area: bar; }
+  .row .c-alt { display: none; }
+  .bar-v b { font-size: 18px; }
+}
+
+/* find */
+.find { display: grid; gap: 12px; padding: 22px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; }
+.find-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.find input { max-width: 420px; }
+.hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+.hit { display: flex; gap: 12px; align-items: center; text-decoration: none; padding: 8px 10px 8px 8px; border-radius: 4px; border: 1px solid var(--rule); background: var(--paper); min-width: 0; }
+.hit:hover { border-color: var(--form); }
+.hit .hx { width: 48px; height: 48px; --b: 2px; }
+.hit div { min-width: 0; display: grid; line-height: 1.25; }
+.hit b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hit span { font-size: 12px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* dialog */
+dialog { width: min(1100px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); color: var(--ink); }
+dialog::backdrop { background: rgba(6, 10, 16, .62); }
+.dlg { display: grid; grid-template-rows: auto auto 1fr; max-height: calc(100dvh - 26px); }
+.dlg-top { display: flex; gap: 16px; align-items: center; padding: 18px 20px 14px; border-bottom: 2px solid var(--ink); }
+.dlg-top .logo { width: 56px; height: 56px; border-radius: 8px; }
+.dlg-top h3 { font-family: var(--f-display); font-weight: 800; font-size: clamp(26px, 4vw, 40px); line-height: .95; margin: 0; text-transform: uppercase; overflow-wrap: anywhere; }
+.dlg-top .links { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; margin-top: 6px; color: var(--ink-2); }
+.dlg-top .x { margin-left: auto; align-self: start; font: 600 22px/1 var(--f-body); width: 40px; height: 40px; border-radius: 4px; border: 1.5px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; flex: none; }
+.dlg-stats { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; padding: 12px 20px; border-bottom: 1px solid var(--rule); margin: 0; }
+.dlg-stats > div:not(.tabs) { display: grid; }
+.dlg-stats dt { font-family: var(--f-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); }
+.dlg-stats dd { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 26px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.dlg-stats .tabs { margin-left: auto; }
+.dlg-body { overflow: auto; padding: 18px 20px 24px; }
+.comb { position: relative; width: 100%; }
+.comb .hx { position: absolute; }
+.comb a.hx { transition: transform .15s ease; }
+.comb a.hx:hover, .comb a.hx:focus-visible { transform: scale(1.14); z-index: 3; }
+.comb a.hx.me > .rim { background: var(--mark); }
+@media (prefers-reduced-motion: reduce) { .comb a.hx { transition: none; } }
+.face-tip { font-size: 13px; color: var(--ink-2); margin: 12px 0 0; min-height: 1.4em; }
+.sentinel { height: 1px; }
+@media (max-width: 620px) {
+  .dlg-stats .tabs { margin-left: 0; }
+  .dlg-top { padding: 14px; } .dlg-stats, .dlg-body { padding-inline: 14px; }
+}
+
+/* method */
+.method { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; border-top: 2px solid var(--ink); padding-top: 18px; font-size: 14px; color: var(--ink-2); }
+.method h2 { grid-column: 1 / -1; }
+.method p { margin: 0 0 10px; max-width: 64ch; }
+.method code { font-family: var(--f-mono); font-size: 12.5px; background: var(--form-soft); color: var(--form); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+@media (max-width: 760px) { .method { grid-template-columns: minmax(0, 1fr); } }
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div class="source">
+      <span>Source <code>GET /api/v2/collections/{slug}/pfp-profiles</code></span>
+      <span id="snap">Snapshot</span>
+    </div>
+    <h1>PFP Census</h1>
+    <p class="lede">Every OpenSea profile whose picture is an NFT <strong>they currently hold</strong>, counted by collection. Who wears what, which communities wear it hardest, and how much floor is walking around as faces.</p>
+    <dl class="tally" id="tally"></dl>
+  </header>
+
+  <section aria-labelledby="map-h">
+    <div class="sec-head">
+      <h2 id="map-h">The map</h2>
+      <p class="note" id="map-note"></p>
+    </div>
+    <div class="atlas">
+      <div class="map" id="map">
+        <canvas id="map-base" aria-hidden="true"></canvas>
+        <canvas id="map-top" class="top" aria-hidden="true"></canvas>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <div class="legend" id="legend"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="reg-h">
+    <div class="sec-head"><h2 id="reg-h">The register</h2></div>
+    <div class="controls">
+      <div class="tabs" role="group" aria-label="Sort collections" id="sorts">
+        <button type="button" data-sort="worn" aria-pressed="true">Most worn</button>
+        <button type="button" data-sort="rate" aria-pressed="false">Wear rate</button>
+        <button type="button" data-sort="value" aria-pressed="false">Face value</button>
+        <button type="button" data-sort="price" aria-pressed="false">Priciest face</button>
+      </div>
+      <select id="chain" aria-label="Filter by chain"></select>
+      <input type="search" id="q" placeholder="Filter collections" aria-label="Filter collections by name">
+    </div>
+    <p class="sort-note" id="sort-note"></p>
+    <div class="reg" role="list" id="reg"></div>
+    <button type="button" class="more" id="more" hidden>Show all</button>
+  </section>
+
+  <section class="find" aria-labelledby="find-h">
+    <h2 id="find-h">Are you counted?</h2>
+    <div class="find-row">
+      <input type="search" id="who" placeholder="Username, display name, or 0x address" aria-label="Find a profile">
+      <span class="note" id="who-note">Search every counted profile.</span>
+    </div>
+    <div class="hits" id="hits"></div>
+  </section>
+
+  <section class="method" aria-labelledby="m-h">
+    <h2 id="m-h">How this was counted</h2>
+    <div id="method-a"></div>
+    <div id="method-b"></div>
+  </section>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlg-name">
+  <div class="dlg">
+    <div class="dlg-top">
+      <i class="logo" id="dlg-logo"></i>
+      <div style="min-width:0">
+        <h3 id="dlg-name"></h3>
+        <div class="links" id="dlg-links"></div>
+      </div>
+      <button type="button" class="x" id="dlg-x" aria-label="Close">&times;</button>
+    </div>
+    <dl class="dlg-stats" id="dlg-stats"></dl>
+    <div class="dlg-body" id="dlg-body">
+      <div class="comb" id="comb"></div>
+      <div class="sentinel" id="dlg-sentinel"></div>
+      <p class="face-tip" id="dlg-tip"></p>
+    </div>
+  </div>
+</dialog>
+
+<script type="application/json" id="summary">/*__SUMMARY__*/</script>
+<script>
+(() => {
+  const S = JSON.parse(document.getElementById("summary").textContent);
+  const C = S.c;
+  const $ = (id) => document.getElementById(id);
+  const nf = new Intl.NumberFormat("en-US");
+  const cf = new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 });
+  const usd = (v) => v == null ? "–" : v >= 1e6 ? "$" + cf.format(v) : "$" + nf.format(Math.round(v));
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+  const CHAINS = { ethereum: "Ethereum", base: "Base", solana: "Solana", polygon: "Polygon", matic: "Polygon", abstract: "Abstract", ape_chain: "ApeChain", ronin: "Ronin", robinhood: "Robinhood", hyperevm: "HyperEVM", ink: "Ink", blast: "Blast", unichain: "Unichain", monad: "Monad", zora: "Zora", arc: "Arc", arbitrum: "Arbitrum", optimism: "Optimism", bera_chain: "Berachain", shape: "Shape", soneium: "Soneium", avalanche: "Avalanche", b3: "B3", flow: "Flow", sei: "Sei", gunzilla: "GUNZ", animechain: "Animechain" };
+  const chainName = (c) => CHAINS[c] || (c ? c[0].toUpperCase() + c.slice(1).replace(/_/g, " ") : "");
+  const floorTxt = (c) => c.f == null || c.f === 0 ? "–" : (c.f >= 100 ? nf.format(Math.round(c.f)) : c.f >= 1 ? c.f.toFixed(2) : c.f.toPrecision(2)) + " " + (c.fs || "");
+  const rate = (c) => c.o ? c.c / c.o : null;
+  const rateOk = (c) => c.o >= S.rateMinOwners && c.c >= S.rateMinWearers;
+  const pct = (r) => r == null ? "–" : (r >= 0.1 ? (r * 100).toFixed(1) : (r * 100).toFixed(2)) + "%";
+  const faceValue = (c) => c.fu != null ? c.fu * c.c : null;
+  const byId = (id) => C[id];
+  const ownerOf = (g) => { let lo = 0, hi = C.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (C[m].go <= g) lo = m; else hi = m - 1; } return C[lo]; };
+
+  /* sprites */
+  const miniPos = (idx) => { const m = S.mini, col = idx % m.cols, row = Math.floor(idx / m.cols); return { sheet: Math.floor(row / m.rows), col, row: row % m.rows }; };
+  const miniStyle = (idx, px) => { const m = S.mini, p = miniPos(idx); return `background-image:url(${m.files[p.sheet]});background-size:${m.cols * px}px ${m.rows * px}px;background-position:-${p.col * px}px -${p.row * px}px`; };
+  const sheetStyle = (c, i, px) => { const sh = S.sheet, per = sh.cols * sh.rows, g = c.go + i, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp);background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
+  const logoStyle = (c, px) => { if (c.lg < 0) return ""; const L = S.logos, col = c.lg % L.cols, row = Math.floor(c.lg / L.cols); return `background-image:url(${L.file});background-size:${L.cols * px}px ${Math.ceil(L.count / L.cols) * px}px;background-position:-${col * px}px -${row * px}px`; };
+  const borderOf = (size) => Math.max(1.5, Math.round(size * 0.04));
+  const hexHTML = (style, size, verified, extra = "") => `<i class="hx${verified ? " v" : ""}" ${extra} style="--b:${borderOf(size)}px"><i class="rim"></i><i class="im" style="${style}"></i></i>`;
+
+  /* header */
+  const when = new Date(S.at);
+  $("snap").textContent = "Snapshot " + when.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZone: "UTC", timeZoneName: "short" });
+  const byWorn = [...C].sort((a, b) => b.c - a.c);
+  const totalValue = C.reduce((s, c) => s + (faceValue(c) || 0), 0);
+  $("tally").innerHTML = `
+    <div><dt>Profiles counted</dt><dd class="num">${nf.format(S.n)}<small>wearing an NFT they hold</small></dd></div>
+    <div><dt>Collections worn</dt><dd class="num">${nf.format(C.length)}<small>of ${nf.format(S.k)} enumerated</small></dd></div>
+    <div><dt>Most worn</dt><dd class="txt"><span class="nm">${esc(byWorn[0].n)}</span><small>${nf.format(byWorn[0].c)} profiles</small></dd></div>
+    <div><dt>Floor worn as faces</dt><dd class="num">${usd(totalValue)}<small>floor price × wearers, all collections</small></dd></div>`;
+
+  /* ---------- the map: a Gosper island, each collection a contiguous territory of hexagons ---------- */
+  const HEX = getComputedStyle(document.documentElement).getPropertyValue("--hex").match(/[\d.]+%\s+[\d.]+%/g).map((p) => p.split(/\s+/).map((v) => parseFloat(v) / 100));
+  const SQ3 = Math.sqrt(3);
+  const DIRS = [[1, 0], [1, -1], [0, -1], [-1, 0], [-1, 1], [0, 1]];
+  const EDGE_N = [[1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]]; // neighbour across edge i (corners i, i+1)
+  const gosperCache = {};
+  function gosper(order) {
+    if (gosperCache[order]) return gosperCache[order];
+    let s = "A";
+    for (let i = 0; i < order; i++) s = s.replace(/[AB]/g, (c) => (c === "A" ? "A-B--B+A++AA+B-" : "+A-BB--B-A++A+B"));
+    const pts = [[0, 0]]; let q = 0, r = 0, d = 0;
+    for (const ch of s) {
+      if (ch === "A" || ch === "B") { q += DIRS[d][0]; r += DIRS[d][1]; pts.push([q, r]); }
+      else if (ch === "+") d = (d + 1) % 6; else if (ch === "-") d = (d + 5) % 6;
+    }
+    pts.pop();
+    return (gosperCache[order] = pts);
+  }
+  function allocate(counts, N) {
+    const total = counts.reduce((s, x) => s + x, 0), raw = counts.map((x) => (x * N) / total);
+    const a = raw.map((x) => Math.max(1, Math.floor(x)));
+    let sum = a.reduce((s, x) => s + x, 0);
+    const order = raw.map((x, i) => [x - Math.floor(x), i]).sort((p, q) => q[0] - p[0]);
+    for (let k = 0; sum < N; k++, sum++) a[order[k % order.length][1]]++;
+    while (sum > N) { const i = a.indexOf(Math.max(...a)); a[i]--; sum--; }
+    return a;
+  }
+  let T = S.wall.full; // territories, largest first; phones use S.wall.small (top 30 + the rest)
+  const mapEl = $("map"), base = $("map-base"), top = $("map-top"), tip = $("tip");
+  const miniImgs = S.mini.files.map((f) => { const im = new Image(); im.decoding = "async"; im.src = f; return im; });
+  let M = null; // current map geometry
+  let hoverT = -1, hoverCell = -1, raf = 0;
+
+  function layout() {
+    const W = mapEl.clientWidth;
+    const order = W < 560 ? 3 : 4;
+    T = order === 3 ? S.wall.small : S.wall.full;
+    const pts = gosper(order), N = pts.length;
+    const alloc = allocate(T.map((t) => t.count), N);
+    const owner = new Int32Array(N), tile = new Int32Array(N);
+    let k = 0;
+    T.forEach((t, ti) => { for (let j = 0; j < alloc[ti]; j++, k++) { owner[k] = ti; tile[k] = t.tiles[j % t.tiles.length]; } });
+    const xs = pts.map(([q, r]) => SQ3 * (q + r / 2)), ys = pts.map(([, r]) => 1.5 * r);
+    const minX = Math.min(...xs) - SQ3 / 2, maxX = Math.max(...xs) + SQ3 / 2, minY = Math.min(...ys) - 1, maxY = Math.max(...ys) + 1;
+    const R = W / (maxX - minX), H = Math.ceil((maxY - minY) * R);
+    const cx = xs.map((x) => (x - minX) * R), cy = ys.map((y) => (y - minY) * R);
+    const at = new Map(pts.map(([q, r], i) => [q + "," + r, i]));
+    const nb = (i, e) => { const [q, r] = pts[i]; const j = at.get((q + EDGE_N[e][0]) + "," + (r + EDGE_N[e][1])); return j === undefined ? -1 : j; };
+    const cells = T.map(() => []);
+    for (let i = 0; i < N; i++) cells[owner[i]].push(i);
+    M = { W, H, R, N, pts, owner, tile, cx, cy, at, nb, cells, alloc, order };
+    mapEl.style.height = H + "px";
+    $("map-note").textContent = (N >= S.n ? "Each hexagon is one real profile picture." : `Each hexagon is one real profile picture: ${nf.format(N)} of the ${nf.format(S.n)} counted, in proportion.`) + " Collections are laid along a Gosper curve, so each one stays in a single piece, sized by its wearers.";
+  }
+  function hexPath(g, x, y, s) {
+    g.moveTo(x + (HEX[0][0] - 0.5) * s, y + (HEX[0][1] - 0.5) * s);
+    for (let i = 1; i < HEX.length; i++) g.lineTo(x + (HEX[i][0] - 0.5) * s, y + (HEX[i][1] - 0.5) * s);
+    g.closePath();
+  }
+  const corner = (i, k) => { const a = (Math.PI / 180) * (60 * k - 30); return [M.cx[i] + M.R * Math.cos(a), M.cy[i] + M.R * Math.sin(a)]; };
+  function sizeCanvas(cv) {
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.round(M.W * dpr); cv.height = Math.round(M.H * dpr);
+    const g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); return g;
+  }
+  function drawBase() {
+    const g = sizeCanvas(base), m = S.mini, s = 2 * M.R * 0.93;
+    g.clearRect(0, 0, M.W, M.H);
+    for (let i = 0; i < M.N; i++) {
+      const p = miniPos(M.tile[i]), im = miniImgs[p.sheet];
+      g.save(); g.beginPath(); hexPath(g, M.cx[i], M.cy[i], s); g.clip();
+      if (im.complete && im.naturalWidth) g.drawImage(im, p.col * m.tile, p.row * m.tile, m.tile, m.tile, M.cx[i] - s / 2, M.cy[i] - s / 2, s, s);
+      else { g.fillStyle = "rgba(128,140,155,.35)"; g.fill(); }
+      g.restore();
+    }
+    /* carve channels between territories so each reads as one shape */
+    g.globalCompositeOperation = "destination-out";
+    g.lineWidth = Math.max(2, M.R * 0.42); g.lineCap = "round"; g.beginPath();
+    for (let i = 0; i < M.N; i++) for (let e = 0; e < 6; e++) {
+      const j = M.nb(i, e); if (j < 0 || M.owner[j] === M.owner[i] || j < i) continue;
+      const [x1, y1] = corner(i, e), [x2, y2] = corner(i, e + 1); g.moveTo(x1, y1); g.lineTo(x2, y2);
+    }
+    g.stroke(); g.globalCompositeOperation = "source-over";
+  }
+  function territoryCenter(ti) {
+    const cs = M.cells[ti]; let sx = 0, sy = 0;
+    for (const i of cs) { sx += M.cx[i]; sy += M.cy[i]; }
+    sx /= cs.length; sy /= cs.length;
+    let best = cs[0], bd = Infinity;
+    for (const i of cs) { const d = (M.cx[i] - sx) ** 2 + (M.cy[i] - sy) ** 2; if (d < bd) { bd = d; best = i; } }
+    return [M.cx[best], M.cy[best]];
+  }
+  function placeTags() {
+    mapEl.querySelectorAll(".tag").forEach((e) => e.remove());
+    const placed = [], minCells = M.order === 3 ? 18 : 45;
+    T.forEach((t, ti) => {
+      if (M.cells[ti].length < minCells) return;
+      const [x, y] = territoryCenter(ti);
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "tag"; b.dataset.t = ti;
+      b.style.left = x + "px"; b.style.top = y + "px";
+      b.setAttribute("aria-label", `${t.label}: ${nf.format(t.count)} profiles`);
+      b.innerHTML = `<b>${esc(t.label)}</b><span>${nf.format(t.count)}</span>`;
+      mapEl.appendChild(b);
+      const hw = b.offsetWidth / 2 + 2, hh = b.offsetHeight / 2 + 2;
+      b.style.left = Math.min(M.W - hw, Math.max(hw, x)) + "px"; b.style.top = Math.min(M.H - hh, Math.max(hh, y)) + "px";
+      const r = b.getBoundingClientRect();
+      if (placed.some((p) => !(r.right + 4 < p.left || r.left - 4 > p.right || r.bottom + 2 < p.top || r.top - 2 > p.bottom))) { b.remove(); return; }
+      placed.push(r);
+      b.addEventListener("mouseenter", () => setHover(ti, -1));
+      b.addEventListener("mouseleave", () => setHover(-1, -1));
+      b.addEventListener("focus", () => setHover(ti, -1));
+      b.addEventListener("blur", () => setHover(-1, -1));
+      b.addEventListener("click", () => openTerritory(ti));
+    });
+  }
+  function drawTop(now = 0) {
+    const g = top.getContext("2d"), dpr = Math.min(2, window.devicePixelRatio || 1);
+    g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, top.width, top.height); g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (hoverT < 0) return;
+    const css = getComputedStyle(document.documentElement), paper = css.getPropertyValue("--paper").trim();
+    const s = 2 * M.R * 0.93;
+    g.globalAlpha = 0.68; g.fillStyle = paper; g.fillRect(0, 0, M.W, M.H); g.globalAlpha = 1;
+    g.globalCompositeOperation = "destination-out"; g.beginPath();
+    for (const i of M.cells[hoverT]) hexPath(g, M.cx[i], M.cy[i], s * 1.06);
+    g.fill(); g.globalCompositeOperation = "source-over";
+    const [tx, ty] = territoryCenter(hoverT);
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const ang = reduce ? 0 : ((now / 4000) % 1) * Math.PI * 2;
+    const a = css.getPropertyValue("--glow-a").trim(), b = css.getPropertyValue("--glow-b").trim(), a4 = css.getPropertyValue("--glow-a-40").trim();
+    let grad;
+    if (g.createConicGradient) { grad = g.createConicGradient(ang, tx, ty); grad.addColorStop(0, a); grad.addColorStop(0.33, a4); grad.addColorStop(0.66, b); grad.addColorStop(1, a); }
+    else grad = a;
+    g.strokeStyle = grad; g.lineWidth = Math.max(2, M.R * 0.34); g.lineCap = "round"; g.lineJoin = "round"; g.beginPath();
+    for (const i of M.cells[hoverT]) for (let e = 0; e < 6; e++) {
+      const j = M.nb(i, e); if (j >= 0 && M.owner[j] === hoverT) continue;
+      const [x1, y1] = corner(i, e), [x2, y2] = corner(i, e + 1); g.moveTo(x1, y1); g.lineTo(x2, y2);
+    }
+    g.stroke();
+    if (hoverCell >= 0) {
+      const i = hoverCell, z = Math.max(46, s * 3), p = miniPos(M.tile[i]), im = miniImgs[p.sheet], m = S.mini;
+      const x = Math.min(M.W - z / 2, Math.max(z / 2, M.cx[i])), y = Math.min(M.H - z / 2, Math.max(z / 2, M.cy[i]));
+      g.save(); g.shadowColor = "rgba(0,0,0,.35)"; g.shadowBlur = 14; g.beginPath(); hexPath(g, x, y, z); g.fillStyle = grad; g.fill(); g.restore();
+      g.save(); g.beginPath(); hexPath(g, x, y, z - borderOf(z) * 2); g.clip();
+      if (im.complete && im.naturalWidth) g.drawImage(im, p.col * m.tile, p.row * m.tile, m.tile, m.tile, x - z / 2, y - z / 2, z, z);
+      g.restore();
+    }
+    if (!reduce) raf = requestAnimationFrame(drawTop);
+  }
+  function setHover(ti, cell) {
+    if (ti === hoverT && cell === hoverCell) return;
+    hoverT = ti; hoverCell = cell;
+    cancelAnimationFrame(raf); raf = requestAnimationFrame(drawTop);
+    mapEl.querySelectorAll(".tag").forEach((e) => e.classList.toggle("on", +e.dataset.t === ti));
+    const hid = ti >= 0 ? T[ti].id : null;
+    $("legend").querySelectorAll(".lg").forEach((e) => e.classList.toggle("on", hid !== null && +e.dataset.id === hid));
+  }
+  function cellAt(x, y) {
+    const minX = M.cx[0] - SQ3 * M.R * (M.pts[0][0] + M.pts[0][1] / 2), minY = M.cy[0] - 1.5 * M.R * M.pts[0][1];
+    const px = (x - minX) / M.R, py = (y - minY) / M.R;
+    let q = (SQ3 / 3) * px - py / 3, r = (2 / 3) * py, sx = -q - r;
+    let rq = Math.round(q), rr = Math.round(r), rs = Math.round(sx);
+    const dq = Math.abs(rq - q), dr = Math.abs(rr - r), ds = Math.abs(rs - sx);
+    if (dq > dr && dq > ds) rq = -rr - rs; else if (dr > ds) rr = -rq - rs;
+    const i = M.at.get(rq + "," + rr);
+    return i === undefined ? -1 : i;
+  }
+  const profileAtCell = (i) => { const g = S.mini.who[M.tile[i]], c = ownerOf(g); return { c, i: g - c.go }; };
+  top.addEventListener("mousemove", (e) => {
+    const b = top.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top, i = cellAt(x, y);
+    if (i < 0) { setHover(-1, -1); tip.hidden = true; return; }
+    setHover(M.owner[i], i);
+    const t = T[M.owner[i]], { c, i: pi } = profileAtCell(i);
+    const label = P ? pname(P[c.id][pi]) : "";
+    tip.innerHTML = `<b>${esc(t.label)}</b> · ${nf.format(t.count)} profiles${label ? `<br><span>${esc(label)} · ${esc(c.n)} #${esc(P[c.id][pi][4])}</span>` : ""}`;
+    tip.hidden = false;
+    tip.style.left = Math.min(x + 16, M.W - tip.offsetWidth - 4) + "px";
+    tip.style.top = Math.max(4, y - tip.offsetHeight - 14) + "px";
+  });
+  top.addEventListener("mouseleave", () => { setHover(-1, -1); tip.hidden = true; });
+  top.addEventListener("click", (e) => {
+    const b = top.getBoundingClientRect(), i = cellAt(e.clientX - b.left, e.clientY - b.top); if (i < 0) return;
+    const { c, i: pi } = profileAtCell(i); openColl(c, pi);
+  });
+  function openTerritory(ti) { const t = T[ti]; if (t.id >= 0) openColl(byId(t.id)); else $("reg-h").scrollIntoView({ behavior: "smooth" }); }
+  function legend() {
+    const L = S.wall.full.slice(0, 12);
+    $("legend").innerHTML = `<h3>Largest territories</h3>` + L.map((t, li) => `
+      <button type="button" class="lg" data-id="${t.id}">
+        <span class="r">${li + 1}</span>${hexHTML(miniStyle(t.tiles[0], 30 - borderOf(30) * 2), 30, false)}
+        <span class="n">${esc(t.label)}</span>
+        <span class="c"><b>${nf.format(t.count)}</b> · ${pct(t.count / S.n)}</span>
+      </button>`).join("");
+    $("legend").querySelectorAll(".lg").forEach((b) => {
+      const id = +b.dataset.id, ti = () => T.findIndex((t) => t.id === id);
+      b.addEventListener("mouseenter", () => setHover(ti(), -1)); b.addEventListener("mouseleave", () => setHover(-1, -1));
+      b.addEventListener("focus", () => setHover(ti(), -1)); b.addEventListener("blur", () => setHover(-1, -1));
+      b.addEventListener("click", () => openColl(byId(id)));
+    });
+  }
+  function drawMap() { layout(); drawBase(); sizeCanvas(top); placeTags(); drawTop(); }
+  legend();
+  drawMap();
+  let pending = miniImgs.length;
+  miniImgs.forEach((im) => { const done = () => { if (--pending <= 0 && M) drawBase(); }; im.complete ? done() : (im.onload = im.onerror = done); });
+  let lastW = mapEl.clientWidth, rz;
+  new ResizeObserver(() => { if (mapEl.clientWidth === lastW) return; lastW = mapEl.clientWidth; clearTimeout(rz); rz = setTimeout(drawMap, 120); }).observe(mapEl);
+
+  /* ---------- register ---------- */
+  const chains = [...new Set(C.map((c) => c.ch))].sort((a, b) => C.filter((c) => c.ch === b).length - C.filter((c) => c.ch === a).length);
+  $("chain").innerHTML = `<option value="">All chains</option>` + chains.map((ch) => `<option value="${esc(ch)}">${esc(chainName(ch))} (${C.filter((c) => c.ch === ch).length})</option>`).join("");
+  const state = { sort: "worn", chain: "", q: "", all: false };
+  const NOTES = {
+    worn: "Ranked by how many profiles wear a held NFT from the collection.",
+    rate: `Share of holders who wear it: wearers divided by unique owners. Collections under ${nf.format(S.rateMinOwners)} owners or ${S.rateMinWearers} wearers are left out of this ranking.`,
+    value: "Floor price times wearers, in US dollars at snapshot prices. How much floor is out there as someone's face.",
+    price: "Ranked by floor price in US dollars: the most expensive NFT someone is wearing as their face, at the floor.",
+  };
+  function rows() {
+    let list = C.filter((c) => (!state.chain || c.ch === state.chain) && (!state.q || c.n.toLowerCase().includes(state.q) || c.s.includes(state.q)));
+    if (state.sort === "worn") list.sort((a, b) => b.c - a.c);
+    if (state.sort === "rate") list = list.filter(rateOk).sort((a, b) => rate(b) - rate(a));
+    if (state.sort === "value") list = list.filter((c) => faceValue(c) != null).sort((a, b) => faceValue(b) - faceValue(a));
+    if (state.sort === "price") list = list.filter((c) => c.fu != null && c.fu > 0).sort((a, b) => b.fu - a.fu);
+    return list;
+  }
+  function render() {
+    const list = rows(), shown = state.all ? list : list.slice(0, 50);
+    $("sort-note").textContent = NOTES[state.sort];
+    const metric = { worn: (c) => c.c, rate: (c) => rate(c), value: (c) => faceValue(c), price: (c) => c.fu }[state.sort];
+    const max = Math.max(1e-9, ...list.map(metric));
+    const main = { worn: (c) => [nf.format(c.c), "wearing"], rate: (c) => [pct(rate(c)), `${nf.format(c.c)} of ${nf.format(c.o)} owners`], value: (c) => [usd(faceValue(c)), `${nf.format(c.c)} × ${floorTxt(c)}`], price: (c) => [usd(c.fu), `${floorTxt(c)} floor · ${nf.format(c.c)} wearing`] }[state.sort];
+    $("reg").innerHTML = `
+      <div class="reg-head" aria-hidden="true"><span>#</span><span>Collection</span><span>${{ worn: "Wearing", rate: "Wear rate", value: "Face value", price: "Floor in USD" }[state.sort]}</span><span class="r c-alt">Wear rate</span><span class="r c-alt">Floor</span><span class="r c-faces">Faces</span></div>` +
+      (shown.length ? shown.map((c, i) => {
+        const [v, sub] = main(c);
+        const previews = Array.from({ length: Math.min(5, c.mn) }, (_, k) => hexHTML(miniStyle(c.ms + k, 32 - borderOf(32) * 2), 32, false)).join("");
+        return `<button type="button" role="listitem" class="row${rateOk(c) ? "" : " dim"}" data-id="${c.id}">
+          <span class="rank">${i + 1}</span>
+          <span class="who"><i class="logo" style="${logoStyle(c, 40)}"></i><span class="who-t"><b>${esc(c.n)}</b><span class="chain">${esc(chainName(c.ch))}</span></span></span>
+          <span class="bar"><span class="bar-v"><b>${v}</b><span>${esc(sub)}</span></span><span class="tal" style="width:${Math.max(2, (metric(c) / max) * 100)}%"></span></span>
+          <span class="cell-v c-alt rate"><b>${rateOk(c) ? pct(rate(c)) : "–"}</b><span>${c.o ? nf.format(c.o) + " owners" : ""}</span></span>
+          <span class="cell-v c-alt"><b>${floorTxt(c)}</b><span>${faceValue(c) != null ? usd(faceValue(c)) + " worn" : ""}</span></span>
+          <span class="faces c-faces">${previews}</span>
+        </button>`;
+      }).join("") : `<p class="empty">No collections match.</p>`);
+    $("more").hidden = state.all || list.length <= 50;
+    $("more").textContent = `Show all ${nf.format(list.length)}`;
+  }
+  $("sorts").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-sort]"); if (!b) return;
+    state.sort = b.dataset.sort; $("sorts").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); render();
+  });
+  $("chain").addEventListener("change", (e) => { state.chain = e.target.value; render(); });
+  $("q").addEventListener("input", (e) => { state.q = e.target.value.trim().toLowerCase(); render(); });
+  $("more").addEventListener("click", () => { state.all = true; render(); });
+  $("reg").addEventListener("click", (e) => { const r = e.target.closest(".row"); if (r) openColl(byId(+r.dataset.id)); });
+  render();
+
+  /* ---------- profiles, loaded after first paint ---------- */
+  let P = null;
+  const loadP = () => P ? Promise.resolve(P) : fetch("profiles.json").then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).then((j) => (P = j));
+  setTimeout(() => loadP().catch(() => {}), 600);
+  const href = (p) => "https://opensea.io/" + encodeURIComponent(p[0] || p[2]);
+  const pname = (p) => p[0] || p[1] || p[2].slice(0, 6) + "…" + p[2].slice(-4);
+
+  /* ---------- dialog: a honeycomb of every face ---------- */
+  const dlg = $("dlg"), comb = $("comb");
+  let cur = null, order = [], drawn = 0, mark = -1, geo = null;
+  const BATCH = 360;
+  function combGeo() {
+    const Wc = comb.clientWidth, s = Wc < 520 ? 60 : 78, gap = 5;
+    const sx = 0.866 * s + gap, sy = sx * 0.866;
+    const cols = Math.max(1, Math.floor((Wc - sx / 2 - 0.134 * s) / sx));
+    const ox = Math.max(0, (Wc - (cols * sx + sx / 2 - gap)) / 2) - 0.067 * s;
+    return { s, sx, sy, cols, ox, b: borderOf(s) };
+  }
+  const posOf = (k) => { const row = Math.floor(k / geo.cols), col = k % geo.cols; return [geo.ox + col * geo.sx + (row % 2 ? geo.sx / 2 : 0), row * geo.sy]; };
+  function setCombHeight() { const rows = Math.ceil(drawn / geo.cols); comb.style.height = rows ? ((rows - 1) * geo.sy + geo.s) + "px" : "0px"; }
+  function openColl(c, highlight = -1) {
+    if (!c) return;
+    cur = c; mark = highlight;
+    $("dlg-logo").setAttribute("style", logoStyle(c, 56));
+    $("dlg-name").textContent = c.n;
+    $("dlg-links").innerHTML = `<span class="mono">${esc(chainName(c.ch))}</span><a href="https://opensea.io/collection/${encodeURIComponent(c.s)}" target="_blank" rel="noopener">View collection on OpenSea</a>` + (c.tw ? `<a href="https://x.com/${encodeURIComponent(c.tw)}" target="_blank" rel="noopener">@${esc(c.tw)}</a>` : "");
+    $("dlg-stats").innerHTML = `
+      <div><dt>Wearing</dt><dd>${nf.format(c.c)}</dd></div>
+      <div><dt>Wear rate</dt><dd>${c.o ? pct(rate(c)) : "–"}</dd></div>
+      <div><dt>Floor</dt><dd>${floorTxt(c)}</dd></div>
+      <div><dt>Face value</dt><dd>${usd(faceValue(c))}</dd></div>
+      <div><dt>Blue checks</dt><dd>${nf.format(c.v)}</dd></div>
+      <div class="tabs" role="group" aria-label="Order faces" id="dlg-sort">
+        <button type="button" data-o="token" aria-pressed="true">Token ID</button>
+        <button type="button" data-o="checks" aria-pressed="false">Verified first</button>
+        <button type="button" data-o="name" aria-pressed="false">A–Z</button>
+      </div>`;
+    comb.innerHTML = ""; comb.style.height = "0px"; $("dlg-tip").textContent = "Loading faces…";
+    if (!dlg.open) dlg.showModal();
+    $("dlg-body").scrollTop = 0;
+    try { history.replaceState(null, "", "#" + c.s); } catch (_) {}
+    loadP().then(() => { if (cur === c) setOrder("token"); }).catch(() => { $("dlg-tip").textContent = "Faces did not load. Reload the page to try again."; });
+  }
+  function setOrder(o) {
+    const list = P[cur.id];
+    order = list.map((_, i) => i);
+    if (o === "checks") order.sort((a, b) => list[b][3] - list[a][3] || (list[b][0] ? 1 : 0) - (list[a][0] ? 1 : 0));
+    if (o === "name") order.sort((a, b) => pname(list[a]).toLowerCase().localeCompare(pname(list[b]).toLowerCase()));
+    if (mark >= 0) order = [mark, ...order.filter((i) => i !== mark)];
+    $("dlg-sort").querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.o === o)));
+    comb.innerHTML = ""; drawn = 0; geo = combGeo(); more();
+    $("dlg-tip").textContent = `${nf.format(list.length)} faces. Each opens that profile on OpenSea.`;
+  }
+  function more() {
+    if (!cur || !P) return;
+    const list = P[cur.id], end = Math.min(order.length, drawn + BATCH), frag = document.createDocumentFragment(), inner = geo.s - geo.b * 2;
+    for (let k = drawn; k < end; k++) {
+      const i = order[k], p = list[i], a = document.createElement("a"), [x, y] = posOf(k);
+      a.className = "hx" + (p[3] ? " v" : "") + (i === mark ? " me" : "");
+      a.href = href(p); a.target = "_blank"; a.rel = "noopener";
+      a.title = `${pname(p)} · #${p[4]}`;
+      a.setAttribute("aria-label", `${pname(p)}, ${cur.n} #${p[4]}`);
+      a.dataset.i = i; a.dataset.k = k;
+      a.style.cssText = `left:${x}px;top:${y}px;width:${geo.s}px;height:${geo.s}px;--b:${geo.b}px`;
+      a.innerHTML = `<i class="rim"></i><i class="im" style="${sheetStyle(cur, i, inner)}"></i>`;
+      frag.appendChild(a);
+    }
+    comb.appendChild(frag); drawn = end; setCombHeight();
+  }
+  function relayoutComb() {
+    if (!cur || !drawn) return;
+    geo = combGeo(); const inner = geo.s - geo.b * 2;
+    comb.querySelectorAll("a.hx").forEach((a) => {
+      const [x, y] = posOf(+a.dataset.k);
+      a.style.cssText = `left:${x}px;top:${y}px;width:${geo.s}px;height:${geo.s}px;--b:${geo.b}px`;
+      a.querySelector(".im").setAttribute("style", sheetStyle(cur, +a.dataset.i, inner));
+    });
+    setCombHeight();
+  }
+  new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting) && cur && drawn < order.length) more(); }, { root: $("dlg-body"), rootMargin: "700px" }).observe($("dlg-sentinel"));
+  dlg.addEventListener("click", (e) => {
+    const b = e.target.closest("#dlg-sort button"); if (b) { mark = -1; setOrder(b.dataset.o); return; }
+    if (e.target === dlg) dlg.close();
+  });
+  comb.addEventListener("mouseover", (e) => { const a = e.target.closest(".hx"); if (a && P && cur) { const p = P[cur.id][+a.dataset.i]; $("dlg-tip").textContent = `${pname(p)}${p[1] && p[0] && p[1] !== p[0] ? " (" + p[1] + ")" : ""} · ${cur.n} #${p[4]}${p[3] ? " · verified" : ""}`; } });
+  $("dlg-x").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("close", () => { cur = null; try { history.replaceState(null, "", location.pathname + location.search); } catch (_) {} });
+  let rs; new ResizeObserver(() => { clearTimeout(rs); rs = setTimeout(relayoutComb, 120); }).observe(comb);
+
+  /* ---------- find yourself ---------- */
+  let idx = null;
+  $("who").addEventListener("input", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    if (q.length < 2) { $("hits").innerHTML = ""; $("who-note").textContent = "Search every counted profile."; return; }
+    loadP().then(() => {
+      if (!idx) { idx = []; C.forEach((c) => P[c.id].forEach((p, i) => idx.push([((p[0] || "") + " " + (p[1] || "") + " " + p[2]).toLowerCase(), c, i]))); }
+      const hits = [];
+      for (const [s, c, i] of idx) { if (s.includes(q)) { hits.push([c, i, s.startsWith(q) || s.includes(" " + q) ? 0 : 1]); if (hits.length > 400) break; } }
+      hits.sort((a, b) => a[2] - b[2]);
+      $("who-note").textContent = hits.length ? `${hits.length > 400 ? "400+" : nf.format(hits.length)} match${hits.length === 1 ? "" : "es"}` : "Nobody by that name is wearing a counted collection.";
+      $("hits").innerHTML = hits.slice(0, 24).map(([c, i]) => { const p = P[c.id][i]; return `<a class="hit" href="#${esc(c.s)}" data-id="${c.id}" data-i="${i}">${hexHTML(sheetStyle(c, i, 48 - borderOf(48) * 2), 48, p[3])}<div><b>${esc(pname(p))}</b><span>${esc(c.n)} #${esc(p[4])}${p[3] ? " · verified" : ""}</span></div></a>`; }).join("");
+    }).catch(() => { $("who-note").textContent = "Profiles did not load. Reload the page to try again."; });
+  });
+  $("hits").addEventListener("click", (e) => { const a = e.target.closest(".hit"); if (!a) return; e.preventDefault(); openColl(byId(+a.dataset.id), +a.dataset.i); });
+
+  /* ---------- method ---------- */
+  $("method-a").innerHTML = `
+    <p>For each collection, this page called <code>GET /api/v2/collections/{slug}/pfp-profiles</code> on the OpenSea API with <code>limit=100</code> and followed <code>next</code> until it came back empty. The endpoint has no total count, so every number here is a full walk of the list.</p>
+    <p>A profile counts only when its NFT profile picture is verified, meaning the profile's wallet holds that NFT right now. Profiles that are not public are left out by the API.</p>`;
+  $("method-b").innerHTML = `
+    <p>${nf.format(S.k)} collections were enumerated: the top collections on OpenSea by market cap and by 7 and 30 day volume, plus well-known PFP projects on other chains. A collection outside that set can have wearers and still be missing here. ${nf.format(C.length)} had at least one.</p>
+    <p>Wear rate divides wearers by the collection's unique owners. Face value is floor price times wearers, converted to US dollars at snapshot prices (${esc(S.usdNote)}). Snapshot taken ${esc(when.toUTCString().replace("GMT", "UTC"))}.</p>`;
+
+  /* deep link: #slug opens that collection */
+  const fromHash = () => { const h = decodeURIComponent(location.hash.slice(1)); const c = h && C.find((x) => x.s === h); if (c) openColl(c); };
+  fromHash();
+})();
+</script>

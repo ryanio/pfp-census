@@ -1,0 +1,6 @@
+data/profiles/
+data/img/
+data/fonts/
+data/usd.json
+__pycache__/
+.DS_Store
