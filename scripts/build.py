@@ -58,7 +58,7 @@ for cid, d in enumerate(colls):
     fu = floor * usd[sym] if floor and sym in usd else None
     C.append({"id": cid, "s": d["slug"], "n": sd.get("name") or d["slug"], "ch": (sd.get("contracts") or [{}])[0].get("chain") or (contracts[0][0] if contracts else ""),
               "o": sd.get("num_owners") or 0, "f": floor, "fs": sym, "fu": fu, "c": len(rows), "v": sum(x["r"][3] for x in rows),
-              "tw": sd.get("twitter") or "", "logo_url": sd.get("image_url"), "k": [list(x) for x in contracts]})
+              "tw": sd.get("twitter") or "", "cat": (sd.get("category") or "").lower(), "logo_url": sd.get("image_url"), "k": [list(x) for x in contracts]})
     P.append(rows)
 
 total = sum(c["c"] for c in C)
@@ -160,6 +160,10 @@ if SITE_URL:
     head, body = page[:head_end], page[head_end:]
     head = head.replace('<meta charset="utf-8">\n', "")
     desc = f"{total:,} OpenSea profiles wear an NFT they hold as their picture, across {len(C)} collections. A map of who wears what."
+    GA_ID = os.environ.get("GA_ID", "").strip()
+    ga = (f"""<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","{GA_ID}");</script>
+""" if GA_ID else "")
     meta = f"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="{desc}">
@@ -174,7 +178,7 @@ if SITE_URL:
 <meta name="twitter:title" content="PFP Census">
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{SITE_URL}og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 4 90 27v46L50 96 10 73V27z' fill='%230786FF'/%3E%3C/svg%3E">
+{ga}<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 4 90 27v46L50 96 10 73V27z' fill='%230786FF'/%3E%3C/svg%3E">
 """
     page = "<!doctype html>\n<html lang=\"en\">\n<head>\n" + meta + head + "\n</head>\n<body>" + body + "\n</body>\n</html>\n"
 open(os.path.join(SITE, "index.html"), "w").write(page)

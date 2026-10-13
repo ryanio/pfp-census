@@ -73,10 +73,12 @@ for i, (q, r) in enumerate(pts):
 
 # left column: title, numbers, source
 L = 64 * K
-title = font("bsd.ttf", 132, b"Black")
-d.text((L, 70 * K), "PFP", font=title, fill=INK)
-d.text((L, 70 * K + 118 * K), "CENSUS", font=title, fill=INK)
-bar_y = 70 * K + 118 * K * 2 + 24 * K
+kick = font("mono.ttf", 17)
+d.text((L, 58 * K), "PFP CENSUS", font=kick, fill=BLUE)
+title = font("bsd.ttf", 118, b"Black")
+d.text((L, 88 * K), "WHO WEARS", font=title, fill=INK)
+d.text((L, 88 * K + 104 * K), "WHAT", font=title, fill=INK)
+bar_y = 88 * K + 104 * K * 2 + 22 * K
 d.rectangle([L, bar_y, L + 120 * K, bar_y + 6 * K], fill=BLUE)
 d.rectangle([L + 120 * K, bar_y, L + 180 * K, bar_y + 6 * K], fill=GREEN)
 num = font("bsd.ttf", 54, b"ExtraBold"); lab = font("ps.ttf", 17, b"Medium"); mono = font("mono.ttf", 15)
@@ -87,6 +89,6 @@ for v, t in stats:
     vw = d.textlength(v, font=num)
     d.text((L + vw + 14 * K, y + 26 * K), t, font=lab, fill=INK2)
     y += 66 * K
-d.text((L, H - 64 * K), "Data: OpenSea API  /collections/{slug}/pfp-profiles", font=mono, fill=INK2)
+d.text((L, H - 64 * K), "By Ryan Ghods  ·  data from the OpenSea API", font=mono, fill=INK2)
 img.resize((1200, 630), Image.LANCZOS).save(os.path.join(SITE, "og.png"), optimize=True)
 print("og.png", os.path.getsize(os.path.join(SITE, "og.png")), "bytes; hex size", s // K, "px")
