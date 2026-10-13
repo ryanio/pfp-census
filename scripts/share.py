@@ -165,7 +165,7 @@ ld = [{"@context": "https://schema.org", "@type": "Article", "headline": "Who we
       {"@context": "https://schema.org", "@type": "Dataset", "name": "PFP Census", "description": f"OpenSea profiles wearing a verified NFT profile picture, counted by collection: {N:,} profiles, {len(C):,} collections.",
        "url": SITE_URL, "creator": {"@type": "Person", "name": "Ryan Ghods"}, "isAccessibleForFree": True, "license": "https://creativecommons.org/licenses/by/4.0/",
        "keywords": ["NFT", "profile pictures", "PFP", "OpenSea", "onchain"], "dateModified": S["at"][:10],
-       "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": SITE_URL + "profiles.json"}]}]
+       "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://raw.githubusercontent.com/ryanio/pfp-census/main/data/collections.csv"}, {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://raw.githubusercontent.com/ryanio/pfp-census/main/data/wearers.csv"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": SITE_URL + "profiles.json"}]}]
 page = page.replace("</head>", '<script type="application/ld+json">' + json.dumps(ld, separators=(",", ":")) + "</script>\n</head>", 1)
 open(os.path.join(SITE, "index.html"), "w").write(page)
 open(os.path.join(SITE, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{SITE_URL}</loc><lastmod>{S["at"][:10]}</lastmod><changefreq>daily</changefreq></url></urlset>\n')
