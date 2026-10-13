@@ -68,10 +68,21 @@ jobs:
           path: data/img
           key: avatars-${{ github.run_id }}
           restore-keys: avatars-
+      - uses: actions/cache@v4
+        if: steps.key.outputs.refresh == 'true'
+        with:
+          path: |
+            data/profiles
+            data/seed.json
+            data/crawled_at
+          key: crawl-${{ github.run_id }}
+          restore-keys: crawl-
       - name: Crawl and build
         if: steps.key.outputs.refresh == 'true'
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+          # pushes reuse a crawl under 6 hours old; scheduled and manual runs always crawl fresh
+          CRAWL_MAX_AGE: ${{ github.event_name == 'push' && '21600' || '' }}
           SITE_URL: https://ryanio.github.io/pfp-census/
           GA_ID: ${{ vars.GA_ID }}
         run: ./scripts/refresh.sh
