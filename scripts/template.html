@@ -192,8 +192,13 @@ h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(60px, 6.9
 .grail span { font: 12px/1.4 var(--f-mono); color: var(--ink-3); }
 .comb, .singles { position: relative; width: 100%; }
 .comb .hx, .singles .hx { position: absolute; }
-.singles a.hx { transition: transform .15s ease; }
-.singles a.hx:hover, .singles a.hx:focus-visible { transform: scale(1.35); z-index: 3; }
+.singles a.hx { transition: transform .38s cubic-bezier(.2, .9, .25, 1.15), filter .3s ease; will-change: transform; }
+.singles:hover a.hx { filter: saturate(.55) brightness(.8); }
+.singles a.hx:hover, .singles a.hx:focus-visible { transform: scale(1.75); z-index: 4; filter: drop-shadow(0 12px 22px rgba(0, 0, 0, .45)); }
+.singles a.hx:hover > .rim, .singles a.hx:focus-visible > .rim { animation: hex-rotate 3s linear infinite; }
+.stag { position: absolute; z-index: 6; transform: translateX(-50%); pointer-events: none; display: grid; text-align: center; gap: 1px; padding: 6px 11px 7px; border-radius: 4px; background: var(--ink); color: var(--paper); box-shadow: 0 8px 24px rgba(0, 0, 0, .25); white-space: nowrap; }
+.stag b { font: 600 14px var(--f-ui); }
+.stag span { font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: .06em; opacity: .75; }
 
 /* explore */
 .sect { max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 72px 0; }
@@ -285,6 +290,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
 @media (prefers-reduced-motion: reduce) {
   a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim, .grail:hover .hx > .rim { animation: none; }
   .comb a.hx, .singles a.hx { transition: none; }
+  .singles:hover a.hx { filter: none; }
 }
 </style>
 
@@ -475,9 +481,13 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   const miniStyle = (idx, px) => { const m = S.mini, p = miniPos(idx); return `background-image:url(${m.files[p.sheet]});background-size:${m.cols * px}px ${m.rows * px}px;background-position:-${p.col * px}px -${p.row * px}px`; };
   const sheetStyle = (c, i, px) => { const sh = S.sheet, per = sh.cols * sh.rows, g = c.go + i, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp);background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
   const logoStyle = (c, px) => { if (c.lg < 0) return ""; const L = S.logos, col = c.lg % L.cols, row = Math.floor(c.lg / L.cols); return `background-image:url(${L.file});background-size:${L.cols * px}px ${Math.ceil(L.count / L.cols) * px}px;background-position:-${col * px}px -${row * px}px`; };
+  const fullStyle = (g, px) => { const sh = S.sheet, per = sh.cols * sh.rows, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp);background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
+  const lazyBg = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute("style", e.target.dataset.bg); lazyBg.unobserve(e.target); } }), { rootMargin: "500px" });
+  const observeBg = (root) => root.querySelectorAll("[data-bg]:not([style])").forEach((el) => lazyBg.observe(el));
   const borderOf = (size) => Math.max(1.5, Math.round(size * 0.04));
   const inner = (size) => size - borderOf(size) * 2;
   const hexHTML = (style, size, verified, attrs = "") => `<i class="hx${verified ? " v" : ""}" ${attrs} style="--b:${borderOf(size)}px"><i class="rim"></i><i class="im" style="${style}"></i></i>`;
+  const hexLazy = (g, size, verified, attrs = "") => `<i class="hx${verified ? " v" : ""}" ${attrs} style="--b:${borderOf(size)}px"><i class="rim"></i><i class="im" data-bg="${fullStyle(g, inner(size))}"></i></i>`;
   const lazy = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute("style", e.target.dataset.bg); lazy.unobserve(e.target); } }), { rootMargin: "400px" });
 
   /* share links */
@@ -528,7 +538,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   const maxTop = top10[0].c;
   $("top10").innerHTML = `<h2><span>Most worn</span><span>Wearers</span></h2>` + top10.map((c, i) => `
     <button type="button" class="trow" data-id="${c.id}">
-      <span class="r">${i + 1}</span>${hexHTML(miniStyle(c.ms, inner(32)), 32, false)}
+      <span class="r">${i + 1}</span>${hexHTML(fullStyle(S.mini.who[c.ms], inner(32)), 32, false)}
       <span class="t"><b>${esc(c.n)}</b><i style="width:${Math.max(4, (c.c / maxTop) * 100)}%"></i></span>
       <span class="c">${nf.format(c.c)}</span>
     </button>`).join("");
@@ -738,7 +748,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   $("p-wear-rate").innerHTML = wr.map(P_).join("");
   if (smallClubs) { $("pull").hidden = false; $("pull").textContent = "The smaller and tighter the community, the more of it shows up as faces."; }
   const rateRows = (list, cls) => { const max = Math.max(...rateList.slice(0, 8).map(rate), ...core.map(rate)); return list.map((c) => `
-    <button type="button" class="brow ${cls}" data-id="${c.id}">${hexHTML(miniStyle(c.ms, inner(34)), 34, false)}
+    <button type="button" class="brow ${cls}" data-id="${c.id}">${hexHTML(fullStyle(S.mini.who[c.ms], inner(34)), 34, false)}
       <span class="bn"><b>${esc(c.n)}</b><span>${esc(chainName(c.ch))}</span></span>
       <span class="track"><span class="fill" style="width:${Math.max(1, (rate(c) / max) * 100)}%"></span></span>
       <span class="bv"><b>${pct(rate(c))}</b><span>${nf.format(c.c)} of ${nf.format(c.o)}</span></span>
@@ -784,13 +794,22 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   $("cap-singles").innerHTML = `<b>Fig. 4</b> One face from each of the ${nf.format(singles.length)} collections with exactly one wearer. Click any to open it.`;
   const singlesEl = $("singles");
   function drawSingles() {
-    const Wc = singlesEl.clientWidth, s = Wc < 520 ? 36 : 44, gap = 3, sx = 0.866 * s + gap, sy = sx * 0.866;
+    const Wc = singlesEl.clientWidth, s = Wc < 520 ? 46 : 66, gap = 4, sx = 0.866 * s + gap, sy = sx * 0.866;
     const cols = Math.max(1, Math.floor((Wc - sx / 2 - 0.134 * s) / sx)), ox = Math.max(0, (Wc - (cols * sx + sx / 2 - gap)) / 2) - 0.067 * s;
-    singlesEl.innerHTML = singles.map((c, k) => { const row = Math.floor(k / cols), col = k % cols; return `<a class="hx" href="#${esc(c.s)}" data-id="${c.id}" title="${esc(c.n)}" aria-label="${esc(c.n)}" style="left:${ox + col * sx + (row % 2 ? sx / 2 : 0)}px;top:${row * sy}px;width:${s}px;height:${s}px;--b:${borderOf(s)}px"><i class="rim"></i><i class="im" style="${miniStyle(c.ms, inner(s))}"></i></a>`; }).join("");
+    singlesEl.innerHTML = singles.map((c, k) => { const row = Math.floor(k / cols), col = k % cols; return `<a class="hx" href="#${esc(c.s)}" data-id="${c.id}" title="${esc(c.n)}" aria-label="${esc(c.n)}" style="left:${ox + col * sx + (row % 2 ? sx / 2 : 0)}px;top:${row * sy}px;width:${s}px;height:${s}px;--b:${borderOf(s)}px"><i class="rim"></i><i class="im" data-bg="${fullStyle(c.go, inner(s))}"></i></a>`; }).join("") + `<span class="stag" id="stag" hidden></span>`;
+    observeBg(singlesEl);
     const rows = Math.ceil(singles.length / cols); singlesEl.style.height = rows ? (rows - 1) * sy + s + "px" : "0";
   }
   drawSingles();
   let sw = singlesEl.clientWidth; new ResizeObserver(() => { if (singlesEl.clientWidth !== sw) { sw = singlesEl.clientWidth; drawSingles(); } }).observe(singlesEl);
+  singlesEl.addEventListener("mouseover", (e) => {
+    const a = e.target.closest("a.hx"), tag = $("stag"); if (!a || !tag) return;
+    const c = byId(+a.dataset.id), r = a.getBoundingClientRect(), b = singlesEl.getBoundingClientRect();
+    tag.innerHTML = `<b>${esc(c.n)}</b><span>${esc(chainName(c.ch))}</span>`; tag.hidden = false;
+    const x = Math.min(b.width - tag.offsetWidth / 2 - 4, Math.max(tag.offsetWidth / 2 + 4, r.left - b.left + r.width / 2));
+    tag.style.left = x + "px"; tag.style.top = (r.bottom - b.top + r.height * 0.42) + "px";
+  });
+  singlesEl.addEventListener("mouseleave", () => { const tag = $("stag"); if (tag) tag.hidden = true; });
   singlesEl.addEventListener("click", (e) => { const a = e.target.closest("a.hx"); if (!a) return; e.preventDefault(); openColl(byId(+a.dataset.id)); });
   document.querySelectorAll("#fig-rate .brow, #fig-grails .grail").forEach((b) => b.addEventListener("click", () => openColl(byId(+b.dataset.id))));
 
@@ -832,7 +851,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
       <div class="reg-head" aria-hidden="true"><span>#</span><span>Collection</span><span>${{ worn: "Wearing", rate: "Wear rate", value: "Face value", price: "Floor in USD" }[state.sort]}</span><span class="r c-alt">Wear rate</span><span class="r c-alt">Floor</span><span class="r c-faces">Faces</span></div>` +
       (shownR.length ? shownR.map((c, i) => {
         const [v, sub] = main(c);
-        const previews = Array.from({ length: Math.min(5, c.mn) }, (_, k) => hexHTML(miniStyle(c.ms + k, inner(32)), 32, false)).join("");
+        const previews = Array.from({ length: Math.min(5, c.mn) }, (_, k) => hexLazy(S.mini.who[c.ms + k], 32, false)).join("");
         return `<button type="button" role="listitem" class="row${rateOk(c) ? "" : " dim"}" data-id="${c.id}">
           <span class="rank">${i + 1}</span>
           <span class="who"><i class="logo" style="${logoStyle(c, 40)}"></i><span class="who-t"><b>${esc(c.n)}</b><span class="chain">${esc(chainName(c.ch))}</span></span></span>
@@ -844,6 +863,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
       }).join("") : `<p class="empty">No collections match.</p>`);
     $("more").hidden = state.all || list.length <= 50;
     $("more").textContent = `Show all ${nf.format(list.length)}`;
+    observeBg($("reg"));
   }
   $("sorts").addEventListener("click", (e) => { const b = e.target.closest("button[data-sort]"); if (!b) return; state.sort = b.dataset.sort; $("sorts").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); render(); });
   $("chain").addEventListener("change", (e) => { state.chain = e.target.value; render(); });
