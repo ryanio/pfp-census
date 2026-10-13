@@ -2,242 +2,357 @@
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: a census return. Header tally, a Gosper-island map where each collection is a territory of hexagonal faces, a sortable register, and a honeycomb of every face per collection. */
+/* Layout: a magazine feature. Black cover (headline, top ten, Gosper-island map of faces), a long-form story in five chapters with figures, then the full register, search and method. */
 :root {
-  --paper: #EDF0F4;
-  --sheet: #F8F9FB;
-  --ink: #111A24;
-  --ink-2: #465363;
-  --ink-3: #738193;
-  --rule: #C8D0DA;
-  --form: #0A5BC4;
-  --form-soft: #D7E4F6;
-  --mark: #F2C42B;
-  --mark-ink: #2A2200;
+  --paper: #FFFFFF;
+  --wash: #F3F4F6;
+  --ink: #111214;
+  --ink-2: #3A3E44;
+  --ink-3: #626770;
+  --rule: #DCDEE2;
+  --accent: #0057D9;
+  --accent-soft: #E6EEFB;
+  --mark: #FFE14D;
+  --mark-ink: #1F1A00;
+  --hero: #0A0A0B;
+  --hero-ink: #F4F4F5;
+  --hero-ink-2: #B4B6BC;
+  --hero-rule: #2B2C30;
+  --hero-wash: #17181B;
+  --bar: #111214;
+  --bar-hi: #0786FF;
+  --bar-mute: #B7BBC2;
   --glow-a: #0786FF;
   --glow-b: #0FBE39;
   --glow-a-40: rgba(7, 134, 255, .4);
   --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
-  --f-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --f-ui: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --gutter: clamp(16px, 4vw, 48px);
-  /* OpenSea's NFT profile picture frame: pointy-top hexagon, corner radius ratio 0.15 */
+  --gutter: clamp(18px, 4.5vw, 56px);
   --hex: polygon(43.50% 3.75%, 45.13% 2.93%, 46.75% 2.34%, 48.38% 1.99%, 50.00% 1.87%, 51.62% 1.99%, 53.25% 2.34%, 54.87% 2.93%, 56.50% 3.75%, 86.81% 21.25%, 88.33% 22.25%, 89.65% 23.36%, 90.76% 24.59%, 91.68% 25.94%, 92.39% 27.40%, 92.90% 28.98%, 93.20% 30.68%, 93.30% 32.50%, 93.30% 67.50%, 93.20% 69.32%, 92.90% 71.02%, 92.39% 72.60%, 91.68% 74.06%, 90.76% 75.41%, 89.65% 76.64%, 88.33% 77.75%, 86.81% 78.75%, 56.50% 96.25%, 54.87% 97.07%, 53.25% 97.66%, 51.62% 98.01%, 50.00% 98.13%, 48.38% 98.01%, 46.75% 97.66%, 45.13% 97.07%, 43.50% 96.25%, 13.19% 78.75%, 11.67% 77.75%, 10.35% 76.64%, 9.24% 75.41%, 8.32% 74.06%, 7.61% 72.60%, 7.10% 71.02%, 6.80% 69.32%, 6.70% 67.50%, 6.70% 32.50%, 6.80% 30.68%, 7.10% 28.98%, 7.61% 27.40%, 8.32% 25.94%, 9.24% 24.59%, 10.35% 23.36%, 11.67% 22.25%, 13.19% 21.25%);
   --tally: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='13' viewBox='0 0 18 13'%3E%3Cg stroke='black' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M2 1.5v10M5 1.5v10M8 1.5v10M11 1.5v10M.5 10 13 3'/%3E%3C/g%3E%3C/svg%3E");
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0C1117; --sheet: #131A22; --ink: #E4EAF1; --ink-2: #A1AEBD; --ink-3: #718093;
-    --rule: #243040; --form: #5AA8FF; --form-soft: #15263B; --mark: #E8BE35; --mark-ink: #1E1800;
+    --paper: #0E0F11; --wash: #17181C; --ink: #ECEDEF; --ink-2: #C4C7CD; --ink-3: #8F949C; --rule: #2A2C31;
+    --accent: #5AA9FF; --accent-soft: #13233A; --mark: #E9C63A; --mark-ink: #1A1500;
+    --hero: #000000; --hero-wash: #141518; --bar: #ECEDEF; --bar-hi: #3D9BFF; --bar-mute: #4B4F57;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #0C1117; --sheet: #131A22; --ink: #E4EAF1; --ink-2: #A1AEBD; --ink-3: #718093;
-  --rule: #243040; --form: #5AA8FF; --form-soft: #15263B; --mark: #E8BE35; --mark-ink: #1E1800;
+  --paper: #0E0F11; --wash: #17181C; --ink: #ECEDEF; --ink-2: #C4C7CD; --ink-3: #8F949C; --rule: #2A2C31;
+  --accent: #5AA9FF; --accent-soft: #13233A; --mark: #E9C63A; --mark-ink: #1A1500;
+  --hero: #000000; --hero-wash: #141518; --bar: #ECEDEF; --bar-hi: #3D9BFF; --bar-mute: #4B4F57;
   color-scheme: dark;
 }
 @property --hex-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes hex-rotate { from { --hex-angle: 0deg; } to { --hex-angle: 360deg; } }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
+html { scroll-padding-top: 64px; }
 [hidden] { display: none !important; }
 img { max-width: 100%; }
-body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
-.wrap { max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 28px 64px; display: grid; gap: 44px; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-ui); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid var(--form); outline-offset: 2px; }
-.mono { font-family: var(--f-mono); }
+:focus-visible { outline: 2px solid var(--glow-a); outline-offset: 2px; }
+code { font-family: var(--f-mono); font-size: .82em; background: var(--accent-soft); color: var(--accent); padding: .1em .35em; border-radius: 3px; overflow-wrap: anywhere; }
 .num { font-variant-numeric: tabular-nums; }
 
-/* hexagon faces, shared */
+/* hexagon faces */
 .hx { position: relative; display: block; flex: none; }
 .hx > .rim, .hx > .im { position: absolute; clip-path: var(--hex); }
 .hx > .rim { inset: 0; background: conic-gradient(from var(--hex-angle), var(--glow-a), var(--glow-a-40), var(--glow-b), var(--glow-a)); }
 .hx > .im { inset: var(--b, 2px); background-color: var(--rule); background-repeat: no-repeat; }
-.hx.v::after { content: ""; position: absolute; right: 2%; bottom: 4%; width: 32%; height: 32%; max-width: 18px; max-height: 18px; min-width: 12px; min-height: 12px; border-radius: 50%; background: var(--form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.2 8.3 6.8 10.8 11.8 5.6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 72% no-repeat; box-shadow: 0 0 0 2px var(--paper); }
-a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim { animation: hex-rotate 4s linear infinite; }
+.hx.v::after { content: ""; position: absolute; right: 2%; bottom: 4%; width: 30%; height: 30%; max-width: 18px; max-height: 18px; min-width: 12px; min-height: 12px; border-radius: 50%; background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.2 8.3 6.8 10.8 11.8 5.6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 72% no-repeat; box-shadow: 0 0 0 2px var(--paper); }
+a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim, .grail:hover .hx > .rim { animation: hex-rotate 4s linear infinite; }
 a.hx:focus-visible { outline: none; }
 a.hx:focus-visible > .rim { background: var(--mark); }
-@media (prefers-reduced-motion: reduce) { a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim { animation: none; } }
 
-/* header */
-.head { display: grid; gap: 18px; border-bottom: 2px solid var(--ink); padding-bottom: 22px; }
-.source { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 18px; }
-.source code { background: var(--form-soft); color: var(--form); padding: 1px 6px; border-radius: 3px; font-family: inherit; overflow-wrap: anywhere; }
-h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(64px, 12vw, 148px); line-height: .82; letter-spacing: -.01em; margin: 0; text-transform: uppercase; text-wrap: balance; }
-.lede { font-size: clamp(17px, 2vw, 21px); max-width: 60ch; margin: 0; color: var(--ink-2); text-wrap: pretty; }
-.lede strong { color: var(--ink); font-weight: 600; }
-.tally { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 6px 0 0; border-top: 1px solid var(--rule); }
-.tally > div { padding: 14px 16px 4px 0; display: grid; gap: 2px; min-width: 0; align-content: start; }
-.tally > div + div { padding-left: 16px; border-left: 1px solid var(--rule); }
-.tally dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
-.tally dd { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 4.4vw, 52px); line-height: 1; font-variant-numeric: tabular-nums; min-width: 0; }
-.tally dd.txt .nm { font-size: clamp(24px, 3vw, 38px); line-height: .95; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-transform: uppercase; }
-.tally dd small { display: block; font-family: var(--f-body); font-weight: 500; font-size: 13px; color: var(--ink-2); margin-top: 4px; }
-@media (max-width: 760px) { .tally { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tally > div:nth-child(3) { padding-left: 0; border-left: 0; } .tally > div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+/* masthead */
+.mast { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--hero); color: var(--hero-ink); border-bottom: 1px solid var(--hero-rule); }
+.mast-in { max-width: 1320px; margin: 0 auto; padding-inline: var(--gutter); height: 52px; display: flex; align-items: center; gap: 24px; }
+.wm { font-family: var(--f-display); font-weight: 900; font-size: 22px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 9px; }
+.wm i { width: 16px; height: 18px; background: linear-gradient(135deg, var(--glow-a), var(--glow-b)); clip-path: var(--hex); }
+.mast nav { display: flex; gap: 20px; margin-left: auto; font: 600 14px var(--f-ui); }
+.mast nav a { text-decoration: none; color: var(--hero-ink-2); }
+.mast nav a:hover { color: var(--hero-ink); }
+@media (max-width: 560px) { .mast nav a.opt { display: none; } .mast nav { gap: 14px; } }
 
-/* section heads */
-.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 24px; margin-bottom: 14px; }
-h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 4vw, 44px); line-height: .95; text-transform: uppercase; margin: 0; letter-spacing: .005em; }
-.note { font-size: 13px; color: var(--ink-2); margin: 0; max-width: 62ch; }
-
-/* atlas: Gosper island map + legend */
-.atlas { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(250px, 1fr); gap: 20px 40px; align-items: center; }
+/* cover */
+.cover { background: var(--hero); color: var(--hero-ink); }
+.cover-in { max-width: 1320px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 36px 40px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px 56px; align-items: start; }
+.kicker { font: 500 13px var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--glow-a); margin: 0 0 12px; }
+h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(60px, 6.9vw, 100px); line-height: .84; letter-spacing: -.005em; text-transform: uppercase; margin: 0; text-wrap: balance; }
+.dek { font: 400 clamp(19px, 1.7vw, 23px)/1.42 var(--f-serif); color: var(--hero-ink); margin: 20px 0 0; max-width: 34ch; text-wrap: pretty; }
+.byline { font: 500 13px/1.5 var(--f-mono); color: var(--hero-ink-2); margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.byline a { color: var(--hero-ink); text-decoration-color: var(--hero-rule); text-underline-offset: 3px; }
+.top10 { margin-top: 28px; border-top: 2px solid var(--hero-ink); }
+.top10 h2 { font: 500 12.5px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--hero-ink-2); margin: 10px 0 6px; display: flex; justify-content: space-between; }
+.trow { display: grid; grid-template-columns: 26px 32px minmax(0, 1fr) auto; gap: 12px; align-items: center; width: 100%; padding: 6px 6px 6px 0; border: 0; border-bottom: 1px solid var(--hero-rule); background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.trow:hover, .trow.on { background: var(--hero-wash); }
+.trow .r { font: 800 20px/1 var(--f-display); color: var(--hero-ink-2); text-align: right; font-variant-numeric: tabular-nums; }
+.trow .hx { width: 32px; height: 32px; }
+.trow .t { min-width: 0; display: grid; gap: 3px; }
+.trow .t b { font: 600 15.5px/1.2 var(--f-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.trow .t i { display: block; height: 3px; border-radius: 0 2px 2px 0; background: linear-gradient(90deg, var(--glow-a), var(--glow-b)); }
+.trow .c { font: 800 24px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.cover-r { margin: 0; }
 .map { position: relative; width: 100%; touch-action: manipulation; }
 .map canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .map canvas.top { cursor: pointer; }
-.tag { position: absolute; transform: translate(-50%, -50%); border: 0; margin: 0; padding: 4px 9px 5px; border-radius: 3px; background: var(--sheet); color: var(--ink); box-shadow: 0 1px 0 var(--rule), 0 4px 14px rgba(10, 20, 30, .22); display: grid; line-height: 1.05; text-align: center; cursor: pointer; max-width: 168px; z-index: 2; }
+.tag { position: absolute; transform: translate(-50%, -50%); border: 0; margin: 0; padding: 4px 9px 5px; border-radius: 3px; background: #FFFFFF; color: #111214; box-shadow: 0 4px 16px rgba(0,0,0,.45); display: grid; line-height: 1.05; text-align: center; cursor: pointer; max-width: 170px; z-index: 2; }
 .tag b { font-family: var(--f-display); font-weight: 800; font-size: 15px; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tag span { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-2); white-space: nowrap; }
+.tag span { font-family: var(--f-mono); font-size: 10.5px; color: #4A4E55; white-space: nowrap; }
+.tag.on, .tag:hover { background: var(--glow-a); color: #FFFFFF; }
+.tag.on span, .tag:hover span { color: #FFFFFF; }
 @media (max-width: 560px) { .tag { padding: 3px 6px 4px; max-width: 120px; } .tag b { font-size: 12px; } .tag span { font-size: 9.5px; } }
-.tag.on, .tag:hover { background: var(--ink); color: var(--paper); }
-.tag.on span, .tag:hover span { color: inherit; opacity: .8; }
-.tip { position: absolute; pointer-events: none; background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 10px; font-size: 13px; line-height: 1.35; box-shadow: 0 6px 20px rgba(0,0,0,.18); white-space: nowrap; z-index: 4; }
+.tip { position: absolute; pointer-events: none; background: #FFFFFF; color: #111214; border-radius: 4px; padding: 7px 11px; font: 13px/1.35 var(--f-ui); box-shadow: 0 8px 24px rgba(0,0,0,.4); white-space: nowrap; z-index: 4; }
 .tip b { font-weight: 600; }
-.tip span { color: var(--ink-2); }
-.legend { display: grid; gap: 2px; align-content: center; min-width: 0; }
-.legend h3 { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin: 0 0 8px; }
-.lg { display: grid; grid-template-columns: 22px 30px minmax(0, 1fr) auto; gap: 10px; align-items: center; width: 100%; text-align: left; font: inherit; color: inherit; background: transparent; border: 0; border-bottom: 1px solid var(--rule); padding: 7px 4px; cursor: pointer; }
-.lg:hover, .lg.on { background: var(--sheet); }
-.lg .r { font-family: var(--f-display); font-weight: 800; font-size: 18px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
-.lg .hx { width: 30px; height: 30px; --b: 2px; }
-.lg .n { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
-.lg .c { text-align: right; font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-2); white-space: nowrap; }
-.lg .c b { color: var(--ink); font-weight: 600; font-size: 14px; }
-@media (max-width: 900px) { .atlas { grid-template-columns: minmax(0, 1fr); } .legend { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); column-gap: 24px; } .legend h3 { grid-column: 1 / -1; } }
+.tip span { color: #4A4E55; }
+.cover figcaption { font: 13px/1.5 var(--f-mono); color: var(--hero-ink-2); margin-top: 14px; max-width: 70ch; }
+.cue { display: flex; justify-content: center; padding-bottom: 26px; }
+.cue a { font: 600 14px var(--f-ui); color: var(--hero-ink); text-decoration: none; border: 1.5px solid var(--hero-rule); border-radius: 999px; padding: 9px 18px; }
+.cue a:hover { border-color: var(--hero-ink); }
+@media (max-width: 1000px) {
+  .cover-in { grid-template-columns: minmax(0, 1fr); }
+  .cover-r { order: 2; max-width: 720px; width: 100%; justify-self: center; }
+  .cover-l { display: contents; }
+  .cover-l > .head { order: 1; }
+  .top10 { order: 3; }
+  .dek { max-width: 46ch; }
+}
 
-/* controls */
+/* story */
+.story { --col: minmax(var(--gutter), 1fr) minmax(0, 150px) min(680px, calc(100% - 2 * var(--gutter))) minmax(0, 150px) minmax(var(--gutter), 1fr); padding-block: 56px 24px; }
+.blk { display: grid; grid-template-columns: var(--col); }
+.blk > * { grid-column: 3; }
+.blk > .wide { grid-column: 2 / 5; }
+.story p { font: 400 clamp(18px, 1.35vw, 20.5px)/1.62 var(--f-serif); margin: 0 0 1.05em; color: var(--ink); text-wrap: pretty; }
+.story p strong { font-weight: 600; }
+.lead::first-letter { font-family: var(--f-display); font-weight: 900; float: left; font-size: 5.4em; line-height: .76; padding: .07em .1em 0 0; }
+.ch { padding-top: 64px; }
+.ch-k { font: 500 13px var(--f-mono) !important; letter-spacing: .12em; text-transform: uppercase; color: var(--accent) !important; margin: 0 0 10px !important; }
+.ch h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(38px, 5vw, 60px); line-height: .96; margin: 0 0 22px; text-wrap: balance; }
+.pull { margin: 56px 0 8px; padding: 6px 0 6px 28px; border-left: 6px solid; border-image: linear-gradient(var(--glow-a), var(--glow-b)) 1; font-family: var(--f-display); font-weight: 800; font-size: clamp(34px, 4.6vw, 60px); line-height: 1.02; text-wrap: balance; }
+.share { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; }
+.share a, .share button { font: 600 13px var(--f-ui); color: var(--ink-2); background: transparent; border: 1.5px solid var(--rule); border-radius: 999px; padding: 6px 13px; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+.share a:hover, .share button:hover { border-color: var(--ink); color: var(--ink); }
+.share svg { width: 13px; height: 13px; fill: currentColor; }
+.fig { margin: 30px 0 14px; }
+.fig figcaption { font: 13px/1.5 var(--f-mono); color: var(--ink-3); margin-top: 12px; border-top: 1px solid var(--rule); padding-top: 9px; }
+.fig figcaption b { color: var(--ink); font-weight: 500; }
+.bars { display: grid; gap: 1px; }
+.bars h4 { font: 500 12px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 16px 0 4px; }
+.brow { display: grid; grid-template-columns: 34px minmax(0, 1.3fr) minmax(60px, 2fr) 104px; gap: 14px; align-items: center; width: 100%; padding: 7px 6px; border: 0; border-radius: 4px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.brow.nohex { grid-template-columns: minmax(0, 1.1fr) minmax(60px, 2.4fr) 120px; cursor: default; }
+.brow:hover { background: var(--wash); }
+.brow.nohex:hover { background: transparent; }
+.brow .hx { width: 34px; height: 34px; }
+.brow .bn { min-width: 0; display: grid; }
+.brow .bn b { font: 600 15.5px/1.25 var(--f-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brow .bn span { font: 500 12px var(--f-mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; }
+.brow .track { display: block; height: 12px; min-width: 0; }
+.brow .fill { display: block; height: 100%; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 3px; }
+.brow.hi .fill { background: var(--bar-hi); }
+.brow.mute .fill { background: var(--bar-mute); }
+.brow .bv { text-align: right; display: grid; }
+.brow .bv b { font: 800 24px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.brow .bv span { font: 12px var(--f-mono); color: var(--ink-3); white-space: nowrap; }
+@media (max-width: 620px) {
+  .brow { grid-template-columns: 30px minmax(0, 1fr) auto; grid-template-areas: "h n v" "h t t"; row-gap: 6px; }
+  .brow .hx { grid-area: h; width: 30px; height: 30px; align-self: start; }
+  .brow .bn { grid-area: n; } .brow .track { grid-area: t; } .brow .bv { grid-area: v; }
+  .brow.nohex { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n v" "t t"; }
+}
+.grails { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.grail { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 14px; align-items: center; padding: 12px; border: 1px solid var(--rule); border-radius: 6px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.grail:hover { border-color: var(--ink); }
+.grail .hx { width: 84px; height: 84px; }
+.grail div { min-width: 0; display: grid; gap: 2px; }
+.grail b { font: 600 15px/1.25 var(--f-ui); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.grail .gv { font: 800 26px/1 var(--f-display); margin-top: 4px; }
+.grail span { font: 12px/1.4 var(--f-mono); color: var(--ink-3); }
+.comb, .singles { position: relative; width: 100%; }
+.comb .hx, .singles .hx { position: absolute; }
+.singles a.hx { transition: transform .15s ease; }
+.singles a.hx:hover, .singles a.hx:focus-visible { transform: scale(1.35); z-index: 3; }
+
+/* explore */
+.sect { max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 72px 0; }
+.sect-h { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 24px; margin-bottom: 18px; border-top: 2px solid var(--ink); padding-top: 14px; }
+.sect-h h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(38px, 5vw, 60px); line-height: .96; margin: 0; }
+.sect-h p { font: 400 18px/1.5 var(--f-serif); color: var(--ink-2); margin: 0; max-width: 52ch; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-bottom: 4px; }
 .tabs { display: inline-flex; flex-wrap: wrap; border: 1.5px solid var(--ink); border-radius: 4px; overflow: hidden; }
-.tabs button { font: 600 13px/1 var(--f-body); padding: 10px 14px; border: 0; background: transparent; color: var(--ink); cursor: pointer; letter-spacing: .01em; }
+.tabs button { font: 600 14px/1 var(--f-ui); padding: 11px 15px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
 .tabs button + button { border-left: 1.5px solid var(--ink); }
 .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.tabs button:hover:not([aria-pressed="true"]) { background: var(--form-soft); }
-select, input[type="search"] { font: 500 14px var(--f-body); color: var(--ink); background: var(--sheet); border: 1.5px solid var(--rule); border-radius: 4px; padding: 8px 10px; min-width: 0; }
-input[type="search"] { flex: 1 1 220px; max-width: 340px; }
-.sort-note { font-size: 13px; color: var(--ink-2); margin: 6px 0 12px; min-height: 1.5em; }
-
-/* register */
+.tabs button:hover:not([aria-pressed="true"]) { background: var(--wash); }
+select, input[type="search"] { font: 500 15px var(--f-ui); color: var(--ink); background: var(--paper); border: 1.5px solid var(--rule); border-radius: 4px; padding: 9px 11px; min-width: 0; }
+input[type="search"] { flex: 1 1 220px; max-width: 360px; }
+.sort-note { font: 400 16px/1.5 var(--f-serif); color: var(--ink-2); margin: 8px 0 14px; min-height: 1.5em; }
 .reg { border-top: 2px solid var(--ink); }
 .reg-head, .row { display: grid; grid-template-columns: 44px minmax(0, 2.4fr) minmax(0, 2.4fr) minmax(0, .9fr) minmax(0, 1.1fr) 150px; gap: 14px; align-items: center; }
-.reg-head { font-family: var(--f-mono); font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); padding: 10px 8px; border-bottom: 1px solid var(--rule); }
+.reg-head { font: 500 12px var(--f-mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); padding: 10px 8px; border-bottom: 1px solid var(--rule); }
 .reg-head .r { text-align: right; }
-.row { width: 100%; text-align: left; font: inherit; color: inherit; background: transparent; border: 0; border-bottom: 1px solid var(--rule); padding: 10px 8px; cursor: pointer; }
-.row:hover { background: var(--sheet); }
-.row .rank { font-family: var(--f-display); font-weight: 800; font-size: 26px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.row { width: 100%; text-align: left; font: inherit; color: inherit; background: transparent; border: 0; border-bottom: 1px solid var(--rule); padding: 11px 8px; cursor: pointer; }
+.row:hover { background: var(--wash); }
+.row .rank { font: 800 26px var(--f-display); color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .row:nth-child(-n+4) .rank { color: var(--ink); }
 .who { display: flex; gap: 12px; align-items: center; min-width: 0; }
 .logo { flex: none; width: 40px; height: 40px; border-radius: 6px; background-color: var(--rule); background-repeat: no-repeat; }
 .who-t { min-width: 0; display: grid; }
-.who-t b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.chain { font-family: var(--f-mono); font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
-.bar { display: grid; gap: 4px; min-width: 0; }
+.who-t b { font: 600 16px/1.3 var(--f-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chain { font: 500 12px var(--f-mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
+.bar { display: grid; gap: 5px; min-width: 0; }
 .bar-v { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
-.bar-v b { font-family: var(--f-display); font-weight: 800; font-size: 24px; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.bar-v span { font-size: 12px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tal { height: 13px; background: var(--form); -webkit-mask: var(--tally) left center / 18px 13px repeat-x; mask: var(--tally) left center / 18px 13px repeat-x; min-width: 6px; }
+.bar-v b { font: 800 24px/1 var(--f-display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar-v span { font-size: 13px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tal { height: 13px; background: var(--accent); -webkit-mask: var(--tally) left center / 18px 13px repeat-x; mask: var(--tally) left center / 18px 13px repeat-x; min-width: 6px; }
 .cell-v { text-align: right; font-variant-numeric: tabular-nums; min-width: 0; }
-.cell-v b { font-weight: 600; display: block; white-space: nowrap; }
-.cell-v span { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+.cell-v b { font: 600 15px var(--f-ui); display: block; white-space: nowrap; }
+.cell-v span { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
 .row.dim .cell-v.rate b { color: var(--ink-3); font-weight: 500; }
 .faces { display: flex; justify-content: flex-end; padding-right: 2px; }
-.faces .hx { width: 32px; height: 32px; margin-left: -7px; --b: 1.5px; }
-.more { margin-top: 14px; font: 600 14px var(--f-body); background: transparent; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 4px; padding: 10px 16px; cursor: pointer; }
-.more:hover { background: var(--form-soft); }
+.faces .hx { width: 32px; height: 32px; margin-left: -7px; }
+.more { margin-top: 16px; font: 600 15px var(--f-ui); background: transparent; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 4px; padding: 11px 18px; cursor: pointer; }
+.more:hover { background: var(--wash); }
 .empty { padding: 28px 8px; color: var(--ink-2); }
-@media (max-width: 980px) {
-  .reg-head, .row { grid-template-columns: 34px minmax(0, 2fr) minmax(0, 1.6fr) minmax(0, .9fr) minmax(0, 1fr); }
-  .c-faces { display: none; }
-}
+@media (max-width: 980px) { .reg-head, .row { grid-template-columns: 34px minmax(0, 2fr) minmax(0, 1.6fr) minmax(0, .9fr) minmax(0, 1fr); } .c-faces { display: none; } }
 @media (max-width: 620px) {
   .reg-head { display: none; }
   .row { grid-template-columns: 30px minmax(0, 1fr); grid-template-areas: "rank who" "rank bar"; row-gap: 8px; }
   .row .rank { grid-area: rank; font-size: 20px; align-self: start; }
-  .row .who { grid-area: who; }
-  .row .bar { grid-area: bar; }
-  .row .c-alt { display: none; }
-  .bar-v b { font-size: 18px; }
+  .row .who { grid-area: who; } .row .bar { grid-area: bar; } .row .c-alt { display: none; }
+  .bar-v b { font-size: 20px; }
 }
-
-/* find */
-.find { display: grid; gap: 12px; padding: 22px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; }
-.find-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-.find input { max-width: 420px; }
-.hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
-.hit { display: flex; gap: 12px; align-items: center; text-decoration: none; padding: 8px 10px 8px 8px; border-radius: 4px; border: 1px solid var(--rule); background: var(--paper); min-width: 0; }
-.hit:hover { border-color: var(--form); }
-.hit .hx { width: 48px; height: 48px; --b: 2px; }
-.hit div { min-width: 0; display: grid; line-height: 1.25; }
-.hit b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.hit span { font-size: 12px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.find-box { display: grid; gap: 14px; }
+.find-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.find-row input { max-width: 440px; }
+.find-row .note { font: 15px var(--f-ui); color: var(--ink-2); }
+.hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.hit { display: flex; gap: 12px; align-items: center; text-decoration: none; padding: 9px 11px 9px 9px; border-radius: 6px; border: 1px solid var(--rule); min-width: 0; }
+.hit:hover { border-color: var(--ink); }
+.hit .hx { width: 50px; height: 50px; }
+.hit div { min-width: 0; display: grid; line-height: 1.3; }
+.hit b { font: 600 15px var(--f-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hit span { font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.method { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+.method p { font: 400 16.5px/1.6 var(--f-serif); color: var(--ink-2); margin: 0 0 14px; max-width: 64ch; }
+@media (max-width: 760px) { .method { grid-template-columns: minmax(0, 1fr); } }
+.foot { max-width: 1240px; margin: 56px auto 0; padding: 22px var(--gutter) 48px; border-top: 1px solid var(--rule); font: 13px/1.6 var(--f-mono); color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: space-between; }
 
 /* dialog */
-dialog { width: min(1100px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); color: var(--ink); }
-dialog::backdrop { background: rgba(6, 10, 16, .62); }
+dialog { width: min(1100px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); color: var(--ink); }
+dialog::backdrop { background: rgba(0, 0, 0, .66); }
 .dlg { display: grid; grid-template-rows: auto auto 1fr; max-height: calc(100dvh - 26px); }
 .dlg-top { display: flex; gap: 16px; align-items: center; padding: 18px 20px 14px; border-bottom: 2px solid var(--ink); }
 .dlg-top .logo { width: 56px; height: 56px; border-radius: 8px; }
-.dlg-top h3 { font-family: var(--f-display); font-weight: 800; font-size: clamp(26px, 4vw, 40px); line-height: .95; margin: 0; text-transform: uppercase; overflow-wrap: anywhere; }
-.dlg-top .links { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; margin-top: 6px; color: var(--ink-2); }
-.dlg-top .x { margin-left: auto; align-self: start; font: 600 22px/1 var(--f-body); width: 40px; height: 40px; border-radius: 4px; border: 1.5px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; flex: none; }
+.dlg-top h3 { font-family: var(--f-display); font-weight: 800; font-size: clamp(28px, 4vw, 42px); line-height: .95; margin: 0; overflow-wrap: anywhere; }
+.dlg-top .links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 14px; margin-top: 8px; color: var(--ink-2); }
+.dlg-top .links .share { margin: 0; flex-wrap: nowrap; }
+.dlg-top .x { margin-left: auto; align-self: start; font: 600 22px/1 var(--f-ui); width: 40px; height: 40px; border-radius: 4px; border: 1.5px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; flex: none; }
 .dlg-stats { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; padding: 12px 20px; border-bottom: 1px solid var(--rule); margin: 0; }
 .dlg-stats > div:not(.tabs) { display: grid; }
-.dlg-stats dt { font-family: var(--f-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); }
-.dlg-stats dd { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 26px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.dlg-stats dt { font: 500 11.5px var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); }
+.dlg-stats dd { margin: 0; font: 800 27px/1.05 var(--f-display); font-variant-numeric: tabular-nums; }
 .dlg-stats .tabs { margin-left: auto; }
 .dlg-body { overflow: auto; padding: 18px 20px 24px; }
-.comb { position: relative; width: 100%; }
-.comb .hx { position: absolute; }
 .comb a.hx { transition: transform .15s ease; }
 .comb a.hx:hover, .comb a.hx:focus-visible { transform: scale(1.14); z-index: 3; }
 .comb a.hx.me > .rim { background: var(--mark); }
-@media (prefers-reduced-motion: reduce) { .comb a.hx { transition: none; } }
-.face-tip { font-size: 13px; color: var(--ink-2); margin: 12px 0 0; min-height: 1.4em; }
+.face-tip { font: 14px var(--f-ui); color: var(--ink-2); margin: 12px 0 0; min-height: 1.4em; }
 .sentinel { height: 1px; }
-@media (max-width: 620px) {
-  .dlg-stats .tabs { margin-left: 0; }
-  .dlg-top { padding: 14px; } .dlg-stats, .dlg-body { padding-inline: 14px; }
+@media (max-width: 620px) { .dlg-stats .tabs { margin-left: 0; } .dlg-top { padding: 14px; } .dlg-stats, .dlg-body { padding-inline: 14px; } }
+@media (prefers-reduced-motion: reduce) {
+  a.hx:hover > .rim, a.hx:focus-visible > .rim, .hit:hover .hx > .rim, .grail:hover .hx > .rim { animation: none; }
+  .comb a.hx, .singles a.hx { transition: none; }
 }
-
-/* method */
-.method { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; border-top: 2px solid var(--ink); padding-top: 18px; font-size: 14px; color: var(--ink-2); }
-.method h2 { grid-column: 1 / -1; }
-.method p { margin: 0 0 10px; max-width: 64ch; }
-.method code { font-family: var(--f-mono); font-size: 12.5px; background: var(--form-soft); color: var(--form); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
-@media (max-width: 760px) { .method { grid-template-columns: minmax(0, 1fr); } }
 </style>
 
-<div class="wrap">
-  <header class="head">
-    <div class="source">
-      <span>Source <code>GET /api/v2/collections/{slug}/pfp-profiles</code></span>
-      <span id="snap">Snapshot</span>
-    </div>
-    <h1>PFP Census</h1>
-    <p class="lede">Every OpenSea profile whose picture is an NFT <strong>they currently hold</strong>, counted by collection. Who wears what, which communities wear it hardest, and how much floor is walking around as faces.</p>
-    <dl class="tally" id="tally"></dl>
-  </header>
+<header class="mast">
+  <div class="mast-in">
+    <a class="wm" href="#top"><i aria-hidden="true"></i>PFP Census</a>
+    <nav aria-label="Sections">
+      <a href="#story" class="opt">Story</a>
+      <a href="#explore">Explore</a>
+      <a href="#search">Find yourself</a>
+    </nav>
+  </div>
+</header>
 
-  <section aria-labelledby="map-h">
-    <div class="sec-head">
-      <h2 id="map-h">The map</h2>
-      <p class="note" id="map-note"></p>
+<section class="cover" id="top" aria-labelledby="h1">
+  <div class="cover-in">
+    <div class="cover-l">
+      <div class="head">
+        <p class="kicker">A data feature</p>
+        <h1 id="h1">Who wears what</h1>
+        <p class="dek" id="dek"></p>
+        <p class="byline"><span>By <a href="https://github.com/ryanio">Ryan Ghods</a></span><span id="snap"></span></p>
+      </div>
+      <div class="top10" id="top10"></div>
     </div>
-    <div class="atlas">
+    <figure class="cover-r">
       <div class="map" id="map">
         <canvas id="map-base" aria-hidden="true"></canvas>
         <canvas id="map-top" class="top" aria-hidden="true"></canvas>
         <div class="tip" id="tip" hidden></div>
       </div>
-      <div class="legend" id="legend"></div>
-    </div>
-  </section>
+      <figcaption id="map-note"></figcaption>
+    </figure>
+  </div>
+  <div class="cue"><a href="#story">Read the story</a></div>
+</section>
 
-  <section aria-labelledby="reg-h">
-    <div class="sec-head"><h2 id="reg-h">The register</h2></div>
+<main>
+  <article class="story" id="story">
+    <div class="blk">
+      <p class="lead" id="lead"></p>
+      <p id="why"></p>
+    </div>
+    <section class="blk ch" id="most-worn" aria-labelledby="h-most-worn">
+      <p class="ch-k">Chapter 1</p>
+      <h2 id="h-most-worn"></h2>
+      <div id="p-most-worn"></div>
+      <div class="share" data-share="most-worn"></div>
+    </section>
+    <section class="blk ch" id="wear-rate" aria-labelledby="h-wear-rate">
+      <p class="ch-k">Chapter 2</p>
+      <h2 id="h-wear-rate"></h2>
+      <div id="p-wear-rate"></div>
+      <figure class="fig wide" id="fig-rate"></figure>
+      <div class="share" data-share="wear-rate"></div>
+    </section>
+    <div class="blk"><blockquote class="pull wide" id="pull" hidden></blockquote></div>
+    <section class="blk ch" id="grails" aria-labelledby="h-grails">
+      <p class="ch-k">Chapter 3</p>
+      <h2 id="h-grails"></h2>
+      <div id="p-grails"></div>
+      <figure class="fig wide" id="fig-grails"></figure>
+      <div class="share" data-share="grails"></div>
+    </section>
+    <section class="blk ch" id="chains" aria-labelledby="h-chains">
+      <p class="ch-k">Chapter 4</p>
+      <h2 id="h-chains"></h2>
+      <div id="p-chains"></div>
+      <figure class="fig wide" id="fig-chains"></figure>
+      <div class="share" data-share="chains"></div>
+    </section>
+    <section class="blk ch" id="long-tail" aria-labelledby="h-long-tail">
+      <p class="ch-k">Chapter 5</p>
+      <h2 id="h-long-tail"></h2>
+      <div id="p-long-tail"></div>
+      <figure class="fig wide" id="fig-singles"><div class="singles" id="singles"></div><figcaption id="cap-singles"></figcaption></figure>
+      <div class="share" data-share="long-tail"></div>
+    </section>
+  </article>
+
+  <section class="sect" id="explore" aria-labelledby="h-explore">
+    <div class="sect-h"><h2 id="h-explore">Explore the census</h2><p id="explore-note"></p></div>
     <div class="controls">
       <div class="tabs" role="group" aria-label="Sort collections" id="sorts">
         <button type="button" data-sort="worn" aria-pressed="true">Most worn</button>
@@ -253,21 +368,27 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     <button type="button" class="more" id="more" hidden>Show all</button>
   </section>
 
-  <section class="find" aria-labelledby="find-h">
-    <h2 id="find-h">Are you counted?</h2>
-    <div class="find-row">
-      <input type="search" id="who" placeholder="Username, display name, or 0x address" aria-label="Find a profile">
-      <span class="note" id="who-note">Search every counted profile.</span>
+  <section class="sect" id="search" aria-labelledby="h-search">
+    <div class="sect-h"><h2 id="h-search">Are you counted?</h2><p>Search by username, display name or wallet address.</p></div>
+    <div class="find-box">
+      <div class="find-row">
+        <input type="search" id="who" placeholder="Username, display name, or 0x address" aria-label="Find a profile">
+        <span class="note" id="who-note"></span>
+      </div>
+      <div class="hits" id="hits"></div>
     </div>
-    <div class="hits" id="hits"></div>
   </section>
 
-  <section class="method" aria-labelledby="m-h">
-    <h2 id="m-h">How this was counted</h2>
-    <div id="method-a"></div>
-    <div id="method-b"></div>
+  <section class="sect" id="method" aria-labelledby="h-method">
+    <div class="sect-h"><h2 id="h-method">How I counted</h2></div>
+    <div class="method" id="method-body"></div>
   </section>
-</div>
+
+  <footer class="foot">
+    <span>Made by <a href="https://github.com/ryanio">Ryan Ghods</a> with the OpenSea API</span>
+    <span><a href="https://github.com/ryanio/pfp-census">Code and data on GitHub</a></span>
+  </footer>
+</main>
 
 <dialog id="dlg" aria-labelledby="dlg-name">
   <div class="dlg">
@@ -297,16 +418,27 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
   const nf = new Intl.NumberFormat("en-US");
   const cf = new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 });
   const usd = (v) => v == null ? "–" : v >= 1e6 ? "$" + cf.format(v) : "$" + nf.format(Math.round(v));
+  const money = (v) => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + " million" : v >= 10000 ? "$" + nf.format(Math.round(v / 1000) * 1000) : "$" + nf.format(Math.round(v));
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
-  const CHAINS = { ethereum: "Ethereum", base: "Base", solana: "Solana", polygon: "Polygon", matic: "Polygon", abstract: "Abstract", ape_chain: "ApeChain", ronin: "Ronin", robinhood: "Robinhood", hyperevm: "HyperEVM", ink: "Ink", blast: "Blast", unichain: "Unichain", monad: "Monad", zora: "Zora", arc: "Arc", arbitrum: "Arbitrum", optimism: "Optimism", bera_chain: "Berachain", shape: "Shape", soneium: "Soneium", avalanche: "Avalanche", b3: "B3", flow: "Flow", sei: "Sei", gunzilla: "GUNZ", animechain: "Animechain" };
+  const CHAINS = { ethereum: "Ethereum", base: "Base", solana: "Solana", polygon: "Polygon", matic: "Polygon", abstract: "Abstract", ape_chain: "ApeChain", ronin: "Ronin", robinhood: "Robinhood Chain", hyperevm: "HyperEVM", hyperliquid: "Hyperliquid", ink: "Ink", blast: "Blast", unichain: "Unichain", monad: "Monad", zora: "Zora", arc: "Arc", arbitrum: "Arbitrum", optimism: "Optimism", bera_chain: "Berachain", shape: "Shape", soneium: "Soneium", avalanche: "Avalanche", b3: "B3", flow: "Flow", sei: "Sei", gunzilla: "GUNZ", animechain: "Animechain", megaeth: "MegaETH", somnia: "Somnia", stablechain: "Stable" };
   const chainName = (c) => CHAINS[c] || (c ? c[0].toUpperCase() + c.slice(1).replace(/_/g, " ") : "");
   const floorTxt = (c) => c.f == null || c.f === 0 ? "–" : (c.f >= 100 ? nf.format(Math.round(c.f)) : c.f >= 1 ? c.f.toFixed(2) : c.f.toPrecision(2)) + " " + (c.fs || "");
   const rate = (c) => c.o ? c.c / c.o : null;
   const rateOk = (c) => c.o >= S.rateMinOwners && c.c >= S.rateMinWearers;
-  const pct = (r) => r == null ? "–" : (r >= 0.1 ? (r * 100).toFixed(1) : (r * 100).toFixed(2)) + "%";
+  const pct = (r) => r == null ? "–" : (r >= 0.1 ? (r * 100).toFixed(1) : r >= 0.01 ? (r * 100).toFixed(1) : (r * 100).toFixed(2)) + "%";
+  const pct0 = (r) => Math.round(r * 100) + "%";
   const faceValue = (c) => c.fu != null ? c.fu * c.c : null;
   const byId = (id) => C[id];
   const ownerOf = (g) => { let lo = 0, hi = C.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (C[m].go <= g) lo = m; else hi = m - 1; } return C[lo]; };
+  const shortName = (n) => { if (n.length > 28 && n.includes(" - ")) { const p = n.split(" - "); return p.length >= 3 ? p[1] : p[0]; } return n; };
+  const joinList = (xs) => xs.length <= 1 ? (xs[0] || "") : xs.slice(0, -1).join(", ") + " and " + xs[xs.length - 1];
+  const people = (n) => `${nf.format(n)} ${n === 1 ? "person" : "people"}`;
+  const WORDS = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+  const oneIn = (share) => { const n = Math.round(1 / share); return n >= 2 && n <= 10 && Math.abs(1 / n - share) / share < 0.15 ? [`one in ${WORDS[n]}`, true] : [pct0(share) + " of", false]; };
+  const cap = (s) => s[0].toUpperCase() + s.slice(1);
+  const ratioPhrase = (r) => r >= 2.2 ? `${r.toFixed(1)} times as many as` : r >= 1.85 ? "about twice as many as" : r >= 1.25 ? `${Math.round((r - 1) * 100)}% more than` : "just ahead of";
+  const median = (xs) => { const s = [...xs].sort((a, b) => a - b); return s.length ? s[Math.floor(s.length / 2)] : 0; };
+  const base = location.origin + location.pathname;
 
   /* sprites */
   const miniPos = (idx) => { const m = S.mini, col = idx % m.cols, row = Math.floor(idx / m.cols); return { sheet: Math.floor(row / m.rows), col, row: row % m.rows }; };
@@ -314,24 +446,68 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
   const sheetStyle = (c, i, px) => { const sh = S.sheet, per = sh.cols * sh.rows, g = c.go + i, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp);background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
   const logoStyle = (c, px) => { if (c.lg < 0) return ""; const L = S.logos, col = c.lg % L.cols, row = Math.floor(c.lg / L.cols); return `background-image:url(${L.file});background-size:${L.cols * px}px ${Math.ceil(L.count / L.cols) * px}px;background-position:-${col * px}px -${row * px}px`; };
   const borderOf = (size) => Math.max(1.5, Math.round(size * 0.04));
-  const hexHTML = (style, size, verified, extra = "") => `<i class="hx${verified ? " v" : ""}" ${extra} style="--b:${borderOf(size)}px"><i class="rim"></i><i class="im" style="${style}"></i></i>`;
+  const inner = (size) => size - borderOf(size) * 2;
+  const hexHTML = (style, size, verified, attrs = "") => `<i class="hx${verified ? " v" : ""}" ${attrs} style="--b:${borderOf(size)}px"><i class="rim"></i><i class="im" style="${style}"></i></i>`;
+  const lazy = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute("style", e.target.dataset.bg); lazy.unobserve(e.target); } }), { rootMargin: "400px" });
 
-  /* header */
-  const when = new Date(S.at);
-  $("snap").textContent = "Snapshot " + when.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZone: "UTC", timeZoneName: "short" });
+  /* share links */
+  const X_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 18h1.7L8.3 3.9H6.5L17.8 20Z"/></svg>`;
+  const shareHTML = (text, hash) => {
+    const url = base + "#" + hash;
+    const intent = "https://x.com/intent/post?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(url);
+    return `<a href="${esc(intent)}" target="_blank" rel="noopener" data-track="share_x" data-target="${esc(hash)}">${X_ICON}Share</a><button type="button" data-copy="${esc(url)}" data-target="${esc(hash)}">Copy link</button>`;
+  };
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-copy]"); if (!b) return;
+    const done = () => { const t = b.textContent; b.textContent = "Copied"; setTimeout(() => (b.textContent = t), 1500); };
+    (navigator.clipboard ? navigator.clipboard.writeText(b.dataset.copy) : Promise.reject()).then(done, () => { window.prompt?.("Copy this link", b.dataset.copy); });
+    window.gtag?.("event", "share", { method: "copy", item_id: b.dataset.target });
+  });
+  document.addEventListener("click", (e) => { const a = e.target.closest("a[data-track]"); if (a) window.gtag?.("event", "share", { method: "x", item_id: a.dataset.target }); });
+
+  /* ---------- the numbers behind the story ---------- */
+  const BLUE = new Set(["cryptopunks", "boredapeyachtclub", "mutant-ape-yacht-club", "pudgypenguins", "lilpudgys", "azuki", "milady", "doodles-official", "proof-moonbirds", "moonbirds", "clonex", "bored-ape-kennel-club", "meebits", "azuki-elementals", "wrapped-cryptopunks"]);
+  const CORE = ["boredapeyachtclub", "cryptopunks", "pudgypenguins", "azuki", "milady", "doodles-official"];
+  const isENS = (c) => c.s === "ens" || /^ENS\b/i.test(c.n);
   const byWorn = [...C].sort((a, b) => b.c - a.c);
-  const totalValue = C.reduce((s, c) => s + (faceValue(c) || 0), 0);
-  $("tally").innerHTML = `
-    <div><dt>Profiles counted</dt><dd class="num">${nf.format(S.n)}<small>wearing an NFT they hold</small></dd></div>
-    <div><dt>Collections worn</dt><dd class="num">${nf.format(C.length)}<small>of ${nf.format(S.k)} enumerated</small></dd></div>
-    <div><dt>Most worn</dt><dd class="txt"><span class="nm">${esc(byWorn[0].n)}</span><small>${nf.format(byWorn[0].c)} profiles</small></dd></div>
-    <div><dt>Floor worn as faces</dt><dd class="num">${usd(totalValue)}<small>floor price × wearers, all collections</small></dd></div>`;
+  const top = byWorn[0], second = byWorn[1];
+  const top10 = byWorn.slice(0, 10);
+  const topIsBlue = BLUE.has(top.s);
+  const surprises = top10.filter((c) => c !== top && !BLUE.has(c.s) && !isENS(c));
+  const blueTop10 = top10.filter((c) => BLUE.has(c.s));
+  const ens = top10.find(isENS);
+  const rateList = C.filter(rateOk).sort((a, b) => rate(b) - rate(a));
+  const core = CORE.map((s) => C.find((c) => c.s === s)).filter((c) => c && rateOk(c)).sort((a, b) => b.o - a.o).slice(0, 4);
+  const smallClubs = rateList.length >= 5 && core.length >= 2 && median(rateList.slice(0, 8).map((c) => c.o)) < median(core.map((c) => c.o)) && Math.max(...core.map(rate)) < 0.02;
+  const agg = {}; C.forEach((c) => { const a = (agg[c.ch] ||= { ch: c.ch, n: 0, k: 0 }); a.n += c.c; a.k++; });
+  const chains = Object.values(agg).sort((a, b) => b.n - a.n);
+  const singles = C.filter((c) => c.c === 1);
+  const top10Share = top10.reduce((s, c) => s + c.c, 0) / S.n;
+  const fvTotal = C.reduce((s, c) => s + (faceValue(c) || 0), 0);
+  const grails = C.filter((c) => faceValue(c) != null && c.c >= 3).sort((a, b) => faceValue(b) - faceValue(a)).slice(0, 6);
+  const artShare = fvTotal ? C.filter((c) => c.cat === "art").reduce((s, c) => s + (faceValue(c) || 0), 0) / fvTotal : 0;
+  const [c1, c2, c3, c4] = chains;
+  const share2 = c2 ? c2.n / S.n : 0;
+  const when = new Date(S.at);
+  const whenTxt = when.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZone: "UTC", timeZoneName: "short" });
+
+  /* ---------- cover ---------- */
+  $("snap").textContent = "Snapshot " + whenTxt;
+  $("dek").textContent = `I counted every OpenSea profile whose picture is an NFT its owner still holds: ${nf.format(S.n)} people across ${nf.format(C.length)} collections and ${chains.length} chains. ` +
+    (topIsBlue ? "Here is who wears what." : "The top of the list isn't who you'd expect.");
+  const maxTop = top10[0].c;
+  $("top10").innerHTML = `<h2><span>Most worn</span><span>Wearers</span></h2>` + top10.map((c, i) => `
+    <button type="button" class="trow" data-id="${c.id}">
+      <span class="r">${i + 1}</span>${hexHTML(miniStyle(c.ms, inner(32)), 32, false)}
+      <span class="t"><b>${esc(c.n)}</b><i style="width:${Math.max(4, (c.c / maxTop) * 100)}%"></i></span>
+      <span class="c">${nf.format(c.c)}</span>
+    </button>`).join("");
 
   /* ---------- the map: a Gosper island, each collection a contiguous territory of hexagons ---------- */
   const HEX = getComputedStyle(document.documentElement).getPropertyValue("--hex").match(/[\d.]+%\s+[\d.]+%/g).map((p) => p.split(/\s+/).map((v) => parseFloat(v) / 100));
   const SQ3 = Math.sqrt(3);
   const DIRS = [[1, 0], [1, -1], [0, -1], [-1, 0], [-1, 1], [0, 1]];
-  const EDGE_N = [[1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]]; // neighbour across edge i (corners i, i+1)
+  const EDGE_N = [[1, 0], [0, 1], [-1, 1], [-1, 0], [0, -1], [1, -1]];
   const gosperCache = {};
   function gosper(order) {
     if (gosperCache[order]) return gosperCache[order];
@@ -354,15 +530,12 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     while (sum > N) { const i = a.indexOf(Math.max(...a)); a[i]--; sum--; }
     return a;
   }
-  let T = S.wall.full; // territories, largest first; phones use S.wall.small (top 30 + the rest)
-  const mapEl = $("map"), base = $("map-base"), top = $("map-top"), tip = $("tip");
+  let T = S.wall.full;
+  const mapEl = $("map"), base0 = $("map-base"), topCv = $("map-top"), tip = $("tip");
   const miniImgs = S.mini.files.map((f) => { const im = new Image(); im.decoding = "async"; im.src = f; return im; });
-  let M = null; // current map geometry
-  let hoverT = -1, hoverCell = -1, raf = 0;
-
+  let M = null, hoverT = -1, hoverCell = -1, raf = 0;
   function layout() {
-    const W = mapEl.clientWidth;
-    const order = W < 560 ? 3 : 4;
+    const W = mapEl.clientWidth, order = W < 560 ? 3 : 4;
     T = order === 3 ? S.wall.small : S.wall.full;
     const pts = gosper(order), N = pts.length;
     const alloc = allocate(T.map((t) => t.count), N);
@@ -377,9 +550,9 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     const nb = (i, e) => { const [q, r] = pts[i]; const j = at.get((q + EDGE_N[e][0]) + "," + (r + EDGE_N[e][1])); return j === undefined ? -1 : j; };
     const cells = T.map(() => []);
     for (let i = 0; i < N; i++) cells[owner[i]].push(i);
-    M = { W, H, R, N, pts, owner, tile, cx, cy, at, nb, cells, alloc, order };
+    M = { W, H, R, N, pts, owner, tile, cx, cy, at, nb, cells, order };
     mapEl.style.height = H + "px";
-    $("map-note").textContent = (N >= S.n ? "Each hexagon is one real profile picture." : `Each hexagon is one real profile picture: ${nf.format(N)} of the ${nf.format(S.n)} counted, in proportion.`) + " Collections are laid along a Gosper curve, so each one stays in a single piece, sized by its wearers.";
+    $("map-note").textContent = (N >= S.n ? "Each hexagon is one real profile picture." : `Each hexagon is one real profile picture: ${nf.format(N)} of the ${nf.format(S.n)}, in proportion.`) + " Collections run along a Gosper curve, so each one stays in a single piece, sized by its wearers. Hover to see who's who.";
   }
   function hexPath(g, x, y, s) {
     g.moveTo(x + (HEX[0][0] - 0.5) * s, y + (HEX[0][1] - 0.5) * s);
@@ -387,22 +560,17 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     g.closePath();
   }
   const corner = (i, k) => { const a = (Math.PI / 180) * (60 * k - 30); return [M.cx[i] + M.R * Math.cos(a), M.cy[i] + M.R * Math.sin(a)]; };
-  function sizeCanvas(cv) {
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
-    cv.width = Math.round(M.W * dpr); cv.height = Math.round(M.H * dpr);
-    const g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); return g;
-  }
+  function sizeCanvas(cv) { const dpr = Math.min(2, window.devicePixelRatio || 1); cv.width = Math.round(M.W * dpr); cv.height = Math.round(M.H * dpr); const g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); return g; }
   function drawBase() {
-    const g = sizeCanvas(base), m = S.mini, s = 2 * M.R * 0.93;
+    const g = sizeCanvas(base0), m = S.mini, s = 2 * M.R * 0.93;
     g.clearRect(0, 0, M.W, M.H);
     for (let i = 0; i < M.N; i++) {
       const p = miniPos(M.tile[i]), im = miniImgs[p.sheet];
       g.save(); g.beginPath(); hexPath(g, M.cx[i], M.cy[i], s); g.clip();
       if (im.complete && im.naturalWidth) g.drawImage(im, p.col * m.tile, p.row * m.tile, m.tile, m.tile, M.cx[i] - s / 2, M.cy[i] - s / 2, s, s);
-      else { g.fillStyle = "rgba(128,140,155,.35)"; g.fill(); }
+      else { g.fillStyle = "rgba(128,128,136,.35)"; g.fill(); }
       g.restore();
     }
-    /* carve channels between territories so each reads as one shape */
     g.globalCompositeOperation = "destination-out";
     g.lineWidth = Math.max(2, M.R * 0.42); g.lineCap = "round"; g.beginPath();
     for (let i = 0; i < M.N; i++) for (let e = 0; e < 6; e++) {
@@ -427,7 +595,6 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
       const [x, y] = territoryCenter(ti);
       const b = document.createElement("button");
       b.type = "button"; b.className = "tag"; b.dataset.t = ti;
-      b.style.left = x + "px"; b.style.top = y + "px";
       b.setAttribute("aria-label", `${t.label}: ${nf.format(t.count)} profiles`);
       b.innerHTML = `<b>${esc(t.label)}</b><span>${nf.format(t.count)}</span>`;
       mapEl.appendChild(b);
@@ -436,20 +603,17 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
       const r = b.getBoundingClientRect();
       if (placed.some((p) => !(r.right + 4 < p.left || r.left - 4 > p.right || r.bottom + 2 < p.top || r.top - 2 > p.bottom))) { b.remove(); return; }
       placed.push(r);
-      b.addEventListener("mouseenter", () => setHover(ti, -1));
-      b.addEventListener("mouseleave", () => setHover(-1, -1));
-      b.addEventListener("focus", () => setHover(ti, -1));
-      b.addEventListener("blur", () => setHover(-1, -1));
+      b.addEventListener("mouseenter", () => setHover(ti, -1)); b.addEventListener("mouseleave", () => setHover(-1, -1));
+      b.addEventListener("focus", () => setHover(ti, -1)); b.addEventListener("blur", () => setHover(-1, -1));
       b.addEventListener("click", () => openTerritory(ti));
     });
   }
   function drawTop(now = 0) {
-    const g = top.getContext("2d"), dpr = Math.min(2, window.devicePixelRatio || 1);
-    g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, top.width, top.height); g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const g = topCv.getContext("2d"), dpr = Math.min(2, window.devicePixelRatio || 1);
+    g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, topCv.width, topCv.height); g.setTransform(dpr, 0, 0, dpr, 0, 0);
     if (hoverT < 0) return;
-    const css = getComputedStyle(document.documentElement), paper = css.getPropertyValue("--paper").trim();
-    const s = 2 * M.R * 0.93;
-    g.globalAlpha = 0.68; g.fillStyle = paper; g.fillRect(0, 0, M.W, M.H); g.globalAlpha = 1;
+    const css = getComputedStyle(document.documentElement), hero = css.getPropertyValue("--hero").trim(), s = 2 * M.R * 0.93;
+    g.globalAlpha = 0.72; g.fillStyle = hero; g.fillRect(0, 0, M.W, M.H); g.globalAlpha = 1;
     g.globalCompositeOperation = "destination-out"; g.beginPath();
     for (const i of M.cells[hoverT]) hexPath(g, M.cx[i], M.cy[i], s * 1.06);
     g.fill(); g.globalCompositeOperation = "source-over";
@@ -458,8 +622,7 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     const ang = reduce ? 0 : ((now / 4000) % 1) * Math.PI * 2;
     const a = css.getPropertyValue("--glow-a").trim(), b = css.getPropertyValue("--glow-b").trim(), a4 = css.getPropertyValue("--glow-a-40").trim();
     let grad;
-    if (g.createConicGradient) { grad = g.createConicGradient(ang, tx, ty); grad.addColorStop(0, a); grad.addColorStop(0.33, a4); grad.addColorStop(0.66, b); grad.addColorStop(1, a); }
-    else grad = a;
+    if (g.createConicGradient) { grad = g.createConicGradient(ang, tx, ty); grad.addColorStop(0, a); grad.addColorStop(0.33, a4); grad.addColorStop(0.66, b); grad.addColorStop(1, a); } else grad = a;
     g.strokeStyle = grad; g.lineWidth = Math.max(2, M.R * 0.34); g.lineCap = "round"; g.lineJoin = "round"; g.beginPath();
     for (const i of M.cells[hoverT]) for (let e = 0; e < 6; e++) {
       const j = M.nb(i, e); if (j >= 0 && M.owner[j] === hoverT) continue;
@@ -467,9 +630,9 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     }
     g.stroke();
     if (hoverCell >= 0) {
-      const i = hoverCell, z = Math.max(46, s * 3), p = miniPos(M.tile[i]), im = miniImgs[p.sheet], m = S.mini;
+      const i = hoverCell, z = Math.max(52, s * 3.4), p = miniPos(M.tile[i]), im = miniImgs[p.sheet], m = S.mini;
       const x = Math.min(M.W - z / 2, Math.max(z / 2, M.cx[i])), y = Math.min(M.H - z / 2, Math.max(z / 2, M.cy[i]));
-      g.save(); g.shadowColor = "rgba(0,0,0,.35)"; g.shadowBlur = 14; g.beginPath(); hexPath(g, x, y, z); g.fillStyle = grad; g.fill(); g.restore();
+      g.save(); g.shadowColor = "rgba(0,0,0,.5)"; g.shadowBlur = 16; g.beginPath(); hexPath(g, x, y, z); g.fillStyle = grad; g.fill(); g.restore();
       g.save(); g.beginPath(); hexPath(g, x, y, z - borderOf(z) * 2); g.clip();
       if (im.complete && im.naturalWidth) g.drawImage(im, p.col * m.tile, p.row * m.tile, m.tile, m.tile, x - z / 2, y - z / 2, z, z);
       g.restore();
@@ -482,68 +645,144 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     cancelAnimationFrame(raf); raf = requestAnimationFrame(drawTop);
     mapEl.querySelectorAll(".tag").forEach((e) => e.classList.toggle("on", +e.dataset.t === ti));
     const hid = ti >= 0 ? T[ti].id : null;
-    $("legend").querySelectorAll(".lg").forEach((e) => e.classList.toggle("on", hid !== null && +e.dataset.id === hid));
+    $("top10").querySelectorAll(".trow").forEach((e) => e.classList.toggle("on", hid !== null && +e.dataset.id === hid));
   }
   function cellAt(x, y) {
-    const minX = M.cx[0] - SQ3 * M.R * (M.pts[0][0] + M.pts[0][1] / 2), minY = M.cy[0] - 1.5 * M.R * M.pts[0][1];
-    const px = (x - minX) / M.R, py = (y - minY) / M.R;
-    let q = (SQ3 / 3) * px - py / 3, r = (2 / 3) * py, sx = -q - r;
-    let rq = Math.round(q), rr = Math.round(r), rs = Math.round(sx);
+    const ox = M.cx[0] - SQ3 * M.R * (M.pts[0][0] + M.pts[0][1] / 2), oy = M.cy[0] - 1.5 * M.R * M.pts[0][1];
+    const px = (x - ox) / M.R, py = (y - oy) / M.R;
+    const q = (SQ3 / 3) * px - py / 3, r = (2 / 3) * py, sx = -q - r;
+    let rq = Math.round(q), rr = Math.round(r); const rs = Math.round(sx);
     const dq = Math.abs(rq - q), dr = Math.abs(rr - r), ds = Math.abs(rs - sx);
     if (dq > dr && dq > ds) rq = -rr - rs; else if (dr > ds) rr = -rq - rs;
     const i = M.at.get(rq + "," + rr);
     return i === undefined ? -1 : i;
   }
   const profileAtCell = (i) => { const g = S.mini.who[M.tile[i]], c = ownerOf(g); return { c, i: g - c.go }; };
-  top.addEventListener("mousemove", (e) => {
-    const b = top.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top, i = cellAt(x, y);
+  topCv.addEventListener("mousemove", (e) => {
+    const b = topCv.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top, i = cellAt(x, y);
     if (i < 0) { setHover(-1, -1); tip.hidden = true; return; }
     setHover(M.owner[i], i);
     const t = T[M.owner[i]], { c, i: pi } = profileAtCell(i);
-    const label = P ? pname(P[c.id][pi]) : "";
-    tip.innerHTML = `<b>${esc(t.label)}</b> · ${nf.format(t.count)} profiles${label ? `<br><span>${esc(label)} · ${esc(c.n)} #${esc(P[c.id][pi][4])}</span>` : ""}`;
+    const p = P ? P[c.id][pi] : null;
+    tip.innerHTML = `<b>${esc(t.label)}</b> · ${nf.format(t.count)} ${t.count === 1 ? "wearer" : "wearers"}${p ? `<br><span>${esc(pname(p))} · ${esc(c.n)} #${esc(p[4])}</span>` : ""}`;
     tip.hidden = false;
     tip.style.left = Math.min(x + 16, M.W - tip.offsetWidth - 4) + "px";
     tip.style.top = Math.max(4, y - tip.offsetHeight - 14) + "px";
   });
-  top.addEventListener("mouseleave", () => { setHover(-1, -1); tip.hidden = true; });
-  top.addEventListener("click", (e) => {
-    const b = top.getBoundingClientRect(), i = cellAt(e.clientX - b.left, e.clientY - b.top); if (i < 0) return;
-    const { c, i: pi } = profileAtCell(i); openColl(c, pi);
+  topCv.addEventListener("mouseleave", () => { setHover(-1, -1); tip.hidden = true; });
+  topCv.addEventListener("click", (e) => { const b = topCv.getBoundingClientRect(), i = cellAt(e.clientX - b.left, e.clientY - b.top); if (i < 0) return; const { c, i: pi } = profileAtCell(i); openColl(c, pi); });
+  function openTerritory(ti) { const t = T[ti]; if (t.id >= 0) openColl(byId(t.id)); else $("explore").scrollIntoView({ behavior: "smooth" }); }
+  $("top10").querySelectorAll(".trow").forEach((b) => {
+    const id = +b.dataset.id, ti = () => T.findIndex((t) => t.id === id);
+    b.addEventListener("mouseenter", () => setHover(ti(), -1)); b.addEventListener("mouseleave", () => setHover(-1, -1));
+    b.addEventListener("focus", () => setHover(ti(), -1)); b.addEventListener("blur", () => setHover(-1, -1));
+    b.addEventListener("click", () => openColl(byId(id)));
   });
-  function openTerritory(ti) { const t = T[ti]; if (t.id >= 0) openColl(byId(t.id)); else $("reg-h").scrollIntoView({ behavior: "smooth" }); }
-  function legend() {
-    const L = S.wall.full.slice(0, 12);
-    $("legend").innerHTML = `<h3>Largest territories</h3>` + L.map((t, li) => `
-      <button type="button" class="lg" data-id="${t.id}">
-        <span class="r">${li + 1}</span>${hexHTML(miniStyle(t.tiles[0], 30 - borderOf(30) * 2), 30, false)}
-        <span class="n">${esc(t.label)}</span>
-        <span class="c"><b>${nf.format(t.count)}</b> · ${pct(t.count / S.n)}</span>
-      </button>`).join("");
-    $("legend").querySelectorAll(".lg").forEach((b) => {
-      const id = +b.dataset.id, ti = () => T.findIndex((t) => t.id === id);
-      b.addEventListener("mouseenter", () => setHover(ti(), -1)); b.addEventListener("mouseleave", () => setHover(-1, -1));
-      b.addEventListener("focus", () => setHover(ti(), -1)); b.addEventListener("blur", () => setHover(-1, -1));
-      b.addEventListener("click", () => openColl(byId(id)));
-    });
-  }
-  function drawMap() { layout(); drawBase(); sizeCanvas(top); placeTags(); drawTop(); }
-  legend();
+  function drawMap() { layout(); drawBase(); sizeCanvas(topCv); placeTags(); drawTop(); }
   drawMap();
   let pending = miniImgs.length;
   miniImgs.forEach((im) => { const done = () => { if (--pending <= 0 && M) drawBase(); }; im.complete ? done() : (im.onload = im.onerror = done); });
   let lastW = mapEl.clientWidth, rz;
   new ResizeObserver(() => { if (mapEl.clientWidth === lastW) return; lastW = mapEl.clientWidth; clearTimeout(rz); rz = setTimeout(drawMap, 120); }).observe(mapEl);
 
+  /* ---------- the story ---------- */
+  const P_ = (html) => `<p>${html}</p>`;
+  const nm = (c) => esc(shortName(c.n));
+  $("lead").innerHTML = `On OpenSea you can set an NFT as your profile picture, and if your wallet still holds it, the picture gets a hexagon frame. I wanted to know who actually does that, so I went through ${nf.format(S.k)} collections and counted every public profile wearing one.`;
+  $("why").innerHTML = `I'm a developer at OpenSea, and I added the endpoint behind this page, <code>/api/v2/collections/{slug}/pfp-profiles</code>, so a collection can identify its most prestigious members: the holders who wear the NFT as their face.`;
+
+  $("h-most-worn").textContent = `${shortName(top.n)} is the most worn NFT on OpenSea`;
+  const mw = [];
+  mw.push(topIsBlue
+    ? `${nm(top)} leads with ${people(top.c)} wearing one they own, ${ratioPhrase(top.c / second.c)} the runner-up, ${nm(second)} (${nf.format(second.c)}).`
+    : `Most people would guess CryptoPunks or Bored Apes. The answer is ${nm(top)}, with ${people(top.c)} wearing one they own, ${ratioPhrase(top.c / second.c)} the runner-up, ${nm(second)} (${nf.format(second.c)}).`);
+  if (surprises.length >= 2) mw.push(`${topIsBlue ? "The rest of the top ten mixes old and new names." : "The rest of the top ten is just as unexpected."} ${joinList(surprises.map(nm))} ${surprises.length > 1 ? "sit" : "sits"} next to ${blueTop10.filter((c) => c !== top).length ? joinList(blueTop10.filter((c) => c !== top).map(nm)) : "no blue chips at all"}.`);
+  if (ens) mw.push(`${people(ens.c)} wear an ENS name, which puts a domain name at number ${top10.indexOf(ens) + 1}.`);
+  $("p-most-worn").innerHTML = mw.map(P_).join("");
+
+  $("h-wear-rate").textContent = smallClubs ? "Small clubs wear it hardest" : "Who wears it hardest";
+  const wr = [];
+  const r1 = rateList[0], r2 = rateList[1];
+  if (r1) wr.push(`Raw counts favor big collections, so I also divided wearers by holders. ${nm(r1)} leads that ranking: ${pct(rate(r1))} of its holders wear one, ${nf.format(r1.c)} of ${nf.format(r1.o)}.${r2 ? ` ${nm(r2)} is next at ${pct(rate(r2))}.` : ""}${r1 !== top && r2 !== top && rateOk(top) ? ` ${nm(top)} is at ${pct(rate(top))}.` : ""}`);
+  if (core.length >= 2) wr.push(`${Math.max(...core.map(rate)) < 0.02 ? "The blue chips barely register: " : "Among the blue chips: "}${joinList(core.map((c) => `${nm(c)} at ${pct(rate(c))}`))}.`);
+  $("p-wear-rate").innerHTML = wr.map(P_).join("");
+  if (smallClubs) { $("pull").hidden = false; $("pull").textContent = "The smaller and tighter the community, the more of it shows up as faces."; }
+  const rateRows = (list, cls) => { const max = Math.max(...rateList.slice(0, 8).map(rate), ...core.map(rate)); return list.map((c) => `
+    <button type="button" class="brow ${cls}" data-id="${c.id}">${hexHTML(miniStyle(c.ms, inner(34)), 34, false)}
+      <span class="bn"><b>${esc(c.n)}</b><span>${esc(chainName(c.ch))}</span></span>
+      <span class="track"><span class="fill" style="width:${Math.max(1, (rate(c) / max) * 100)}%"></span></span>
+      <span class="bv"><b>${pct(rate(c))}</b><span>${nf.format(c.c)} of ${nf.format(c.o)}</span></span>
+    </button>`).join(""); };
+  $("fig-rate").innerHTML = `<div class="bars"><h4>Highest wear rate</h4>${rateRows(rateList.slice(0, 8), "hi")}${core.length ? `<h4>Blue chips</h4>${rateRows(core, "mute")}` : ""}</div>
+    <figcaption><b>Fig. 1</b> Share of each collection's holders wearing it as their profile picture. Collections with at least ${nf.format(S.rateMinOwners)} holders and ${S.rateMinWearers} wearers.</figcaption>`;
+
+  const g1 = grails[0], g2 = grails[1], g3 = grails[2];
+  $("h-grails").textContent = g1 && g1.fu >= 10000 ? "Some people wear their grails" : "The floor on everyone's face";
+  const gr = [`Add up the floor price of every NFT in this census and you get ${money(fvTotal)} worn as profile pictures, priced at the cheapest listing in each collection.`];
+  const gShare = fvTotal ? grails.reduce((s, c) => s + faceValue(c), 0) / fvTotal : 0;
+  if (g1) gr.push(`${grails.length >= 3 && gShare >= 0.4 ? `${cap(WORDS[grails.length] || String(grails.length))} collections hold ${pct0(gShare)} of it. ` : ""}${nm(g1)} has ${people(g1.c)} wearing one at about ${money(g1.fu)} each.${g2 && g3 ? ` ${nm(g2)} has ${nf.format(g2.c)} wearers and ${nm(g3)} has ${nf.format(g3.c)}.` : ""}`);
+  if (artShare >= 0.15) gr.push(`${pct0(artShare)} of that value is in collections OpenSea files under art.`);
+  $("p-grails").innerHTML = gr.map(P_).join("");
+  $("fig-grails").innerHTML = `<div class="grails">${grails.map((c) => `
+    <button type="button" class="grail" data-id="${c.id}">${hexHTML("", 84, false, `data-grail="${c.id}"`)}
+      <div><b>${esc(c.n)}</b><span class="gv">${usd(faceValue(c))}</span><span>${nf.format(c.c)} wearing · ${usd(c.fu)} floor</span></div>
+    </button>`).join("")}</div>
+    <figcaption><b>Fig. 2</b> Collections with the most floor value being worn, floor price times wearers in US dollars. At least 3 wearers.</figcaption>`;
+  $("fig-grails").querySelectorAll("[data-grail]").forEach((el) => { const c = byId(+el.dataset.grail), im = el.querySelector(".im"); im.dataset.bg = sheetStyle(c, 0, inner(84)); lazy.observe(im); });
+
+  if (c2) {
+    const [phrase, singular] = oneIn(share2);
+    $("h-chains").textContent = share2 >= 0.1 ? `${cap(phrase)} faces ${singular ? "lives" : "live"} on ${chainName(c2.ch)}` : "Where the faces live";
+    const ch = [`${chainName(c1.ch)} has the most, ${pct0(c1.n / S.n)} of all wearers. ${chainName(c2.ch)} is next with ${pct0(share2)} from only ${c2.k} collections${c3 && c4 && c2.n > c3.n + c4.n ? `, more than ${chainName(c3.ch)} and ${chainName(c4.ch)} combined` : ""}.`];
+    const c2top = top10.filter((c) => c.ch === c2.ch);
+    if (c2top.length >= 2) ch.push(`${joinList(c2top.map(nm))} all made the overall top ten.`);
+    $("p-chains").innerHTML = ch.map(P_).join("");
+  } else $("h-chains").textContent = "Where the faces live";
+  const shown = chains.slice(0, 8), restN = chains.slice(8).reduce((s, x) => s + x.n, 0), restK = chains.slice(8).length;
+  const chainRows = shown.map((x, i) => ({ label: chainName(x.ch), n: x.n, k: x.k, cls: i === 1 ? "hi" : "" })).concat(restN ? [{ label: `${restK} more chains`, n: restN, k: chains.slice(8).reduce((s, x) => s + x.k, 0), cls: "mute" }] : []);
+  $("fig-chains").innerHTML = `<div class="bars">${chainRows.map((r) => `
+    <div class="brow nohex ${r.cls}"><span class="bn"><b>${esc(r.label)}</b><span>${r.k} ${r.k === 1 ? "collection" : "collections"}</span></span>
+      <span class="track"><span class="fill" style="width:${Math.max(0.6, (r.n / chains[0].n) * 100)}%"></span></span>
+      <span class="bv"><b>${pct0(r.n / S.n)}</b><span>${nf.format(r.n)} wearers</span></span></div>`).join("")}</div>
+    <figcaption><b>Fig. 3</b> Share of all wearers by the chain of the collection they wear.</figcaption>`;
+
+  $("h-long-tail").textContent = `${nf.format(singles.length)} collections, one person each`;
+  $("p-long-tail").innerHTML = [
+    `The tail is long: ${nf.format(singles.length)} collections show up exactly once in this census, each one a single person wearing something nobody else here wears. The ten biggest collections add up to only ${pct0(top10Share)} of all wearers.`,
+    `That's the case I built the endpoint for. Whether a collection has one wearer or a hundred, it can pull the list and see exactly who they are.`,
+  ].map(P_).join("");
+  $("cap-singles").innerHTML = `<b>Fig. 4</b> One face from each of the ${nf.format(singles.length)} collections with exactly one wearer. Click any to open it.`;
+  const singlesEl = $("singles");
+  function drawSingles() {
+    const Wc = singlesEl.clientWidth, s = Wc < 520 ? 36 : 44, gap = 3, sx = 0.866 * s + gap, sy = sx * 0.866;
+    const cols = Math.max(1, Math.floor((Wc - sx / 2 - 0.134 * s) / sx)), ox = Math.max(0, (Wc - (cols * sx + sx / 2 - gap)) / 2) - 0.067 * s;
+    singlesEl.innerHTML = singles.map((c, k) => { const row = Math.floor(k / cols), col = k % cols; return `<a class="hx" href="#${esc(c.s)}" data-id="${c.id}" title="${esc(c.n)}" aria-label="${esc(c.n)}" style="left:${ox + col * sx + (row % 2 ? sx / 2 : 0)}px;top:${row * sy}px;width:${s}px;height:${s}px;--b:${borderOf(s)}px"><i class="rim"></i><i class="im" style="${miniStyle(c.ms, inner(s))}"></i></a>`; }).join("");
+    const rows = Math.ceil(singles.length / cols); singlesEl.style.height = rows ? (rows - 1) * sy + s + "px" : "0";
+  }
+  drawSingles();
+  let sw = singlesEl.clientWidth; new ResizeObserver(() => { if (singlesEl.clientWidth !== sw) { sw = singlesEl.clientWidth; drawSingles(); } }).observe(singlesEl);
+  singlesEl.addEventListener("click", (e) => { const a = e.target.closest("a.hx"); if (!a) return; e.preventDefault(); openColl(byId(+a.dataset.id)); });
+  document.querySelectorAll("#fig-rate .brow, #fig-grails .grail").forEach((b) => b.addEventListener("click", () => openColl(byId(+b.dataset.id))));
+
+  const SHARE = {
+    "most-worn": `The most worn NFT on OpenSea is ${top.n}, with ${people(top.c)} wearing one they hold.`,
+    "wear-rate": r1 ? `${pct(rate(r1))} of ${r1.n} holders wear it as their OpenSea profile picture.${core.length && Math.max(...core.map(rate)) < 0.02 ? " The blue chips are all under 2%." : ""}` : "Which NFT communities wear it hardest?",
+    "grails": `${money(fvTotal)} of NFT floor is being worn as OpenSea profile pictures right now.`,
+    "chains": c2 ? `${cap(oneIn(share2)[0])} OpenSea profile pictures ${oneIn(share2)[1] ? "is an NFT" : "are NFTs"} on ${chainName(c2.ch)}.` : "Where OpenSea profile pictures live, by chain.",
+    "long-tail": `${nf.format(singles.length)} NFT collections have exactly one person wearing them as an OpenSea profile picture.`,
+  };
+  document.querySelectorAll("[data-share]").forEach((el) => { el.innerHTML = shareHTML(SHARE[el.dataset.share], el.dataset.share); });
+
   /* ---------- register ---------- */
-  const chains = [...new Set(C.map((c) => c.ch))].sort((a, b) => C.filter((c) => c.ch === b).length - C.filter((c) => c.ch === a).length);
-  $("chain").innerHTML = `<option value="">All chains</option>` + chains.map((ch) => `<option value="${esc(ch)}">${esc(chainName(ch))} (${C.filter((c) => c.ch === ch).length})</option>`).join("");
+  $("explore-note").textContent = `All ${nf.format(C.length)} collections with at least one wearer, four ways to rank them. Open one to see every face in it.`;
+  const chainsSel = [...new Set(C.map((c) => c.ch))].sort((a, b) => (agg[b]?.k || 0) - (agg[a]?.k || 0));
+  $("chain").innerHTML = `<option value="">All chains</option>` + chainsSel.map((ch) => `<option value="${esc(ch)}">${esc(chainName(ch))} (${agg[ch].k})</option>`).join("");
   const state = { sort: "worn", chain: "", q: "", all: false };
   const NOTES = {
     worn: "Ranked by how many profiles wear a held NFT from the collection.",
-    rate: `Share of holders who wear it: wearers divided by unique owners. Collections under ${nf.format(S.rateMinOwners)} owners or ${S.rateMinWearers} wearers are left out of this ranking.`,
-    value: "Floor price times wearers, in US dollars at snapshot prices. How much floor is out there as someone's face.",
-    price: "Ranked by floor price in US dollars: the most expensive NFT someone is wearing as their face, at the floor.",
+    rate: `Share of holders who wear it: wearers divided by unique holders. Collections under ${nf.format(S.rateMinOwners)} holders or ${S.rateMinWearers} wearers are left out of this ranking.`,
+    value: "Floor price times wearers, in US dollars at snapshot prices: how much floor is out there as someone's face.",
+    price: "Ranked by floor price in US dollars: the most expensive NFT someone is wearing, at the floor.",
   };
   function rows() {
     let list = C.filter((c) => (!state.chain || c.ch === state.chain) && (!state.q || c.n.toLowerCase().includes(state.q) || c.s.includes(state.q)));
@@ -554,21 +793,21 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     return list;
   }
   function render() {
-    const list = rows(), shown = state.all ? list : list.slice(0, 50);
+    const list = rows(), shownR = state.all ? list : list.slice(0, 50);
     $("sort-note").textContent = NOTES[state.sort];
     const metric = { worn: (c) => c.c, rate: (c) => rate(c), value: (c) => faceValue(c), price: (c) => c.fu }[state.sort];
     const max = Math.max(1e-9, ...list.map(metric));
-    const main = { worn: (c) => [nf.format(c.c), "wearing"], rate: (c) => [pct(rate(c)), `${nf.format(c.c)} of ${nf.format(c.o)} owners`], value: (c) => [usd(faceValue(c)), `${nf.format(c.c)} × ${floorTxt(c)}`], price: (c) => [usd(c.fu), `${floorTxt(c)} floor · ${nf.format(c.c)} wearing`] }[state.sort];
+    const main = { worn: (c) => [nf.format(c.c), "wearing"], rate: (c) => [pct(rate(c)), `${nf.format(c.c)} of ${nf.format(c.o)} holders`], value: (c) => [usd(faceValue(c)), `${nf.format(c.c)} × ${floorTxt(c)}`], price: (c) => [usd(c.fu), `${floorTxt(c)} floor · ${nf.format(c.c)} wearing`] }[state.sort];
     $("reg").innerHTML = `
       <div class="reg-head" aria-hidden="true"><span>#</span><span>Collection</span><span>${{ worn: "Wearing", rate: "Wear rate", value: "Face value", price: "Floor in USD" }[state.sort]}</span><span class="r c-alt">Wear rate</span><span class="r c-alt">Floor</span><span class="r c-faces">Faces</span></div>` +
-      (shown.length ? shown.map((c, i) => {
+      (shownR.length ? shownR.map((c, i) => {
         const [v, sub] = main(c);
-        const previews = Array.from({ length: Math.min(5, c.mn) }, (_, k) => hexHTML(miniStyle(c.ms + k, 32 - borderOf(32) * 2), 32, false)).join("");
+        const previews = Array.from({ length: Math.min(5, c.mn) }, (_, k) => hexHTML(miniStyle(c.ms + k, inner(32)), 32, false)).join("");
         return `<button type="button" role="listitem" class="row${rateOk(c) ? "" : " dim"}" data-id="${c.id}">
           <span class="rank">${i + 1}</span>
           <span class="who"><i class="logo" style="${logoStyle(c, 40)}"></i><span class="who-t"><b>${esc(c.n)}</b><span class="chain">${esc(chainName(c.ch))}</span></span></span>
           <span class="bar"><span class="bar-v"><b>${v}</b><span>${esc(sub)}</span></span><span class="tal" style="width:${Math.max(2, (metric(c) / max) * 100)}%"></span></span>
-          <span class="cell-v c-alt rate"><b>${rateOk(c) ? pct(rate(c)) : "–"}</b><span>${c.o ? nf.format(c.o) + " owners" : ""}</span></span>
+          <span class="cell-v c-alt rate"><b>${rateOk(c) ? pct(rate(c)) : "–"}</b><span>${c.o ? nf.format(c.o) + " holders" : ""}</span></span>
           <span class="cell-v c-alt"><b>${floorTxt(c)}</b><span>${faceValue(c) != null ? usd(faceValue(c)) + " worn" : ""}</span></span>
           <span class="faces c-faces">${previews}</span>
         </button>`;
@@ -576,10 +815,7 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     $("more").hidden = state.all || list.length <= 50;
     $("more").textContent = `Show all ${nf.format(list.length)}`;
   }
-  $("sorts").addEventListener("click", (e) => {
-    const b = e.target.closest("button[data-sort]"); if (!b) return;
-    state.sort = b.dataset.sort; $("sorts").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); render();
-  });
+  $("sorts").addEventListener("click", (e) => { const b = e.target.closest("button[data-sort]"); if (!b) return; state.sort = b.dataset.sort; $("sorts").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); render(); });
   $("chain").addEventListener("change", (e) => { state.chain = e.target.value; render(); });
   $("q").addEventListener("input", (e) => { state.q = e.target.value.trim().toLowerCase(); render(); });
   $("more").addEventListener("click", () => { state.all = true; render(); });
@@ -598,8 +834,7 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
   let cur = null, order = [], drawn = 0, mark = -1, geo = null;
   const BATCH = 360;
   function combGeo() {
-    const Wc = comb.clientWidth, s = Wc < 520 ? 60 : 78, gap = 5;
-    const sx = 0.866 * s + gap, sy = sx * 0.866;
+    const Wc = comb.clientWidth, s = Wc < 520 ? 60 : 78, gap = 5, sx = 0.866 * s + gap, sy = sx * 0.866;
     const cols = Math.max(1, Math.floor((Wc - sx / 2 - 0.134 * s) / sx));
     const ox = Math.max(0, (Wc - (cols * sx + sx / 2 - gap)) / 2) - 0.067 * s;
     return { s, sx, sy, cols, ox, b: borderOf(s) };
@@ -611,13 +846,13 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     cur = c; mark = highlight;
     $("dlg-logo").setAttribute("style", logoStyle(c, 56));
     $("dlg-name").textContent = c.n;
-    $("dlg-links").innerHTML = `<span class="mono">${esc(chainName(c.ch))}</span><a href="https://opensea.io/collection/${encodeURIComponent(c.s)}" target="_blank" rel="noopener">View collection on OpenSea</a>` + (c.tw ? `<a href="https://x.com/${encodeURIComponent(c.tw)}" target="_blank" rel="noopener">@${esc(c.tw)}</a>` : "");
+    const shareText = `${people(c.c)} ${c.c === 1 ? "wears" : "wear"} ${c.n} as their OpenSea profile picture${rateOk(c) ? `, ${pct(rate(c))} of holders` : ""}.`;
+    $("dlg-links").innerHTML = `<span>${esc(chainName(c.ch))}</span><a href="https://opensea.io/collection/${encodeURIComponent(c.s)}" target="_blank" rel="noopener">View on OpenSea</a>` + (c.tw ? `<a href="https://x.com/${encodeURIComponent(c.tw)}" target="_blank" rel="noopener">@${esc(c.tw)}</a>` : "") + `<span class="share">${shareHTML(shareText, c.s)}</span>`;
     $("dlg-stats").innerHTML = `
       <div><dt>Wearing</dt><dd>${nf.format(c.c)}</dd></div>
       <div><dt>Wear rate</dt><dd>${c.o ? pct(rate(c)) : "–"}</dd></div>
       <div><dt>Floor</dt><dd>${floorTxt(c)}</dd></div>
       <div><dt>Face value</dt><dd>${usd(faceValue(c))}</dd></div>
-      <div><dt>Blue checks</dt><dd>${nf.format(c.v)}</dd></div>
       <div class="tabs" role="group" aria-label="Order faces" id="dlg-sort">
         <button type="button" data-o="token" aria-pressed="true">Token ID</button>
         <button type="button" data-o="checks" aria-pressed="false">Verified first</button>
@@ -627,6 +862,7 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     if (!dlg.open) dlg.showModal();
     $("dlg-body").scrollTop = 0;
     try { history.replaceState(null, "", "#" + c.s); } catch (_) {}
+    window.gtag?.("event", "select_content", { content_type: "collection", item_id: c.s });
     loadP().then(() => { if (cur === c) setOrder("token"); }).catch(() => { $("dlg-tip").textContent = "Faces did not load. Reload the page to try again."; });
   }
   function setOrder(o) {
@@ -637,11 +873,11 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
     if (mark >= 0) order = [mark, ...order.filter((i) => i !== mark)];
     $("dlg-sort").querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.o === o)));
     comb.innerHTML = ""; drawn = 0; geo = combGeo(); more();
-    $("dlg-tip").textContent = `${nf.format(list.length)} faces. Each opens that profile on OpenSea.`;
+    $("dlg-tip").textContent = `${nf.format(list.length)} ${list.length === 1 ? "face" : "faces"}. Each opens that profile on OpenSea.`;
   }
   function more() {
     if (!cur || !P) return;
-    const list = P[cur.id], end = Math.min(order.length, drawn + BATCH), frag = document.createDocumentFragment(), inner = geo.s - geo.b * 2;
+    const list = P[cur.id], end = Math.min(order.length, drawn + BATCH), frag = document.createDocumentFragment(), inn = geo.s - geo.b * 2;
     for (let k = drawn; k < end; k++) {
       const i = order[k], p = list[i], a = document.createElement("a"), [x, y] = posOf(k);
       a.className = "hx" + (p[3] ? " v" : "") + (i === mark ? " me" : "");
@@ -650,26 +886,23 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
       a.setAttribute("aria-label", `${pname(p)}, ${cur.n} #${p[4]}`);
       a.dataset.i = i; a.dataset.k = k;
       a.style.cssText = `left:${x}px;top:${y}px;width:${geo.s}px;height:${geo.s}px;--b:${geo.b}px`;
-      a.innerHTML = `<i class="rim"></i><i class="im" style="${sheetStyle(cur, i, inner)}"></i>`;
+      a.innerHTML = `<i class="rim"></i><i class="im" style="${sheetStyle(cur, i, inn)}"></i>`;
       frag.appendChild(a);
     }
     comb.appendChild(frag); drawn = end; setCombHeight();
   }
   function relayoutComb() {
     if (!cur || !drawn) return;
-    geo = combGeo(); const inner = geo.s - geo.b * 2;
+    geo = combGeo(); const inn = geo.s - geo.b * 2;
     comb.querySelectorAll("a.hx").forEach((a) => {
       const [x, y] = posOf(+a.dataset.k);
       a.style.cssText = `left:${x}px;top:${y}px;width:${geo.s}px;height:${geo.s}px;--b:${geo.b}px`;
-      a.querySelector(".im").setAttribute("style", sheetStyle(cur, +a.dataset.i, inner));
+      a.querySelector(".im").setAttribute("style", sheetStyle(cur, +a.dataset.i, inn));
     });
     setCombHeight();
   }
   new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting) && cur && drawn < order.length) more(); }, { root: $("dlg-body"), rootMargin: "700px" }).observe($("dlg-sentinel"));
-  dlg.addEventListener("click", (e) => {
-    const b = e.target.closest("#dlg-sort button"); if (b) { mark = -1; setOrder(b.dataset.o); return; }
-    if (e.target === dlg) dlg.close();
-  });
+  dlg.addEventListener("click", (e) => { const b = e.target.closest("#dlg-sort button"); if (b) { mark = -1; setOrder(b.dataset.o); return; } if (e.target === dlg) dlg.close(); });
   comb.addEventListener("mouseover", (e) => { const a = e.target.closest(".hx"); if (a && P && cur) { const p = P[cur.id][+a.dataset.i]; $("dlg-tip").textContent = `${pname(p)}${p[1] && p[0] && p[1] !== p[0] ? " (" + p[1] + ")" : ""} · ${cur.n} #${p[4]}${p[3] ? " · verified" : ""}`; } });
   $("dlg-x").addEventListener("click", () => dlg.close());
   dlg.addEventListener("close", () => { cur = null; try { history.replaceState(null, "", location.pathname + location.search); } catch (_) {} });
@@ -677,30 +910,33 @@ dialog::backdrop { background: rgba(6, 10, 16, .62); }
 
   /* ---------- find yourself ---------- */
   let idx = null;
+  $("who-note").textContent = `${nf.format(S.n)} profiles to search.`;
   $("who").addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
-    if (q.length < 2) { $("hits").innerHTML = ""; $("who-note").textContent = "Search every counted profile."; return; }
+    if (q.length < 2) { $("hits").innerHTML = ""; $("who-note").textContent = `${nf.format(S.n)} profiles to search.`; return; }
     loadP().then(() => {
       if (!idx) { idx = []; C.forEach((c) => P[c.id].forEach((p, i) => idx.push([((p[0] || "") + " " + (p[1] || "") + " " + p[2]).toLowerCase(), c, i]))); }
       const hits = [];
       for (const [s, c, i] of idx) { if (s.includes(q)) { hits.push([c, i, s.startsWith(q) || s.includes(" " + q) ? 0 : 1]); if (hits.length > 400) break; } }
       hits.sort((a, b) => a[2] - b[2]);
-      $("who-note").textContent = hits.length ? `${hits.length > 400 ? "400+" : nf.format(hits.length)} match${hits.length === 1 ? "" : "es"}` : "Nobody by that name is wearing a counted collection.";
-      $("hits").innerHTML = hits.slice(0, 24).map(([c, i]) => { const p = P[c.id][i]; return `<a class="hit" href="#${esc(c.s)}" data-id="${c.id}" data-i="${i}">${hexHTML(sheetStyle(c, i, 48 - borderOf(48) * 2), 48, p[3])}<div><b>${esc(pname(p))}</b><span>${esc(c.n)} #${esc(p[4])}${p[3] ? " · verified" : ""}</span></div></a>`; }).join("");
+      $("who-note").textContent = hits.length ? `${hits.length > 400 ? "400+" : nf.format(hits.length)} match${hits.length === 1 ? "" : "es"}` : "Nobody by that name is wearing a collection in this census.";
+      $("hits").innerHTML = hits.slice(0, 24).map(([c, i]) => { const p = P[c.id][i]; return `<a class="hit" href="#${esc(c.s)}" data-id="${c.id}" data-i="${i}">${hexHTML(sheetStyle(c, i, inner(50)), 50, p[3])}<div><b>${esc(pname(p))}</b><span>${esc(c.n)} #${esc(p[4])}${p[3] ? " · verified" : ""}</span></div></a>`; }).join("");
     }).catch(() => { $("who-note").textContent = "Profiles did not load. Reload the page to try again."; });
   });
   $("hits").addEventListener("click", (e) => { const a = e.target.closest(".hit"); if (!a) return; e.preventDefault(); openColl(byId(+a.dataset.id), +a.dataset.i); });
 
   /* ---------- method ---------- */
-  $("method-a").innerHTML = `
-    <p>For each collection, this page called <code>GET /api/v2/collections/{slug}/pfp-profiles</code> on the OpenSea API with <code>limit=100</code> and followed <code>next</code> until it came back empty. The endpoint has no total count, so every number here is a full walk of the list.</p>
-    <p>A profile counts only when its NFT profile picture is verified, meaning the profile's wallet holds that NFT right now. Profiles that are not public are left out by the API.</p>`;
-  $("method-b").innerHTML = `
-    <p>${nf.format(S.k)} collections were enumerated: the top collections on OpenSea by market cap and by 7 and 30 day volume, plus well-known PFP projects on other chains. A collection outside that set can have wearers and still be missing here. ${nf.format(C.length)} had at least one.</p>
-    <p>Wear rate divides wearers by the collection's unique owners. Face value is floor price times wearers, converted to US dollars at snapshot prices (${esc(S.usdNote)}). Snapshot taken ${esc(when.toUTCString().replace("GMT", "UTC"))}.</p>`;
+  $("method-body").innerHTML = `<div>
+      <p>For each collection I called <code>GET /api/v2/collections/{slug}/pfp-profiles</code> with <code>limit=100</code> and followed <code>next</code> until it ran out. The endpoint has no total count, so every number here comes from walking the full list.</p>
+      <p>A profile counts only when its NFT profile picture is verified, meaning the wallet holds that NFT right now. The API leaves out profiles that aren't public.</p>
+    </div><div>
+      <p>I checked ${nf.format(S.k)} collections: the top collections on OpenSea by market cap and by 7 and 30 day volume, overall and on each chain, plus well-known PFP projects. A collection outside that set can have wearers and still be missing here. ${nf.format(C.length)} had at least one.</p>
+      <p>Wear rate is wearers divided by the collection's unique holders. Face value is floor price times wearers, in US dollars at snapshot prices (${esc(S.usdNote)}). Snapshot taken ${esc(whenTxt)}.</p>
+    </div>`;
 
-  /* deep link: #slug opens that collection */
-  const fromHash = () => { const h = decodeURIComponent(location.hash.slice(1)); const c = h && C.find((x) => x.s === h); if (c) openColl(c); };
+  /* deep links: #chapter scrolls natively, #slug opens that collection */
+  const fromHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (!h || document.getElementById(h)) return; const c = C.find((x) => x.s === h); if (c) openColl(c); };
   fromHash();
+  window.addEventListener("hashchange", fromHash);
 })();
 </script>

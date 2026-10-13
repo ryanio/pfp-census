@@ -73,6 +73,7 @@ jobs:
         env:
           OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
           SITE_URL: https://ryanio.github.io/pfp-census/
+          GA_ID: ${{ vars.GA_ID }}
         run: ./scripts/refresh.sh
       - uses: actions/upload-pages-artifact@v3
         with:
