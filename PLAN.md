@@ -30,3 +30,7 @@ Live at [ryanio.github.io/pfp-census](https://ryanio.github.io/pfp-census/) from
 - A live "here now" counter was skipped to keep the page static. It needs a small backend (a Worker or any always-on server holding websockets).
 - Snapshot history: keep a dated `counts.json` per refresh so the page can show which collections are gaining wearers.
 - A sibling explorer for `GET /api/v2/nfts/group/{group}/facets` is planned in [ryanio/pop-report](https://github.com/ryanio/pop-report).
+
+## Data in the repo
+
+Each fresh crawl writes CSVs to `data/` and appends to `data/history/`, and the workflow commits them at most once every `DATA_EVERY_HOURS` (24 now). In a few weeks, set it to 168 in `.github/workflows/pages.yml` for weekly commits. The live site still refreshes on its own schedule.
