@@ -168,14 +168,21 @@ if SITE_URL:
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="{desc}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PFP Census">
+<meta property="og:site_name" content="PFP Census">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="A map of OpenSea profile pictures, one hexagon per person, grouped by collection">
+<meta name="twitter:image:alt" content="A map of OpenSea profile pictures, one hexagon per person, grouped by collection">
+<meta name="theme-color" content="#0A0A0B">
+<meta name="author" content="Ryan Ghods">
+<link rel="canonical" href="{SITE_URL}">
+<meta property="og:title" content="Who wears what: the PFP Census">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{SITE_URL}">
 <meta property="og:image" content="{SITE_URL}og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PFP Census">
+<meta name="twitter:title" content="Who wears what: the PFP Census">
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{SITE_URL}og.png">
 {ga}<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 4 90 27v46L50 96 10 73V27z' fill='%230786FF'/%3E%3C/svg%3E">
