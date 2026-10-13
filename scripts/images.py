@@ -41,7 +41,7 @@ def fetch(url):
         return url, False
 
 def pick(p):
-    return p.get("profile_image_url") or p["nft_pfp"].get("image_url")
+    return p["nft_pfp"].get("image_url") or p.get("profile_image_url")
 
 urls = []
 for f in sorted(os.listdir(PROFILES)):

@@ -1,4 +1,4 @@
-import hashlib, json, math, os, random, sys, time
+import hashlib, json, math, os, random, re, sys, time
 from PIL import Image, ImageDraw
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = sys.argv[1]
@@ -20,7 +20,7 @@ def img_path(url):
     p = os.path.join(CACHE, hashlib.sha1(url.encode()).hexdigest() + ".png")
     return p if os.path.exists(p) else None
 
-def pick(p): return p.get("profile_image_url") or p["nft_pfp"].get("image_url")
+def pick(p): return p["nft_pfp"].get("image_url") or p.get("profile_image_url")
 def short(u):
     if not u: return ""
     return u.replace("https://i2c.seadn.io/", "~i/").replace("https://raw2.seadn.io/", "~r/")
@@ -145,7 +145,7 @@ lg_rows = max(1, math.ceil(len(logo_tiles) / LG_COLS))
 write_sheets(logo_tiles, LOGO, LG_COLS, lg_rows, "logos.webp", 80)
 
 for c in C: c.pop("logo_url")
-summary = {"at": fetched_at, "n": total, "k": len(crawled), "c": C,
+summary = {"v": re.sub(r"[^0-9]", "", fetched_at)[:14] + "-" + hashlib.sha1(json.dumps([[x["r"] for x in rows] for rows in P]).encode()).hexdigest()[:6], "at": fetched_at, "n": total, "k": len(crawled), "c": C,
            "sheet": {"cols": SH_COLS, "rows": SH_ROWS, "tile": TILE, "count": len(sheet_files)},
            "mini": {"cols": MI_COLS, "rows": MI_ROWS, "tile": MINI, "files": mini_files, "who": mini_who},
            "logos": {"cols": LG_COLS, "count": len(logo_tiles), "file": "logos.webp"},

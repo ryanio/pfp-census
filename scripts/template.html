@@ -532,10 +532,10 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
 
   /* sprites */
   const miniPos = (idx) => { const m = S.mini, col = idx % m.cols, row = Math.floor(idx / m.cols); return { sheet: Math.floor(row / m.rows), col, row: row % m.rows }; };
-  const miniStyle = (idx, px) => { const m = S.mini, p = miniPos(idx); return `background-image:url(${m.files[p.sheet]});background-size:${m.cols * px}px ${m.rows * px}px;background-position:-${p.col * px}px -${p.row * px}px`; };
-  const sheetStyle = (c, i, px) => { const sh = S.sheet, per = sh.cols * sh.rows, g = c.go + i, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp);background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
-  const logoStyle = (c, px) => { if (c.lg < 0) return ""; const L = S.logos, col = c.lg % L.cols, row = Math.floor(c.lg / L.cols); return `background-image:url(${L.file});background-size:${L.cols * px}px ${Math.ceil(L.count / L.cols) * px}px;background-position:-${col * px}px -${row * px}px`; };
-  const fullStyle = (g, px) => { const sh = S.sheet, per = sh.cols * sh.rows, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp);background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
+  const miniStyle = (idx, px) => { const m = S.mini, p = miniPos(idx); return `background-image:url(${m.files[p.sheet]}?v=${S.v});background-size:${m.cols * px}px ${m.rows * px}px;background-position:-${p.col * px}px -${p.row * px}px`; };
+  const sheetStyle = (c, i, px) => { const sh = S.sheet, per = sh.cols * sh.rows, g = c.go + i, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp?v=${S.v});background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
+  const logoStyle = (c, px) => { if (c.lg < 0) return ""; const L = S.logos, col = c.lg % L.cols, row = Math.floor(c.lg / L.cols); return `background-image:url(${L.file}?v=${S.v});background-size:${L.cols * px}px ${Math.ceil(L.count / L.cols) * px}px;background-position:-${col * px}px -${row * px}px`; };
+  const fullStyle = (g, px) => { const sh = S.sheet, per = sh.cols * sh.rows, k = Math.floor(g / per), j = g % per; return `background-image:url(s/${k}.webp?v=${S.v});background-size:${sh.cols * px}px ${sh.rows * px}px;background-position:-${(j % sh.cols) * px}px -${Math.floor(j / sh.cols) * px}px`; };
   const lazyBg = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.setAttribute("style", e.target.dataset.bg); lazyBg.unobserve(e.target); } }), { rootMargin: "500px" });
   const observeBg = (root) => root.querySelectorAll("[data-bg]:not([style])").forEach((el) => lazyBg.observe(el));
   const imgUrl = (u, px) => { if (!u) return ""; u = u.replace(/^~i\//, "https://i2c.seadn.io/").replace(/^~r\//, "https://raw2.seadn.io/"); if (/\.(mp4|mov|webm)(\?|$)/i.test(u)) return ""; if (u.includes("i2c.seadn.io")) return u + (u.includes("?") ? "&" : "?") + "w=" + Math.ceil(px) + "&auto=format"; return u; };
@@ -633,7 +633,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
   }
   let T = S.wall.full;
   const mapEl = $("map"), base0 = $("map-base"), topCv = $("map-top"), tip = $("tip");
-  const miniImgs = S.mini.files.map((f) => { const im = new Image(); im.decoding = "async"; im.src = f; return im; });
+  const miniImgs = S.mini.files.map((f) => { const im = new Image(); im.decoding = "async"; im.src = f + "?v=" + S.v; return im; });
   let M = null, hoverT = -1, hoverCell = -1, raf = 0;
   function layout() {
     const W = mapEl.clientWidth, order = W < 560 ? 3 : 4;
@@ -946,7 +946,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
 
   /* ---------- profiles, loaded after first paint ---------- */
   let P = null;
-  const loadP = () => P ? Promise.resolve(P) : fetch("profiles.json").then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).then((j) => (P = j));
+  const loadP = () => P ? Promise.resolve(P) : fetch("profiles.json?v=" + S.v).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).then((j) => (P = j));
   setTimeout(() => loadP().catch(() => {}), 600);
   const href = (p) => "https://opensea.io/" + encodeURIComponent(p[0] || p[2]);
   const pname = (p) => p[0] || p[1] || p[2].slice(0, 6) + "…" + p[2].slice(-4);
