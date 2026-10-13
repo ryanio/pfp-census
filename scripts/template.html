@@ -106,6 +106,13 @@ a.hx:focus-visible > .rim { background: var(--mark); }
 .mast.chapping nav { display: none; }
 @media (min-width: 1420px) { .chap { display: none !important; } .mast.chapping nav { display: flex; } }
 @media (max-width: 1419px) { .toc { display: none; } }
+@media (max-width: 620px) {
+  .mast nav a { padding-block: 15px; }
+  .hl .hl-t .acts a { padding-block: 8px; }
+  .hl .hl-t .acts .sx { padding: 8px 13px; }
+  .share a, .share button { min-height: 36px; padding-inline: 14px; }
+  .anchor { padding: 6px 8px; margin-left: 0; }
+}
 @media (prefers-reduced-motion: reduce) { .toc { transition: none; } }
 
 /* cover */
@@ -197,7 +204,7 @@ h2:hover .anchor, .anchor:focus-visible { opacity: 1; }
 .fig figcaption { font: 13px/1.5 var(--f-mono); color: var(--ink-3); margin-top: 12px; border-top: 1px solid var(--rule); padding-top: 9px; }
 .fig figcaption b { color: var(--ink); font-weight: 500; }
 .bars { display: grid; gap: 1px; }
-.bars h4 { font: 500 12px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 16px 0 4px; }
+.bars h4, .bars h3.flabel { font: 500 12px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 16px 0 4px; }
 .brow { display: grid; grid-template-columns: 34px minmax(0, 1.3fr) minmax(60px, 2fr) 104px; gap: 14px; align-items: center; width: 100%; padding: 7px 6px; border: 0; border-radius: 4px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
 .brow.nohex { grid-template-columns: minmax(0, 1.1fr) minmax(60px, 2.4fr) 120px; cursor: default; }
 .brow:hover { background: var(--wash); }
@@ -802,7 +809,7 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
       <span class="track"><span class="fill" style="width:${Math.max(1, (rate(c) / max) * 100)}%"></span></span>
       <span class="bv"><b>${pct(rate(c))}</b><span>${nf.format(c.c)} of ${nf.format(c.o)}</span></span>
     </button>`).join(""); };
-  $("fig-rate").innerHTML = `<div class="bars"><h4>Highest wear rate</h4>${rateRows(rateList.slice(0, 8), "hi")}${core.length ? `<h4>Blue chips</h4>${rateRows(core, "mute")}` : ""}</div>
+  $("fig-rate").innerHTML = `<div class="bars"><h3 class="flabel">Highest wear rate</h3>${rateRows(rateList.slice(0, 8), "hi")}${core.length ? `<h3 class="flabel">Blue chips</h3>${rateRows(core, "mute")}` : ""}</div>
     <figcaption><b>Fig. 1</b> Share of each collection's holders wearing it as their profile picture. Collections with at least ${nf.format(S.rateMinOwners)} holders and ${S.rateMinWearers} wearers.</figcaption>`;
 
   const g1 = grails[0], g2 = grails[1], g3 = grails[2];
@@ -1061,7 +1068,8 @@ dialog::backdrop { background: rgba(0, 0, 0, .66); }
     const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
     prog.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
     const storyTop = $("story").offsetTop, end = document.querySelector(".foot").offsetTop;
-    toc.classList.toggle("on", y + 80 > storyTop && y + innerHeight * 0.6 < end);
+    const storyEnd = $("story").offsetTop + $("story").offsetHeight;
+    toc.classList.toggle("on", y + 80 > storyTop && y + innerHeight * 0.5 < storyEnd);
     let cur = 0; marks.forEach((m, i) => { if (m && m.getBoundingClientRect().top < innerHeight * 0.35) cur = i; });
     links.forEach((a, i) => a.classList.toggle("cur", i === cur));
     const inStory = y + 80 > storyTop && y + innerHeight * 0.6 < end;
