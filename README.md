@@ -10,9 +10,13 @@ Every count comes from walking [`GET /api/v2/collections/{slug}/pfp-profiles`](h
 
 The map lays collections along a [Gosper curve](https://en.wikipedia.org/wiki/Gosper_curve), the hexagonal space-filling curve, so each collection stays in one piece and its area tracks its wearers. Hexagons use the same rounded frame OpenSea draws around verified NFT profile pictures.
 
+## Data
+
+Each fresh crawl commits CSVs to `data/`: `collections.csv` (one row per collection: wearers, holders, wear rate, floor, face value) and `wearers.csv` (every counted profile with its collection, chain, contract and token). `data/history/` keeps an append-only record keyed by crawl time: `totals.csv` (headline numbers per crawl) and `collections.csv` (each collection per crawl), so you can chart who is gaining wearers.
+
 ## Refreshing
 
-The `Refresh and deploy` workflow re-crawls twice a day for the first two weeks after launch, daily through day 45, then weekly on Mondays. With an `OPENSEA_API_KEY` repository secret it re-crawls and deploys fresh data. Without one it deploys the committed snapshot in `site/`. GitHub pauses scheduled workflows on repos with no activity for 60 days, so push anything or run it by hand to wake it.
+The `Refresh and deploy` workflow re-crawls twice a day for the first two weeks after launch, daily through day 45, then weekly on Mondays. With an `OPENSEA_API_KEY` repository secret it re-crawls and deploys fresh data. The built site is deployed straight to Pages and not committed. GitHub pauses scheduled workflows on repos with no activity for 60 days, so push anything or run it by hand to wake it.
 
 To run it locally:
 
