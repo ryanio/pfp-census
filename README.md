@@ -16,7 +16,7 @@ Each fresh crawl commits CSVs to `data/`: `collections.csv` (one row per collect
 
 ## Refreshing
 
-The `Refresh and deploy` workflow re-crawls twice a day for the first two weeks after launch, daily through day 45, then weekly on Mondays. With an `OPENSEA_API_KEY` repository secret it re-crawls and deploys fresh data. The built site is deployed straight to Pages and not committed. GitHub pauses scheduled workflows on repos with no activity for 60 days, so push anything or run it by hand to wake it.
+The `Refresh and deploy` workflow re-crawls twice a day for the first two weeks after launch, daily through day 30, then weekly on Mondays. With an `OPENSEA_API_KEY` repository secret it re-crawls and deploys fresh data. The built site is deployed straight to Pages and not committed. GitHub pauses scheduled workflows on repos with no activity for 60 days, so push anything or run it by hand to wake it.
 
 To run it locally:
 

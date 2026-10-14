@@ -17,7 +17,7 @@ Live at [ryanio.github.io/pfp-census](https://ryanio.github.io/pfp-census/) from
 
 ## Refresh schedule
 
-`.github/workflows/pages.yml` runs at 01:17 and 13:17 UTC. Scheduled runs refresh both times for the first 14 days after `LAUNCH_DATE`, only the 13:17 run until day 45, then Mondays only. Pushes and manual runs always refresh. Without the secret, every run deploys the committed snapshot in `site/`.
+`.github/workflows/pages.yml` runs at 01:17 and 13:17 UTC. Scheduled runs refresh both times for the first 14 days after `LAUNCH_DATE`, only the 13:17 run until day 30, then Mondays only. Pushes and manual runs always refresh. Without the secret, every run deploys the committed snapshot in `site/`.
 
 ## Known limits
 
@@ -33,4 +33,4 @@ Live at [ryanio.github.io/pfp-census](https://ryanio.github.io/pfp-census/) from
 
 ## Data in the repo
 
-Each fresh crawl writes CSVs to `data/` and appends to `data/history/`, and the workflow commits them at most once every `DATA_EVERY_HOURS` (24 now). In a few weeks, set it to 168 in `.github/workflows/pages.yml` for weekly commits. The live site still refreshes on its own schedule.
+Each fresh crawl writes CSVs to `data/` and appends to `data/history/`. The workflow commits them once per UTC day, from that day's first run. Runs drop to weekly at day 30, so the data commits do too.
