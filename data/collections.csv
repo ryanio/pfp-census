@@ -1,445 +1,447 @@
 slug,name,chain,wearers,holders,wear_rate,verified_wearers,floor,floor_symbol,floor_usd,face_value_usd,twitter
-t-a-s,The Ape Society,ethereum,296,1379,0.21465,0,0.0493065,ETH,114.43,33870.56,the_ape_society
-argonauts,Argonauts,ethereum,179,2360,0.07585,3,0.59176155,ETH,1373.32,245825.12,lphaCentauriKid
-mutant-ape-yacht-club,Mutant Ape Yacht Club,ethereum,99,12148,0.00815,3,0.864,ETH,2005.12,198506.82,
-credits,Credits,ethereum,70,10492,0.00667,0,0.007348985,ETH,17.06,1193.86,jackbutcher
-claystonkz,Clay StonKz,robinhood,69,2026,0.03406,0,0.0099,ETH,22.98,1585.3,Brrrbon_
-originalblokyz,Original Blokyz,ethereum,66,2577,0.02561,0,0.055,ETH,127.64,8424.29,OriginalBlokyz
-boredapeyachtclub,Bored Ape Yacht Club,ethereum,61,5621,0.01085,3,6.3429,ETH,14720.22,897933.53,BoredApeYC
-ens,ENS: Ethereum Name Service,ethereum,58,835885,7e-05,1,2e-05,ETH,0.05,2.69,ensdomains
-cashcatss,Cash Cats,robinhood,55,3010,0.01827,0,0.01433698,ETH,33.27,1829.98,cashcatss
-lilpudgys,Lil Pudgys,ethereum,55,10201,0.00539,0,0.21882579,ETH,507.84,27931.08,pudgypenguins
-azukielementals,Azuki Elementals,ethereum,50,6275,0.00797,0,0.049304,ETH,114.42,5721.09,
-arbzukiswap,Arbzukiswap,arbitrum,43,405932,0.00011,0,9.2e-06,ETH,0.02,0.92,
-chain-mancers,Chain Mancers,robinhood,42,790,0.05316,1,0.39,ETH,905.09,38013.72,MancerXYZ
-frontonauts,Frontonauts,ethereum,40,1535,0.02606,1,0.000507,ETH,1.18,47.06,MfersGif
-pudgypenguins,Pudgy Penguins,ethereum,40,5006,0.00799,1,2.5,ETH,5801.85,232074.0,pudgypenguins
-hypurr-hyperevm,Hypurr,hyperevm,37,3382,0.01094,0,222.19,HYPE,20101.53,743756.58,hypurr
-internetmonkes,Internet Monkes,robinhood,37,857,0.04317,1,0.0188209,ETH,43.68,1616.1,internet_monkes
-jpeg-frens,JPEG Frens,ethereum,35,1095,0.03196,0,0.016288999999999,ETH,37.8,1323.09,wearejpegfrens
-stonkbrokers-434284142,StonkBrokers,robinhood,35,668,0.0524,0,2.18,ETH,5059.21,177072.46,OxSimpleFarmer
-rekt-tradooor,Rekt Tradooor,robinhood,34,1806,0.01883,0,0.046,ETH,106.75,3629.64,rektguy
-chog-genesis,Chog Genesis,monad,33,975,0.03385,0,5294.23022299,MON,110.29,3639.68,ChogNFT
-normies,NORMIES,ethereum,33,1668,0.01978,2,0.217999,ETH,505.92,16695.33,normiesART
-trollsoneth,TROLLS,ethereum,33,681,0.04846,0,0.0355389,ETH,82.48,2721.73,Troll_
-suited-ape-society,Suited Ape Society,robinhood,32,714,0.04482,0,0.083,ETH,192.62,6163.89,TheSuitedApes
-theapehood,Ape Hood,robinhood,32,882,0.03628,1,0.0140999,ETH,32.72,1047.11,theapehood
-azuki,Azuki,ethereum,31,4372,0.00709,0,0.565,ETH,1311.22,40647.76,Azuki
-the-warplets-farcaster,The Warplets,base,29,20586,0.00141,0,0.0013798999,ETH,3.2,92.87,WarpletsAI
-interns,The Interns,robinhood,28,3527,0.00794,0,0.05528868,ETH,128.31,3592.7,ClutchMarkets
-deathbats-club,Deathbats Club,ethereum,27,6215,0.00434,0,0.13,ETH,301.7,8145.8,TheOfficialA7X
-fuwacousin,fuwa,robinhood,27,1098,0.02459,0,0.0098573,ETH,22.88,617.66,fuwacousin
-traceart,Trace,ethereum,27,1541,0.01752,0,0.0060318,ETH,14.0,377.95,traceforms
-milady,Milady Maker,ethereum,26,5129,0.00507,0,0.79899999,ETH,1854.27,48211.05,MiladyMaker333
-pixelhoodclan,PIXEL HOOD CLAN,robinhood,26,194,0.13402,1,0.059998,ETH,139.24,3620.23,pixelord
-doodles-official,Doodles,ethereum,25,4562,0.00548,0,0.2621366591000002,ETH,608.35,15208.78,doodles
-good-vibes-club,Good Vibes Club,ethereum,25,1663,0.01503,0,0.215999,ETH,501.28,12531.94,goodvibesclub
-musegod-muses,MUSEGOD Muses,robinhood,24,443,0.05418,0,0.0699989,ETH,162.45,3898.78,musegod_rh
-clonex,CLONE X - X TAKASHI MURAKAMI,ethereum,23,9109,0.00252,0,0.139899,ETH,324.67,7467.39,RTFKT
-rhmachines,RH MACHINES,robinhood,23,1306,0.01761,1,0.01870270350413731,ETH,43.4,998.29,btcordinal
-axie-ronin,Axie,ronin,22,1951107,1e-05,0,10.1,RON,0.54,11.79,
-fwogs,fwogs,ethereum,22,1554,0.01416,0,0.01985064991693,ETH,46.07,1013.5,itsafwog
-mindsdotgames,Minds Dot Games,robinhood,22,937,0.02348,0,0.0309,ETH,71.71,1577.64,MindGames_AI
-nakamigos,Nakamigos,ethereum,22,5225,0.00421,0,0.09401149999999965,ETH,218.18,4799.88,Nakamigos
-cryptopunks,CryptoPunks,ethereum,21,3828,0.00549,1,29.294,ETH,67983.76,1427658.91,cryptopunks
-rektguy,rektguy,ethereum,21,3445,0.0061,0,0.119580452,ETH,277.52,5827.82,rektguyNFT
-bitmon,BitMON,ethereum,20,567,0.03527,1,0.042799,ETH,99.33,1986.51,DesLucrece
-chimpersnft,Chimpers,ethereum,19,1030,0.01845,2,0.409950953,ETH,951.39,18076.4,ChimpersHQ
-cool-cats-nft,Cool Cats,ethereum,19,5379,0.00353,0,0.10392129590000022,ETH,241.17,4582.31,coolcats
-genuine-undead,Genuine Undead,ethereum,19,778,0.02442,1,0.107427382,ETH,249.31,4736.91,genuinelyundead
-gribbits,GRiBBiTS,base,18,1010,0.01782,0,0.0939999,ETH,218.15,3926.69,GRiBBiTS_
-mudwater-cards,Mudwater Cards,solana,18,1712,0.01051,0,0.01059,SOL,1.07,19.17,
-py0py0py0py0,pyopyopyopyo,robinhood,18,1661,0.01084,0,0.0061970799,ETH,14.38,258.87,pyopyopyo410
-fugzofficial,Fugz,ethereum,17,1180,0.01441,0,0.054498936170212765,ETH,126.48,2150.12,FugzOfficial
-kemonokaki,Kemonokaki,base,17,3496,0.00486,0,0.0077291,ETH,17.94,304.93,kemonokaki
-pixelhoodminis,Pixel Hood Minis,robinhood,17,446,0.03812,0,0.0353834,ETH,82.12,1395.97,pixelord
-quirkiesoriginals,Quirkies,ethereum,17,1376,0.01235,0,1.034998,ETH,2401.96,40833.34,quirkiesnft
-wif-outlaws,WIF Outlaws,robinhood,17,1014,0.01677,0,0.041888,ETH,97.21,1652.59,RobinWifHat
-metawinners-1,MetaWinners,ethereum,16,1227,0.01304,0,0.05421698,ETH,125.82,2013.18,Meta_Winners
-veefriends-series-2,VeeFriends Series 2,ethereum,16,19895,0.0008,0,0.0674168,ETH,156.46,2503.31,
-0xc21159f412c294ca2c38f2a9ecaaccf9d93ec929,Goat Street,robinhood,15,1983,0.00756,0,0.031,ETH,71.94,1079.14,CashmereLabs
-glhfers,GLHFers,ethereum,15,832,0.01803,0,0.318,ETH,738.0,11069.93,GLHFers
-invisiblefriends,Invisible Friends,ethereum,15,3259,0.0046,0,0.2499,ETH,579.95,8699.29,InvsbleFriends
-vaultlings,Vaultlings,robinhood,15,813,0.01845,0,0.0358608,ETH,83.22,1248.35,VaultlingsNFT
-zygotepods,zygote,base,15,573,0.02618,1,0.0149995,ETH,34.81,522.15,zygote_pods
-genesis-creepz,Creepz by OVERLORD,ethereum,14,2182,0.00642,0,0.149999,ETH,348.11,4873.52,creepz
-grifters-by-xcopy,Grifters,ethereum,14,467,0.02998,1,12.0,ETH,27848.88,389884.32,XCOPYART
-gemesis,Gemesis,ethereum,13,47668,0.00027,0,0.01078799999999,ETH,25.04,325.47,openseapro
-gs-on-ape,Gs on Ape,ape_chain,13,1569,0.00829,0,2100.0,APE,257.74,3350.56,GeezOnApe
-mfers,mfers,ethereum,13,5442,0.00239,0,0.1237339,ETH,287.15,3733.0,
-prtscn-ink,PRTSCN,ink,13,1958,0.00664,0,0.0339154,ETH,78.71,1023.21,
-remilio-babies,Redacted Remilio Babies,ethereum,13,4177,0.00311,0,0.117468,ETH,272.61,3543.96,RemilioBaby
-zero-to-hero-academy,Zero to Hero Academy,robinhood,13,859,0.01513,0,0.0097107,ETH,22.54,292.97,ZTHAcademy
-finalbosu,Final Bosu,ethereum,12,1818,0.0066,0,0.0176136,ETH,40.88,490.52,finalbosuX
-monkeyhoodnfts,MonkeyHood,robinhood,12,1202,0.00998,0,0.00449999,ETH,10.44,125.32,MonkeyHoodNFT
-otherside-koda,Otherside Koda,ethereum,12,3236,0.00371,0,0.485999,ETH,1127.88,13534.53,OthersideMeta
-skrumpeys,skrumpeys,monad,12,1505,0.00797,0,2805.269,MON,58.44,701.3,skrumpeys
-sunflower-land,Sunflower Land Accounts,polygon,12,245284,5e-05,0,0.0001,WETH,0.23,2.78,0xSunflowerLand
-templars-of-the-storm,Templars of the Storm,ink,12,831,0.01444,0,0.52,ETH,1206.78,14481.42,nadoHQ
-agntstut,AGNTS by tut,robinhood,11,880,0.0125,0,0.0044869,ETH,10.41,114.54,AGNTSOCIAL
-coattailbrokers,Coattail Brokers,robinhood,11,474,0.02321,0,0.00923682933900015,ETH,21.44,235.8,CoattailBrokers
-gorgez,DropDedGorgez,ethereum,11,1226,0.00897,0,0.020435,ETH,47.42,521.67,DedGorgez
-sappy-seals,Sappy Seals,ethereum,11,2488,0.00442,0,0.0568599768,ETH,131.96,1451.53,sappyseals
-apes-bunitori-club,Apes Bunitori Club,base,10,2074,0.00482,0,0.00175,ETH,4.06,40.61,BradApeYuriClub
-arbitrumdao-celebrating-the-third-anniversary,ArbitrumDAO: Celebrating The Third Anniversary,arbitrum,10,69660,0.00014,0,1.99e-05,ETH,0.05,0.46,arbitrum
-ibunnies,iBunnies,ink,10,553,0.01808,0,0.00029998,ETH,0.7,6.96,iBunniesOnInk
-max-pain-and-frens-by-xcopy,MAX PAIN AND FRENS,ethereum,10,3258,0.00307,1,0.419999999,ETH,974.71,9747.11,XCOPYART
-murakami-flowers-2022-official,Murakami.Flowers Official,ethereum,10,5027,0.00199,0,0.1445827,ETH,335.54,3355.39,
-onchain-inkpunks,Onchain InkPunks,ink,10,1658,0.00603,0,0.0014787,ETH,3.43,34.32,InkPunksPFPs
-sproto-gremlins,Sproto Gremlins,ethereum,10,1373,0.00728,0,0.2349,ETH,545.14,5451.42,sprotogremlins
-hypio,Lucky Hypio Winners,hyperevm,9,2593,0.00347,0,1.4699999,HYPE,132.99,1196.92,HypioHL
-lazy-lions,Lazy Lions,ethereum,9,4560,0.00197,0,0.09301089,ETH,215.85,1942.69,LazyLionsNFT
-official-v1-punks,CryptoPunks V1 (wrapped),ethereum,9,1175,0.00766,1,1.6198,ETH,3759.13,33832.21,v1punks
-opepen-edition,Opepen Edition,ethereum,9,3470,0.00259,0,0.057953,ETH,134.49,1210.44,jackbutcher
-themutualfun,The Mutual Fun,robinhood,9,990,0.00909,0,0.0985,WETH,228.59,2057.34,themutualfun
-tiny-dinos-eth,tiny dinos (eth),ethereum,9,3353,0.00268,0,0.0064699999899,ETH,15.02,135.14,tinydinosnft
-beanzofficial,BEANZ Official,ethereum,8,8108,0.00099,0,0.0338473,ETH,78.55,628.41,Azuki
-crafted-avatars,Habbo: Crafted Avatars,ethereum,8,881,0.00908,0,0.37,ETH,858.67,6869.39,Habbo
-r3tardsnft,r3tards,monad,8,467,0.01713,0,4399.97,MON,91.66,733.31,r3tardsNFT
-slippy-nft,Slippy Club,robinhood,8,475,0.01684,0,0.0261999,ETH,60.8,486.43,Slippyclub
-zoolini-base,Zoolini,base,8,3967,0.00202,0,0.0010999,ETH,2.55,20.42,zoolininfts
-akidcalledbeast,a KID called BEAST,ethereum,7,3006,0.00233,0,0.09,ETH,208.87,1462.07,akidcalledbeast
-basedpunks,based punks,base,7,2401,0.00292,0,0.0221399,ETH,51.38,359.67,based
-bearish,BEARISH,ethereum,7,839,0.00834,0,0.017,ETH,39.45,276.17,bearish_af
+t-a-s,The Ape Society,ethereum,295,1377,0.21423,0,0.0489999,ETH,109.25,32227.5,the_ape_society
+argonauts,Argonauts,ethereum,176,2358,0.07464,3,0.49899899,ETH,1112.52,195804.09,lphaCentauriKid
+mutant-ape-yacht-club,Mutant Ape Yacht Club,ethereum,100,12147,0.00823,3,0.9089999,ETH,2026.62,202662.44,
+claystonkz,Clay StonKz,robinhood,70,1971,0.03551,0,0.012999999999,ETH,28.98,2028.85,Brrrbon_
+credits,Credits,ethereum,68,10446,0.00651,0,0.0083836,ETH,18.69,1271.01,jackbutcher
+originalblokyz,Original Blokyz,ethereum,66,2568,0.0257,0,0.058,ETH,129.31,8534.56,OriginalBlokyz
+boredapeyachtclub,Bored Ape Yacht Club,ethereum,60,5623,0.01067,2,6.099,ETH,13597.78,815866.89,BoredApeYC
+ens,ENS: Ethereum Name Service,ethereum,57,835513,7e-05,1,2e-05,ETH,0.04,2.54,ensdomains
+cashcatss,Cash Cats,robinhood,55,3013,0.01825,0,0.01309989,ETH,29.21,1606.35,cashcatss
+lilpudgys,Lil Pudgys,ethereum,55,10198,0.00539,0,0.2126989,ETH,474.21,26081.79,pudgypenguins
+azukielementals,Azuki Elementals,ethereum,50,6274,0.00797,0,0.047996,ETH,107.01,5350.38,
+arbzukiswap,Arbzukiswap,arbitrum,44,405932,0.00011,0,9.1e-06,ETH,0.02,0.89,
+chain-mancers,Chain Mancers,robinhood,42,787,0.05337,1,0.379,ETH,844.98,35489.34,MancerXYZ
+frontonauts,Frontonauts,ethereum,40,1529,0.02616,1,0.000556999998599608,ETH,1.24,49.67,MfersGif
+hypurr-hyperevm,Hypurr,hyperevm,39,3375,0.01156,0,229.9899999,HYPE,20991.19,818656.3,hypurr
+pudgypenguins,Pudgy Penguins,ethereum,39,5004,0.00779,1,2.4989,ETH,5571.32,217281.58,pudgypenguins
+suited-ape-society,Suited Ape Society,robinhood,38,892,0.0426,0,0.12,ETH,267.54,10166.57,TheSuitedApes
+internetmonkes,Internet Monkes,robinhood,37,853,0.04338,1,0.0199532,ETH,44.49,1645.98,internet_monkes
+stonkbrokers-434284142,StonkBrokers,robinhood,35,667,0.05247,0,1.897,ETH,4229.38,148028.32,OxSimpleFarmer
+jpeg-frens,JPEG Frens,ethereum,34,1096,0.03102,0,0.01473885,ETH,32.86,1117.25,wearejpegfrens
+rekt-tradooor,Rekt Tradooor,robinhood,34,1801,0.01888,0,0.045979,ETH,102.51,3485.36,rektguy
+chog-genesis,Chog Genesis,monad,33,974,0.03388,0,4795.25,MON,93.95,3100.34,ChogNFT
+normies,NORMIES,ethereum,33,1665,0.01982,2,0.224,ETH,499.41,16480.54,normiesART
+trollsoneth,TROLLS,ethereum,33,680,0.04853,0,0.038839,ETH,86.59,2857.53,Troll_
+azuki,Azuki,ethereum,31,4389,0.00706,0,0.49,ETH,1092.46,33866.26,Azuki
+theapehood,Ape Hood,robinhood,31,882,0.03515,1,0.012304,ETH,27.43,850.39,theapehood
+the-warplets-farcaster,The Warplets,base,30,20582,0.00146,0,0.0013,ETH,2.9,86.95,WarpletsAI
+fuwacousin,fuwa,robinhood,28,1058,0.02647,0,0.00606798920496,ETH,13.53,378.8,fuwacousin
+interns,The Interns,robinhood,28,3526,0.00794,0,0.05528868,ETH,123.27,3451.47,ClutchMarkets
+deathbats-club,Deathbats Club,ethereum,27,6216,0.00434,0,0.13,ETH,289.84,7825.58,TheOfficialA7X
+traceart,Trace,ethereum,27,1527,0.01768,0,0.0081,ETH,18.06,487.59,traceforms
+good-vibes-club,Good Vibes Club,ethereum,26,1660,0.01566,0,0.234,ETH,521.71,13564.34,goodvibesclub
+milady,Milady Maker,ethereum,26,5129,0.00507,0,0.77499899,ETH,1727.87,44924.57,MiladyMaker333
+pixelhoodclan,PIXEL HOOD CLAN,robinhood,26,195,0.13333,1,0.057998,ETH,129.31,3361.99,pixelord
+doodles-official,Doodles,ethereum,25,4564,0.00548,0,0.25689392560000024,ETH,572.75,14318.69,doodles
+musegod-muses,MUSEGOD Muses,robinhood,25,455,0.05495,0,0.039759699999,ETH,88.64,2216.12,musegod_rh
+mindsdotgames,Minds Dot Games,robinhood,24,895,0.02682,0,0.0374998,ETH,83.61,2006.55,MindGames_AI
+axie-ronin,Axie,ronin,23,1951036,1e-05,0,10.7,RON,0.53,12.26,
+fwogs,fwogs,ethereum,23,1557,0.01477,0,0.018382999,ETH,40.99,942.66,itsafwog
+rhmachines,RH MACHINES,robinhood,23,1307,0.0176,1,0.0192999,ETH,43.03,989.67,btcordinal
+clonex,CLONE X - X TAKASHI MURAKAMI,ethereum,22,9111,0.00241,0,0.134999,ETH,300.98,6621.6,RTFKT
+cryptopunks,CryptoPunks,ethereum,22,3825,0.00575,1,29.994999,ETH,66874.15,1471231.3,cryptopunks
+nakamigos,Nakamigos,ethereum,22,5237,0.0042,0,0.0849998,ETH,189.51,4169.17,Nakamigos
+rektguy,rektguy,ethereum,21,3446,0.00609,0,0.119101699,ETH,265.54,5576.31,rektguyNFT
+bitmon,BitMON,ethereum,20,563,0.03552,1,0.042431836,ETH,94.6,1892.04,DesLucrece
+chimpersnft,Chimpers,ethereum,20,1034,0.01934,2,0.389999,ETH,869.51,17390.13,ChimpersHQ
+cool-cats-nft,Cool Cats,ethereum,19,5378,0.00353,0,0.101,ETH,225.18,4278.43,coolcats
+genuine-undead,Genuine Undead,ethereum,19,777,0.02445,1,0.108212171,ETH,241.26,4583.94,genuinelyundead
+gribbits,GRiBBiTS,base,18,1010,0.01782,0,0.07994,ETH,178.23,3208.09,GRiBBiTS_
+mudwater-cards,Mudwater Cards,solana,18,1750,0.01029,0,0.012,SOL,1.15,20.69,
+py0py0py0py0,pyopyopyopyo,robinhood,18,1660,0.01084,0,0.006112129999,ETH,13.63,245.29,pyopyopyo410
+fugzofficial,Fugz,ethereum,17,1172,0.01451,0,0.05499468085106383,ETH,122.61,2084.39,FugzOfficial
+kemonokaki,Kemonokaki,base,17,3495,0.00486,0,0.0080514,ETH,17.95,305.16,kemonokaki
+pixelhoodminis,Pixel Hood Minis,robinhood,17,444,0.03829,0,0.0339999,ETH,75.8,1288.65,pixelord
+quirkiesoriginals,Quirkies,ethereum,17,1376,0.01235,0,1.039898,ETH,2318.46,39413.87,quirkiesnft
+wif-outlaws,WIF Outlaws,robinhood,17,1012,0.0168,0,0.0425,ETH,94.75,1610.82,RobinWifHat
+metawinners-1,MetaWinners,ethereum,16,1224,0.01307,0,0.05849899,ETH,130.42,2086.79,Meta_Winners
+vaultlings,Vaultlings,robinhood,16,810,0.01975,0,0.0365,ETH,81.38,1302.03,VaultlingsNFT
+veefriends-series-2,VeeFriends Series 2,ethereum,16,19896,0.0008,0,0.0623499999999,ETH,139.01,2224.16,
+0xc21159f412c294ca2c38f2a9ecaaccf9d93ec929,Goat Street,robinhood,15,1987,0.00755,0,0.028993998,ETH,64.64,969.64,CashmereLabs
+invisiblefriends,Invisible Friends,ethereum,15,3258,0.0046,0,0.236997,ETH,528.39,7925.81,InvsbleFriends
+maxextractors,Max Extractors,robinhood,15,391,0.03836,0,0.0033,ETH,7.36,110.36,MaxExtractors
+zygotepods,zygote,base,15,573,0.02618,1,0.0149989,ETH,33.44,501.6,zygote_pods
+genesis-creepz,Creepz by OVERLORD,ethereum,14,2173,0.00644,0,0.1769,ETH,394.4,5521.6,creepz
+glhfers,GLHFers,ethereum,14,829,0.01689,0,0.2376,ETH,529.73,7416.24,GLHFers
+grifters-by-xcopy,Grifters,ethereum,14,467,0.02998,1,12.0,ETH,26754.12,374557.68,XCOPYART
+zero-to-hero-academy,Zero to Hero Academy,robinhood,14,830,0.01687,0,0.012,ETH,26.75,374.56,ZTHAcademy
+gemesis,Gemesis,ethereum,13,47666,0.00027,0,0.01078399999999,ETH,24.04,312.56,openseapro
+gs-on-ape,Gs on Ape,ape_chain,13,1571,0.00827,0,2100.0,APE,233.03,3029.43,GeezOnApe
+mfers,mfers,ethereum,13,5444,0.00239,0,0.1199992,ETH,267.54,3478.01,
+prtscn-ink,PRTSCN,ink,13,1957,0.00664,0,0.0339999,ETH,75.8,985.44,
+remilio-babies,Redacted Remilio Babies,ethereum,13,4177,0.00311,0,0.1149406,ETH,256.26,3331.4,RemilioBaby
+finalbosu,Final Bosu,ethereum,12,1820,0.00659,0,0.014999719999999961,ETH,33.44,401.3,finalbosuX
+monkeyhoodnfts,MonkeyHood,robinhood,12,1204,0.00997,0,0.00446119,ETH,9.95,119.36,MonkeyHoodNFT
+otherside-koda,Otherside Koda,ethereum,12,3238,0.00371,0,0.485,ETH,1081.31,12975.75,OthersideMeta
+skrumpeys,skrumpeys,monad,12,1504,0.00798,0,2809.819,MON,55.05,660.61,skrumpeys
+sunflower-land,Sunflower Land Accounts,polygon,12,245292,5e-05,0,0.0001,WETH,0.22,2.68,0xSunflowerLand
+templars-of-the-storm,Templars of the Storm,ink,12,830,0.01446,0,0.52,ETH,1159.35,13912.14,nadoHQ
+agntstut,AGNTS by tut,robinhood,11,879,0.01251,0,0.0044867,ETH,10.0,110.03,AGNTSOCIAL
+coattailbrokers,Coattail Brokers,robinhood,11,474,0.02321,0,0.008922698699999995,ETH,19.89,218.83,CoattailBrokers
+gorgez,DropDedGorgez,ethereum,11,1224,0.00899,0,0.0219418,ETH,48.92,538.11,DedGorgez
+sappy-seals,Sappy Seals,ethereum,11,2488,0.00442,0,0.05599699999999999,ETH,124.85,1373.3,sappyseals
+apes-bunitori-club,Apes Bunitori Club,base,10,2090,0.00478,0,0.00295,ETH,6.58,65.77,BradApeYuriClub
+arbitrumdao-celebrating-the-third-anniversary,ArbitrumDAO: Celebrating The Third Anniversary,arbitrum,10,69660,0.00014,0,1.99e-05,ETH,0.04,0.44,arbitrum
+bearish,BEARISH,ethereum,10,846,0.01182,0,0.03688,ETH,82.22,822.24,bearish_af
+ibunnies,iBunnies,ink,10,552,0.01812,0,0.00029998,ETH,0.67,6.69,iBunniesOnInk
+max-pain-and-frens-by-xcopy,MAX PAIN AND FRENS,ethereum,10,3258,0.00307,1,0.419999998,ETH,936.39,9363.94,XCOPYART
+murakami-flowers-2022-official,Murakami.Flowers Official,ethereum,10,5027,0.00199,0,0.1444001,ETH,321.94,3219.41,
+onchain-inkpunks,Onchain InkPunks,ink,10,1659,0.00603,0,0.0014578,ETH,3.25,32.5,InkPunksPFPs
+sproto-gremlins,Sproto Gremlins,ethereum,10,1375,0.00727,0,0.2189998,ETH,488.26,4882.62,sprotogremlins
+hypio,Lucky Hypio Winners,hyperevm,9,2593,0.00347,0,1.27998,HYPE,116.82,1051.41,HypioHL
+lazy-lions,Lazy Lions,ethereum,9,4558,0.00197,0,0.08989074,ETH,200.41,1803.71,LazyLionsNFT
+official-v1-punks,CryptoPunks V1 (wrapped),ethereum,9,1175,0.00766,1,1.549999,ETH,3455.74,31101.64,v1punks
+opepen-edition,Opepen Edition,ethereum,9,3472,0.00259,0,0.056997999,ETH,127.08,1143.7,jackbutcher
+tiny-dinos-eth,tiny dinos (eth),ethereum,9,3353,0.00268,0,0.0064599999999,ETH,14.4,129.62,tinydinosnft
+beanzofficial,BEANZ Official,ethereum,8,8110,0.00099,0,0.0304993,ETH,68.0,543.99,Azuki
+crafted-avatars,Habbo: Crafted Avatars,ethereum,8,881,0.00908,0,0.37,ETH,824.92,6599.35,Habbo
+fuwa-angels,fuwa angels,ink,8,282,0.02837,1,0.00822,ETH,18.33,146.61,fuwacousin
+r3tardsnft,r3tards,monad,8,466,0.01717,0,4399.97,MON,86.21,689.64,r3tardsNFT
+slippy-nft,Slippy Club,robinhood,8,470,0.01702,0,0.0257341,ETH,57.37,459.0,Slippyclub
+themutualfun,The Mutual Fun,robinhood,8,978,0.00818,0,0.0699999,ETH,156.07,1248.52,themutualfun
+zoolini-base,Zoolini,base,8,3967,0.00202,0,0.0010999,ETH,2.45,19.62,zoolininfts
+akidcalledbeast,a KID called BEAST,ethereum,7,3007,0.00233,0,0.0813999,ETH,181.48,1270.37,akidcalledbeast
+basedpunks,based punks,base,7,2401,0.00292,0,0.0219017,ETH,48.83,341.81,based
 block-zero-megaeth-x-opensea,Block Zero - MegaETH x OpenSea,megaeth,7,76090,9e-05,0,3.3e-06,ETH,0.01,0.05,opensea
-dreamiliomaker-abstract,DreamilioMaker,abstract,7,1436,0.00487,0,0.0006499,ETH,1.51,10.56,DreamilioMaker
-eye-of-the-seeker,Eye of the Seeker,ink,7,28302,0.00025,0,0.00037399999997,ETH,0.87,6.08,inkonchain
-fuwa-angels,fuwa angels,ink,7,238,0.02941,1,0.00933999999999,ETH,21.68,151.73,fuwacousin
-memelandpotatoz,Memeland Potatoz,ethereum,7,2332,0.003,0,0.025293088366,ETH,58.7,410.89,memeland
-mocaverse,Mocaverse,ethereum,7,2104,0.00333,0,0.12289899,ETH,285.22,1996.52,Moca_Network
-off-the-grid,Off The Grid,gunzilla,7,296722,2e-05,0,16.0,GUN,,,
-persona-base,Persona,base,7,411,0.01703,0,0.0062499,ETH,14.5,101.53,Persona_Journey
-retardio-cousins-solana,Retardio Cousins,solana,7,2276,0.00308,0,0.720003,SOL,72.43,506.98,
-sight-genesis-826300567,Sight Genesis,robinhood,7,541,0.01294,0,0.007721329999999999,ETH,17.92,125.43,sight_hood
-toppsnfts,Topps NFTs,polygon,7,4853,0.00144,0,2.5e-05,WETH,0.06,0.41,ToppsDigital
-veefriends,VeeFriends,ethereum,7,4594,0.00152,0,1.219699,ETH,2830.6,19814.23,veefriends
-abstractio,Abstractio,abstract,6,1247,0.00481,1,0.0018814,ETH,4.37,26.2,bunya_eth
-chonks,Chonks,base,6,13286,0.00045,0,0.00068999,ETH,1.6,9.61,chonksxyz
-deadfellaz,Deadfellaz,ethereum,6,6092,0.00098,0,0.06806095060000023,ETH,157.95,947.71,Deadfellaz
-hype-brokers,Hype Brokers,hyperevm,6,789,0.0076,0,0.0093,HYPE,0.84,5.05,Hype_Brokers
-kaito-genesis,Yapybaras - Kaito Genesis,ethereum,6,958,0.00626,0,0.090797,ETH,210.72,1264.3,KaitoAI
-macarune,Macarune,robinhood,6,405,0.01481,0,0.0099999,ETH,23.21,139.24,WagyuBrands
-meebits,Meebits,ethereum,6,6303,0.00095,0,0.2686555489000002,ETH,623.48,3740.88,MeebitsNFTs
-och-ringbearer,OCH Ringbearer,abstract,6,411,0.0146,0,0.3145,ETH,729.87,4379.24,onchainheroes
-pip-friends,PiP & Friends,hyperevm,6,1751,0.00343,0,0.3999999,HYPE,36.19,217.13,PiPonHL
-pitboys,PitBoys,robinhood,6,680,0.00882,0,0.0124,ETH,28.78,172.66,derp_works
-quotrons404,QUOTRONS,robinhood,6,921,0.00651,0,1.3599837837,ETH,3156.17,18937.01,Quotrons404
-rekt-ink,Rekt Ink,ink,6,1024,0.00586,0,0.0106849,ETH,24.8,148.78,rektink
-renga,RENGA,ethereum,6,2698,0.00222,0,0.043298,ETH,100.48,602.9,RENGA_inc
-riggles,Riggles,robinhood,6,477,0.01258,0,0.0103078,ETH,23.92,143.53,riggles
-sam-spratt-masks-of-luci,Sam Spratt - Masks of Luci,ethereum,6,362,0.01657,0,6.5899,ETH,15293.44,91760.67,
-schizoposters,SchizoPosters,ethereum,6,2104,0.00285,0,0.0682429999999999,ETH,158.37,950.25,SCHIZO_POSTERS
-smowl,SMOWL,ethereum,6,1244,0.00482,0,0.04749999890000022,ETH,110.24,661.41,Darkfarms1
-supducks,SupDucks,ethereum,6,3853,0.00156,0,0.0177659,ETH,41.23,247.38,supducks
-basedapesgang,Based Ape Gang,base,5,769,0.0065,0,0.0148399,ETH,34.44,172.2,BasedApeGang
+dreamiliomaker-abstract,DreamilioMaker,abstract,7,1435,0.00488,0,0.0006499,ETH,1.45,10.14,DreamilioMaker
+eye-of-the-seeker,Eye of the Seeker,ink,7,28302,0.00025,0,0.00038848080884,ETH,0.87,6.06,inkonchain
+meebits,Meebits,ethereum,7,6304,0.00111,0,0.2741383152000002,ETH,611.19,4278.36,MeebitsNFTs
+memelandpotatoz,Memeland Potatoz,ethereum,7,2332,0.003,0,0.025195997869,ETH,56.17,393.22,memeland
+mocaverse,Mocaverse,ethereum,7,2110,0.00332,0,0.111721,ETH,249.08,1743.58,Moca_Network
+off-the-grid,Off The Grid,gunzilla,7,296750,2e-05,0,16.0,GUN,,,
+persona-base,Persona,base,7,412,0.01699,0,0.0068994,ETH,15.38,107.68,Persona_Journey
+retardio-cousins-solana,Retardio Cousins,solana,7,2275,0.00308,0,0.792656,SOL,75.94,531.56,
+sight-genesis-826300567,Sight Genesis,robinhood,7,542,0.01292,0,0.0078302,ETH,17.46,122.2,sight_hood
+toppsnfts,Topps NFTs,polygon,7,4853,0.00144,0,2.27e-05,WETH,0.05,0.35,ToppsDigital
+veefriends,VeeFriends,ethereum,7,4591,0.00152,0,1.2197,ETH,2719.33,19035.33,veefriends
+abstractio,Abstractio,abstract,6,1245,0.00482,1,0.0018799,ETH,4.19,25.15,bunya_eth
+chonks,Chonks,base,6,13287,0.00045,0,0.0006,ETH,1.34,8.03,chonksxyz
+deadfellaz,Deadfellaz,ethereum,6,6092,0.00098,0,0.06669973090000023,ETH,148.71,892.25,Deadfellaz
+hype-brokers,Hype Brokers,hyperevm,6,789,0.0076,0,0.0093,HYPE,0.85,5.09,Hype_Brokers
+kaito-genesis,Yapybaras - Kaito Genesis,ethereum,6,959,0.00626,0,0.090698,ETH,202.21,1213.27,KaitoAI
+macarune,Macarune,robinhood,6,406,0.01478,0,0.0101625,ETH,22.66,135.94,WagyuBrands
+och-ringbearer,OCH Ringbearer,abstract,6,412,0.01456,0,0.307,ETH,684.46,4106.76,onchainheroes
+pip-friends,PiP & Friends,hyperevm,6,1750,0.00343,0,0.6899999,HYPE,62.98,377.86,PiPonHL
+pitboys,PitBoys,robinhood,6,680,0.00882,0,0.0124,ETH,27.65,165.88,derp_works
+quotrons404,QUOTRONS,robinhood,6,922,0.00651,0,1.284,ETH,2862.69,17176.15,Quotrons404
+rekt-ink,Rekt Ink,ink,6,1020,0.00588,0,0.0114,ETH,25.42,152.5,rektink
+renga,RENGA,ethereum,6,2698,0.00222,0,0.043298,ETH,96.53,579.2,RENGA_inc
+riggles,Riggles,robinhood,6,476,0.01261,0,0.0105824,ETH,23.59,141.56,riggles
+sam-spratt-masks-of-luci,Sam Spratt - Masks of Luci,ethereum,6,361,0.01662,0,6.5799,ETH,14669.95,88019.72,
+schizoposters,SchizoPosters,ethereum,6,2104,0.00285,0,0.0654732,ETH,145.97,875.84,SCHIZO_POSTERS
+smowl,SMOWL,ethereum,6,1246,0.00482,0,0.04749999790000022,ETH,105.9,635.41,Darkfarms1
+supducks,SupDucks,ethereum,6,3853,0.00156,0,0.0175108,ETH,39.04,234.24,supducks
+based-fellas,Based Fellas,base,5,3494,0.00143,0,0.0034172,ETH,7.62,38.09,based_fellas
+basedapesgang,Based Ape Gang,base,5,770,0.00649,0,0.0148399,ETH,33.09,165.43,BasedApeGang
 bears-on-the-openthee,Bears on the OpenThee,bera_chain,5,1036054,0.0,0,0.15,BERA,,,opensea
-buumeeofficial,BUUMEE,abstract,5,1633,0.00306,0,0.001145744680851065,ETH,2.66,13.29,myBUUMEE
-cannacats,CannaCats,robinhood,5,199,0.02513,0,0.045,ETH,104.43,522.17,CannaCatMeme
-chain-runners-nft,Chain Runners,ethereum,5,3141,0.00159,0,0.012221,ETH,28.36,141.81,chain_runners
-cryptoskulls,CryptoSkulls,ethereum,5,3852,0.0013,0,0.03683529990000022,ETH,85.49,427.43,Crypto_Skulls
-gobs-on-ape,Gobs On Ape,ape_chain,5,850,0.00588,0,900.9,APE,110.57,552.84,GobsOnApe
-habbo-avatars,Habbo Avatars,ethereum,5,3635,0.00138,0,0.185,ETH,429.34,2146.68,Habbo
-hapeprime,HAPE PRIME,ethereum,5,3757,0.00133,0,0.013995,ETH,32.48,162.39,HAPEsocial
-hash-cats,Hashcats,robinhood,5,721,0.00693,0,0.016749,ETH,38.87,194.35,hashcats_rh
-killergf,Killer GF,ethereum,5,3550,0.00141,0,0.022105,ETH,51.3,256.5,killergfnft
-loopers-639312714,Loopers,base,5,1187,0.00421,0,0.0052342,ETH,12.15,60.74,
-moki-collection,Moki Genesis,ronin,5,2286,0.00219,0,870.0,RON,46.15,230.76,Moku_HQ
-nightglyders,NightGlyders,ape_chain,5,850,0.00588,0,97.9783525,APE,12.02,60.12,nightglyders
-optiapeyachtclub,Optimism Ape Yacht Club,optimism,5,2925,0.00171,0,0.000439,ETH,1.02,5.09,OptiApeYC
-spritehood-wisps,Spritehood Wisps,robinhood,5,3131,0.0016,0,0.0034999,ETH,8.12,40.61,Spritehoodio
-steady-teddys-bera,Steady Teddys BERA,bera_chain,5,2219,0.00225,0,88.95321,BERA,,,
-the-composables,The Composables,ape_chain,5,3229,0.00155,0,139.9998,APE,17.18,85.91,
-the-doge-pound,The Doge Pound,ethereum,5,4868,0.00103,0,0.014188,ETH,32.93,164.63,TheDogePoundNFT
-thezorpians,Zorpians,robinhood,5,738,0.00678,0,0.00056964999999,ETH,1.32,6.61,zorpians
-wild-forest-skins,Wild Forest Skins,ronin,5,23093,0.00022,0,3.33,RON,0.18,0.88,
-adam-bomb-squad,Adam Bomb Squad,ethereum,4,8047,0.0005,0,0.012798,ETH,29.7,118.8,AdamBombSquad
-arsham-voyager,Otherside Arsham Voyager,ape_chain,4,198,0.0202,0,2000.0,APE,245.46,981.85,
-based-fellas,Based Fellas,base,4,3494,0.00114,0,0.0034172,ETH,7.93,31.72,based_fellas
-bloodloop-opensea-collaboration,BloodLoop - OpenSea Collaboration,avalanche,4,198594,2e-05,0,0.005,AVAX,,,BloodLoopGAME
-button-presser,Button Presser,robinhood,4,6127,0.00065,0,0.29,USDG,0.29,1.16,NetNetCap
-ccff00-161927574,CCFF00,robinhood,4,4090,0.00098,0,0.00341,ETH,7.91,31.65,CCFF00club
-chimpers-avatars,Chimpers Avatars,ape_chain,4,2946,0.00136,0,20.0,APE,2.45,9.82,ChimpersHQ
-chumpz-by-saints-of-la,Chumpz by Saints of LA,ape_chain,4,1263,0.00317,0,72.7699816,APE,8.93,35.72,
-creeptopunks-by-hash-1-crush,CreeptoPunks by #1 Crush,ethereum,4,134,0.02985,0,0.007,ETH,16.25,64.98,num1crush
-cryptoadz-by-gremplin,CrypToadz by GREMPLIN,ethereum,4,3464,0.00115,2,0.2376178872000002,ETH,551.45,2205.8,cryptoadzNFT
-dxterminal,DX Terminal,base,4,7864,0.00051,0,0.00163996,ETH,3.81,15.22,DXRGai
-hop-starz,Hop Starz,ape_chain,4,4058,0.00099,0,84.00999999,APE,10.31,41.24,
-iccm-syndicate-collection,ICCM Syndicate Collection,base,4,530,0.00755,0,0.001385,ETH,3.21,12.86,
-inbetweeners,inBetweeners by GianPiero,ethereum,4,5060,0.00079,0,0.0031897,ETH,7.4,29.61,inBetweenersNFT
-jnkyz,JNKYZ,ape_chain,4,1128,0.00355,0,47.4862577,APE,5.83,23.31,JNKYZ420
-loudpunx,LoudPunx,ethereum,4,1054,0.0038,0,0.299,ETH,693.9,2775.61,loudpunxnft
-molandaks-monad,Molandaks,monad,4,1091,0.00367,0,138.9,MON,2.89,11.57,molandaks_xyz
-persona,Persona,ethereum,4,1517,0.00264,0,0.006025985,ETH,13.98,55.94,Persona_Journey
-phygitals,Phygitals,solana,4,31403,0.00013,0,0.25,USDC,0.25,1.0,
-pixelady-maker-cata-abstract,Pixelady Maker CATA,abstract,4,2889,0.00138,0,0.0012699,ETH,2.95,11.79,PixeladyMaker
-re-gens,Regenerates,base,4,1783,0.00224,1,0.0594394,ETH,137.94,551.77,re_generates
-robotos-official,Robotos,ethereum,4,5224,0.00077,0,0.01719,ETH,39.89,159.57,robotosNFT
-the-bullpen-solana,The Bullpen,solana,4,728,0.00549,0,0.41088,SOL,41.33,165.32,bullpen_nft
-unicred,UNICRED,unichain,4,713,0.00561,0,0.001045,ETH,2.43,9.7,Unicred0
-wasteland-art,Wasteland,robinhood,4,690,0.0058,0,0.0019099964,ETH,4.43,17.73,WastelandRH
-0n1-force,0N1 Force,ethereum,3,3252,0.00092,0,0.035596099999,ETH,82.61,247.83,0n1Force
-74894684482486462,Tollan Universe Genesis Avatars,abstract,3,542,0.00554,0,0.02,ETH,46.41,139.24,TollanUniverse
-a7x-rewards,Deathbat Rewards,polygon,3,79961,4e-05,0,0.00014,WETH,0.32,0.97,TheOfficialA7X
-acclimatedmooncats,MoonCats,ethereum,3,5428,0.00055,0,0.12199999890000023,ETH,283.13,849.39,mooncatrescue
-anitaonink,ANITA,ink,3,715,0.0042,0,0.0075,ETH,17.41,52.22,ANITAONINKCTO
-bulltoshi,Bulltoshi,solana,3,788,0.00381,0,0.01712,SOL,1.72,5.17,bulltoshi06
-bywassies,ByWassies,ethereum,3,2609,0.00115,0,0.054993999,ETH,127.63,382.88,ByWassies
-cambria-charters,Cambria Charters,ethereum,3,1100,0.00273,0,0.046999,ETH,109.07,327.22,playcambria
-chromie-squiggle-by-snowfro,Chromie Squiggle by Snowfro,ethereum,3,2939,0.00102,0,1.9672,ETH,4565.36,13696.08,artblocks_io
-clickihood,Clickihood,robinhood,3,687,0.00437,0,0.00013999999999,ETH,0.32,0.97,clickihood
-creatures,Creatures,ethereum,3,5673,0.00053,0,0.011999998900000223,ETH,27.85,83.55,creatureworld
-crypto-bull-society,Crypto Bull Society,ethereum,3,3699,0.00081,0,0.0059579,ETH,13.83,41.48,cryptobulls_wtf
-cryptobatz-by-ozzy-osbourne,CryptoBatz by Ozzy Osbourne,ethereum,3,5661,0.00053,0,0.01342,ETH,31.14,93.43,CryptoBatzNFT
-cyberkongz-vx,CyberKongz VX,ethereum,3,3529,0.00085,0,0.007,ETH,16.25,48.74,CyberKongz
-decentraland-polygon-wearables,Decentraland Wearables (Polygon),polygon,3,186510,2e-05,0,0.0001,WETH,0.23,0.7,
-digitalhumans,Digital humans,robinhood,3,1920,0.00156,0,0.00136,ETH,3.16,9.47,SoulsClubInc
-get-based-primitives-edition,Get Based - Primitives Edition,base,3,105395,3e-05,0,1.1e-05,ETH,0.03,0.08,gmhuntergm
-ghost-machine,GHOST MACHINE,ape_chain,3,2959,0.00101,0,14.7,APE,1.8,5.41,GM_DFZ
-gigaverse-names,Gigaverse Names,abstract,3,82207,4e-05,0,9e-05,ETH,0.21,0.63,playgigaverse
-goblintownwtf,goblintown.wtf,ethereum,3,4081,0.00074,0,0.0348,ETH,80.76,242.29,goblintown
-grand-arena-cards,Grand Arena Cards,ronin,3,4602,0.00065,0,0.28,RON,0.01,0.04,Moku_HQ
-hashmasks,Hashmasks,ethereum,3,5120,0.00059,0,0.059898999,ETH,139.01,417.03,TheHashmasks
-hv-mtl,HV-MTL Auxiliary Core,ethereum,3,6084,0.00049,0,0.0061016,ETH,14.16,42.48,HV_MTL
-jimmy,Jimmy,ape_chain,3,1869,0.00161,0,19.8999999,APE,2.44,7.33,jimmyapeclub
-kaiju-kingz,Kaiju Kingz,ethereum,3,3331,0.0009,0,0.0067373,ETH,15.64,46.91,KaijuKingz
-kokomoji-official,Kokomoji,ethereum,3,508,0.00591,0,0.007842999999,ETH,18.2,54.6,Kokomojinft
-lilpuffins,Lil Puffins,abstract,3,965,0.00311,0,0.00015,ETH,0.35,1.04,ppuffins
-livesofasuna,Lives of Asuna,ethereum,3,3960,0.00076,0,0.005665,ETH,13.15,39.44,LivesOfAsuna
-lostpoets,LOSTPOETS,ethereum,3,7524,0.0004,0,0.00479969,ETH,11.14,33.42,poetslost
+buumeeofficial,BUUMEE,abstract,5,1632,0.00306,0,0.001145744680851065,ETH,2.55,12.77,myBUUMEE
+cannacats,CannaCats,robinhood,5,199,0.02513,0,0.04899999,ETH,109.25,546.23,CannaCatMeme
+chain-runners-nft,Chain Runners,ethereum,5,3141,0.00159,0,0.012221,ETH,27.25,136.23,chain_runners
+cryptoskulls,CryptoSkulls,ethereum,5,3852,0.0013,0,0.03609858990000022,ETH,80.48,402.41,Crypto_Skulls
+gobs-on-ape,Gobs On Ape,ape_chain,5,851,0.00588,0,908.999,APE,100.87,504.35,GobsOnApe
+habbo-avatars,Habbo Avatars,ethereum,5,3634,0.00138,0,0.189989,ETH,423.58,2117.91,Habbo
+hapeprime,HAPE PRIME,ethereum,5,3757,0.00133,0,0.013995,ETH,31.2,156.01,HAPEsocial
+hash-cats,Hashcats,robinhood,5,716,0.00698,0,0.0162948,ETH,36.33,181.65,hashcats_rh
+invisible-friends-editions,Invisible Friends Editions,ethereum,5,5068,0.00099,0,0.00239,ETH,5.33,26.64,InvsbleFriends
+loopers-639312714,Loopers,base,5,1188,0.00421,0,0.0048069,ETH,10.72,53.59,
+moki-collection,Moki Genesis,ronin,5,2286,0.00219,0,870.0,RON,43.34,216.68,Moku_HQ
+nightglyders,NightGlyders,ape_chain,5,851,0.00588,0,97.96383019,APE,10.87,54.35,nightglyders
+optiapeyachtclub,Optimism Ape Yacht Club,optimism,5,2925,0.00171,0,0.000429,ETH,0.96,4.78,OptiApeYC
+persona,Persona,ethereum,5,1517,0.0033,0,0.0064981,ETH,14.49,72.44,Persona_Journey
+spritehood-wisps,Spritehood Wisps,robinhood,5,3131,0.0016,0,0.0032253,ETH,7.19,35.95,Spritehoodio
+steady-teddys-bera,Steady Teddys BERA,bera_chain,5,2219,0.00225,0,88.9414001,BERA,,,
+the-composables,The Composables,ape_chain,5,3229,0.00155,0,139.9998,APE,15.54,77.68,
+the-doge-pound,The Doge Pound,ethereum,5,4868,0.00103,0,0.014186,ETH,31.63,158.14,TheDogePoundNFT
+thezorpians,Zorpians,robinhood,5,739,0.00677,0,0.00045499999807,ETH,1.01,5.07,zorpians
+wild-forest-skins,Wild Forest Skins,ronin,5,23092,0.00022,0,3.33,RON,0.17,0.83,
+adam-bomb-squad,Adam Bomb Squad,ethereum,4,8046,0.0005,0,0.0124,ETH,27.65,110.58,AdamBombSquad
+arsham-voyager,Otherside Arsham Voyager,ape_chain,4,198,0.0202,0,2000.0,APE,221.94,887.74,
+bloodloop-opensea-collaboration,BloodLoop - OpenSea Collaboration,avalanche,4,198593,2e-05,0,0.005,AVAX,,,BloodLoopGAME
+button-presser,Button Presser,robinhood,4,6126,0.00065,0,0.28,USDG,0.28,1.12,NetNetCap
+ccff00-161927574,CCFF00,robinhood,4,4070,0.00098,0,0.0027432,ETH,6.12,24.46,CCFF00club
+chimpers-avatars,Chimpers Avatars,ape_chain,4,2946,0.00136,0,20.0,APE,2.22,8.88,ChimpersHQ
+chumpz-by-saints-of-la,Chumpz by Saints of LA,ape_chain,4,1263,0.00317,0,72.769269,APE,8.08,32.3,
+creeptopunks-by-hash-1-crush,CreeptoPunks by #1 Crush,ethereum,4,133,0.03008,0,0.007,ETH,15.61,62.43,num1crush
+cryptoadz-by-gremplin,CrypToadz by GREMPLIN,ethereum,4,3464,0.00115,2,0.2328655289000002,ETH,519.18,2076.7,cryptoadzNFT
+digitalhumans,Digital humans,robinhood,4,1828,0.00219,0,0.001482,ETH,3.3,13.22,SoulsClubInc
+dxterminal,DX Terminal,base,4,7863,0.00051,0,0.0016393,ETH,3.65,14.62,DXRGai
+hop-starz,Hop Starz,ape_chain,4,4058,0.00099,0,84.00999999,APE,9.32,37.29,
+iccm-syndicate-collection,ICCM Syndicate Collection,base,4,530,0.00755,0,0.001385,ETH,3.09,12.35,
+inbetweeners,inBetweeners by GianPiero,ethereum,4,5058,0.00079,0,0.0039,ETH,8.7,34.78,inBetweenersNFT
+jnkyz,JNKYZ,ape_chain,4,1127,0.00355,0,47.4839287,APE,5.27,21.08,JNKYZ420
+killergf,Killer GF,ethereum,4,3551,0.00113,0,0.022471,ETH,50.1,200.4,killergfnft
+loudpunx,LoudPunx,ethereum,4,1054,0.0038,0,0.316,ETH,704.53,2818.1,loudpunxnft
+molandaks-monad,Molandaks,monad,4,1092,0.00366,0,138.88,MON,2.72,10.88,molandaks_xyz
+phygitals,Phygitals,solana,4,31456,0.00013,0,0.25,USDC,0.25,1.0,
+pixelady-maker-cata-abstract,Pixelady Maker CATA,abstract,4,2886,0.00139,0,0.0012699,ETH,2.83,11.33,PixeladyMaker
+re-gens,Regenerates,base,4,1782,0.00224,1,0.0669399,ETH,149.24,596.97,re_generates
+robotos-official,Robotos,ethereum,4,5223,0.00077,0,0.01662,ETH,37.05,148.22,robotosNFT
+unicred,UNICRED,unichain,4,713,0.00561,0,0.001045,ETH,2.33,9.32,Unicred0
+wasteland-art,Wasteland,robinhood,4,690,0.0058,0,0.00249399999,ETH,5.56,22.24,WastelandRH
+0n1-force,0N1 Force,ethereum,3,3252,0.00092,0,0.0379999,ETH,84.72,254.16,0n1Force
+74894684482486462,Tollan Universe Genesis Avatars,abstract,3,542,0.00554,0,0.0192,ETH,42.81,128.42,TollanUniverse
+a7x-rewards,Deathbat Rewards,polygon,3,80030,4e-05,0,0.000145,WETH,0.32,0.97,TheOfficialA7X
+abstractchickens,Abstract Chickens,abstract,3,1375,0.00218,0,0.03174,ETH,70.76,212.29,0xQuit
+acclimatedmooncats,MoonCats,ethereum,3,5428,0.00055,0,0.12199999890000023,ETH,272.0,816.0,mooncatrescue
+anitaonink,ANITA,ink,3,714,0.0042,0,0.0087969,ETH,19.61,58.84,ANITAONINKCTO
+bulltoshi,Bulltoshi,solana,3,789,0.0038,0,0.01712,SOL,1.64,4.92,bulltoshi06
+bywassies,ByWassies,ethereum,3,2609,0.00115,0,0.054987999,ETH,122.6,367.79,ByWassies
+cambria-charters,Cambria Charters,ethereum,3,1058,0.00284,0,0.038899,ETH,86.73,260.18,playcambria
+chromie-squiggle-by-snowfro,Chromie Squiggle by Snowfro,ethereum,3,2940,0.00102,0,2.045,ETH,4559.35,13678.04,artblocks_io
+clickihood,Clickihood,robinhood,3,688,0.00436,0,9.999999999e-05,ETH,0.22,0.67,clickihood
+creatures,Creatures,ethereum,3,5673,0.00053,0,0.011999998900000223,ETH,26.75,80.26,creatureworld
+crypto-bull-society,Crypto Bull Society,ethereum,3,3699,0.00081,0,0.0069227,ETH,15.43,46.3,cryptobulls_wtf
+cryptobatz-by-ozzy-osbourne,CryptoBatz by Ozzy Osbourne,ethereum,3,5661,0.00053,0,0.01338,ETH,29.83,89.49,CryptoBatzNFT
+cyberkongz,CyberKongz,ethereum,3,538,0.00558,0,0.85,ETH,1895.08,5685.25,CyberKongz
+decentraland-polygon-wearables,Decentraland Wearables (Polygon),polygon,3,186510,2e-05,0,0.0001,WETH,0.22,0.67,
+ghost-machine,GHOST MACHINE,ape_chain,3,2958,0.00101,0,14.6989,APE,1.63,4.89,GM_DFZ
+gigaverse-names,Gigaverse Names,abstract,3,82207,4e-05,0,9e-05,ETH,0.2,0.6,playgigaverse
+goblintownwtf,goblintown.wtf,ethereum,3,4081,0.00074,0,0.0348,ETH,77.59,232.76,goblintown
+grand-arena-cards,Grand Arena Cards,ronin,3,4603,0.00065,0,0.28,RON,0.01,0.04,Moku_HQ
+hashmasks,Hashmasks,ethereum,3,5119,0.00059,0,0.0649,ETH,144.7,434.09,TheHashmasks
+jimmy,Jimmy,ape_chain,3,1868,0.00161,0,19.8999999,APE,2.21,6.62,jimmyapeclub
+kaiju-kingz,Kaiju Kingz,ethereum,3,3331,0.0009,0,0.0067373,ETH,15.02,45.06,KaijuKingz
+kokomoji-official,Kokomoji,ethereum,3,506,0.00593,0,0.0075797,ETH,16.9,50.7,Kokomojinft
+lilpuffins,Lil Puffins,abstract,3,965,0.00311,0,0.00015,ETH,0.33,1.0,ppuffins
+livesofasuna,Lives of Asuna,ethereum,3,3960,0.00076,0,0.00567,ETH,12.64,37.92,LivesOfAsuna
+lostpoets,LOSTPOETS,ethereum,3,7525,0.0004,0,0.00479938,ETH,10.7,32.1,poetslost
 mibera333,Mibera Maker,bera_chain,3,2697,0.00111,0,66.9999978,BERA,,,miberamaker333
-moody-madness-assets,Moody Madness Assets,abstract,3,58219,5e-05,0,1e-12,ETH,0.0,0.0,MoodyMights
-mooniezworld,Mooniez,robinhood,3,226,0.01327,0,0.0029199,ETH,6.78,20.33,MooniezHQ
-mypethooligan,My Pet Hooligan,ethereum,3,3258,0.00092,0,0.0123605,ETH,28.69,86.06,mypethooligan
-nba-top-shot,NBA Top Shot,flow,3,15653,0.00019,0,10.0,FLOW,,,NBATopShot
-nftoshis-2-0-7,NFToshis 2.0,base,3,1318,0.00228,0,0.01143619,ETH,26.54,79.62,Toshi_base
-nodes-by-hunter,NODES,base,3,882,0.0034,0,0.0062309,ETH,14.46,43.38,gmhunterart
-nouns,Nouns,ethereum,3,504,0.00595,1,0.849999,ETH,1972.63,5917.88,nounsdao
-odd-otties-hyperevm,Odd Otties,hyperevm,3,1119,0.00268,0,0.2899943,HYPE,26.24,78.71,ottionhl
-onchain-gaias,onchain gaias,base,3,2215,0.00135,0,0.01487188,ETH,34.51,103.54,onchaingaias
-primeapeplanet-base,PrimeApePlanet,base,3,936,0.00321,0,0.01602588,ETH,37.19,111.58,PrimeApePlanet
-project-aeon,Project AEON,ethereum,3,1178,0.00255,0,0.428434,ETH,994.28,2982.85,ProjectAeon3333
-ronkeverse,Ronkeverse,ronin,3,1856,0.00162,0,695.0,RON,36.87,110.61,RonkeOnRon
-sloooths,Sloooths,ape_chain,3,1069,0.00281,1,78.99999996,APE,9.7,29.09,Sloooths
-the-ecstasy-of-maximals,THE ECSTASY OF MAXIMALS,shape,3,212,0.01415,1,0.0149999999999,ETH,34.81,104.43,shape
-the-weirdo-ghost-gang,The Weirdo Ghost Gang,ethereum,3,1812,0.00166,0,0.00899,ETH,20.86,62.59,WeirdoGhostGang
-thememes6529,The Memes by 6529,ethereum,3,10578,0.00028,0,0.014195,ETH,32.94,98.83,6529er
-trex-rexy,Rexy,arbitrum,3,1940,0.00155,0,0.0036914,ETH,8.57,25.7,TREX_chain
-variance-collection,Variance,somnia,3,3448,0.00087,0,8.25,SOMI,,,playvariance
-vrnouns,VRNouns,base,3,2549,0.00118,0,0.0189999,ETH,44.09,132.28,vrnouns
-wild-forest-units,Wild Forest Units,ronin,3,155788,2e-05,0,1.55,RON,0.08,0.25,playwildforest
-wiredonink,WIRED,ink,3,198,0.01515,0,0.33,ETH,765.84,2297.53,WiredonInk
-world-computer-netizens-megaeth,World Computer Netizens,megaeth,3,1349,0.00222,0,0.0126697,ETH,29.4,88.21,WCNetizens
-zards,Zards,ape_chain,3,920,0.00326,1,198.9099999,APE,24.41,73.24,ZardsNFT
-abstra-universe-abstract,Abstra Universe,abstract,2,4052,0.00049,0,0.0001,ETH,0.23,0.46,AbstraUniverse
-abstractchickens,Abstract Chickens,abstract,2,1378,0.00145,0,0.0323,ETH,74.96,149.92,0xQuit
-akidcalledbeast-legacy,a KID called BEAST [LEGACY],ethereum,2,2806,0.00071,0,0.04933889,ETH,114.5,229.01,akidcalledbeast
-alienfrensnft,alien frens,ethereum,2,5797,0.00035,0,0.0129999,ETH,30.17,60.34,alienfrens
-alienonape,Alien on Ape,ape_chain,2,642,0.00312,1,39.999998,APE,4.91,9.82,AlienOnApe
-apegang-ape,Ape Gang,ape_chain,2,1031,0.00194,0,73.0358938,APE,8.96,17.93,BasedApeGang
-apocalyptic-apes,Apocalyptic Apes,ethereum,2,3023,0.00066,0,0.00731,ETH,16.96,33.93,Fityeth
-asm-brains,ASM B.R.A.I.N.S.,ethereum,2,2820,0.00071,0,0.0013247,ETH,3.07,6.15,altstatemachine
-bald-brothers-hyperevm,bald bröthers,hyperevm,2,1777,0.00113,0,0.0495,HYPE,4.48,8.96,baldbrothers_
-based-minis,BASED MINIS,base,2,1490,0.00134,0,0.0069099,ETH,16.04,32.07,BasedMinis
-based-nouns,Based Nouns,base,2,1005,0.00199,0,0.0149498,ETH,34.69,69.39,basednouns
-based-onchain-punks,Based OnChain Punks,base,2,3143,0.00064,0,0.0034794,ETH,8.07,16.15,OnChainPunksNFT
-bodoggos,Bodoggos,solana,2,3280,0.00061,0,0.4,SOL,40.24,80.47,bodoggos
-bookgames,Book Games by VeeFriends,base,2,2041,0.00098,0,0.0475,ETH,110.24,220.47,veefriends
-cambriaislands,Cambria Islands,ethereum,2,870,0.0023,0,0.05189787234042553,ETH,120.44,240.88,playcambria
-capsulehouse,Capsule House,ethereum,2,3434,0.00058,0,0.0088,ETH,20.42,40.85,capsule_house
-cat-town-founder-collection,Cat Town | Founder Collection,base,2,283,0.00707,0,0.0209216,ETH,48.55,97.11,CatTownBase
-cets-solana,Cets,solana,2,3226,0.00062,0,0.39483,SOL,39.72,79.43,cetsfk
-chain-punks-nft,Chain Punks,ethereum,2,928,0.00216,0,0.00454,ETH,10.54,21.07,ChainPunksNFT
-chainzilla,ChainZilla,ape_chain,2,746,0.00268,0,9.8797099999999,APE,1.21,2.43,
-collector-crypt,Collector Crypt,solana,2,20019,0.0001,0,9.99,USDC,9.99,19.98,
-coolcats-x-reddit,Cool Cats x Reddit Collectible Avatars,polygon,2,2297,0.00087,0,0.00224999,WETH,5.22,10.44,coolcats
-courtyard-nft,Courtyard.io,polygon,2,134341,1e-05,0,5.57,USDC,5.57,11.14,Courtyard_io
-cyberkongz,CyberKongz,ethereum,2,538,0.00372,0,0.85,ETH,1972.63,3945.26,CyberKongz
-doopies-solana,Doopies,solana,2,2017,0.00099,0,0.3579,SOL,36.0,72.0,doodles
-dourdarcels,DourDarcels,ethereum,2,3995,0.0005,0,0.0065489,ETH,15.2,30.4,DourDarcelsNFT
-eggryptomonster-1,EGGRYPTO Monsters,polygon,2,7158,0.00028,0,0.003,WETH,6.96,13.92,eggrypto
-fluf,FLUF World,ethereum,2,3097,0.00065,0,0.00599,ETH,13.9,27.8,flufworld
-footium-clubs,Footium Clubs,arbitrum,2,1719,0.00116,0,0.0069489999999999,ETH,16.13,32.25,Footium
-forgottenruneswizardscult,Forgotten Runes Wizards Cult,ethereum,2,2844,0.0007,0,0.06,ETH,139.24,278.49,forgottenrunes
-fresh-hell,FRESH HELL,ethereum,2,158,0.01266,0,4.949,ETH,11485.34,22970.68,XCOPYART
-galactic-geckos-solana,Galactic Geckos,solana,2,2814,0.00071,0,4.1413902,SOL,416.58,833.16,
-galaxyeggs9999,Galaxy-Eggs,ethereum,2,3742,0.00053,0,0.014096,ETH,32.71,65.43,galaxy_eggs
-genkai-ronin,Genkai,ronin,2,2776,0.00072,0,298.0,RON,15.81,31.62,
-halo-nodes,Halo Nodes,robinhood,2,201,0.00995,0,0.00490117,ETH,11.37,22.75,HaloNodes
-hamieverse-genesis-old,Hamieverse Legacy,abstract,2,210,0.00952,0,0.02969,ETH,68.9,137.81,hamieverse
-kaoforms,Kaoforms,robinhood,2,346,0.00578,0,0.0201,ETH,46.65,93.29,artmachinexyz
-killabears,KILLABEARS,ethereum,2,810,0.00247,0,0.0488,ETH,113.25,226.5,killabearsnft
-legend-of-breadio-loafarina-of-time,Legend Of Breadio: Loafarina Of Time,megaeth,2,1486,0.00135,0,0.00039,ETH,0.91,1.81,Tuteth_
-lil-bangers-,Lil' Bangers,base,2,1271,0.00157,0,0.0048998,ETH,11.37,22.74,vibezgm
-mad-lads,Mad Lads,solana,2,6158,0.00032,0,7.88535,SOL,793.19,1586.37,MadLads
-megalio,Megalio,megaeth,2,707,0.00283,0,0.0024999999999,ETH,5.8,11.6,MegalioETH
-midevil-solana,MidEvil,solana,2,881,0.00227,0,0.3131838,SOL,31.5,63.01,MidEvilsNFT
-mineboys,MineBoys,ape_chain,2,158,0.01266,0,262.8929628,APE,32.27,64.53,
-mudwater-packs,Mudwater Packs,solana,2,1667,0.0012,0,0.8,SOL,80.47,160.94,BoredApeYC
-nodepunk,NodePunks,base,2,2908,0.00069,0,0.000399999999,ETH,0.93,1.86,N0DEPunks
-official-moar-by-joan-cornella,"""MOAR"" by Joan Cornella",ethereum,2,2905,0.00069,0,0.01289,ETH,29.91,59.83,fwenclub
-officialsnoozies,Snoozies,base,2,833,0.0024,0,0.0045398,ETH,10.54,21.07,snooziesNFT
-okcomputers,OK COMPUTERS,base,2,1498,0.00134,0,0.0306907,ETH,71.23,142.45,dailofrog
-otherside-wearables,Otherside Wearables,ape_chain,2,14352,0.00014,0,0.84,APE,0.1,0.21,OthersideMeta
-polygonapetheevolution,Polygon Ape: The Evolution,polygon,2,1918,0.00104,0,0.000698,WETH,1.62,3.24,0xPolygonApe
-psychedelics-anonymous-genesis,Psychedelics Anonymous,ethereum,2,3674,0.00054,0,0.0229461,ETH,53.25,106.5,psychanon
-puccaworld,Pucca World,base,2,1186,0.00169,0,0.00244686,ETH,5.68,11.36,official_pucca
-shellies-ink,Shellies,ink,2,1056,0.00189,0,0.0025256,ETH,5.86,11.72,Shellies_NFTs
-squink-108031948,Squink,ink,2,464,0.00431,1,0.001956499997789929,ETH,4.54,9.08,squinkfun
-swatches-by-jvmi,swatches by jvmi,base,2,3341,0.0006,0,0.00148998999,ETH,3.46,6.92,jvmi_
-the-conmen-solana,The Conmen,solana,2,678,0.00295,0,0.0321,SOL,3.23,6.46,TheConmenNFT
-the-singularity-x-reddit-collectible-avatars,The Singularity x Reddit Collectible Avatars,polygon,2,1618811,0.0,0,0.42,WETH,974.71,1949.42,
-tinybasedfrogs,tiny based frogs,base,2,392,0.0051,0,0.03484,ETH,80.85,161.71,dailofrog
-trenchersonape,Trenchers On Ape,ape_chain,2,554,0.00361,0,57.9243508,APE,7.11,14.22,TrenchtownNFT
-trump-digital-trading-cards-series-2,Trump Digital Trading Cards Series 2,polygon,2,6892,0.00029,0,0.0027969,WETH,6.49,12.98,CollectTrump
-tubby-cats,tubby cats,ethereum,2,7009,0.00029,0,0.0083,ETH,19.26,38.52,
-typical-tigers-apechain,Typical Tigers on Apechain,ape_chain,2,1207,0.00166,0,89.0,APE,10.92,21.85,TypicalTigerNFT
-voting-escrow-dust,Voting Escrow DUST,monad,2,1591,0.00126,0,16.97,MON,0.35,0.71,Neverland_Money
-wonderpals,WonderPals,ethereum,2,5425,0.00037,0,0.0063,ETH,14.62,29.24,wonderpals
-yardkeepers,Yardkeepers,robinhood,2,379,0.00528,0,0.119,ETH,276.17,552.34,
-yield-field-deeds,Yield Field Deeds,robinhood,2,1214,0.00165,0,0.85,ETH,1972.63,3945.26,YieldFields_RH
-zkargos,zkArgos,ethereum,2,1811,0.0011,0,0.00035,ETH,0.81,1.62,zkArgoseth
-1337-brians,1337 Brians,base,1,3165,0.00032,0,0.00162429780065,ETH,3.77,3.77,
-abstract-hotdogs-abstract,Abstract Hotdogs,abstract,1,1463,0.00068,0,0.00013,ETH,0.3,0.3,hotdogs_wtf
-abstract-pepes-abstract,Abstract Pepes,abstract,1,998,0.001,0,0.00075,ETH,1.74,1.74,Abstract_Pepes
-akutars,Akutars,ethereum,1,4789,0.00021,0,0.0098,ETH,22.74,22.74,AkuDreams
-antonymgenesis,Antonym: GENESIS,ethereum,1,3803,0.00026,0,0.0009111,ETH,2.11,2.11,antonym_lab
-apes-on-apechain,Apes on Ape,ape_chain,1,1454,0.00069,0,98.3885714,APE,12.08,12.08,
-apesea,ApeSea,ape_chain,1,1130,0.00088,0,23.39882999,APE,2.87,2.87,
-audioglyphs,Audioglyphs,ethereum,1,2615,0.00038,0,0.00614,ETH,14.25,14.25,audioglyphs
-avatariscollection,AvATARIs Collection,polygon,1,715,0.0014,0,0.000739,WETH,1.72,1.72,TheSandboxGame
-bad-bunnz-megaeth,Bad Bunnz,megaeth,1,504,0.00198,0,0.0117989,ETH,27.38,27.38,badbunnz_
-balloons-by-balloons,BALLOONS,ape_chain,1,834,0.0012,0,123.8874669,APE,15.2,15.2,balloonsonape
-bario-punks,Bario Punks,base,1,562,0.00178,0,0.0126392,ETH,29.33,29.33,BaseBario
-basepaint,BasePaint,base,1,34973,3e-05,0,0.00086995498713,ETH,2.02,2.02,basepaint_xyz
-bera-punks,Bera Punks,arbitrum,1,1800,0.00056,0,0.0001,ETH,0.23,0.23,Bera_Punks
+moody-madness-assets,Moody Madness Assets,abstract,3,58220,5e-05,0,1e-12,ETH,0.0,0.0,MoodyMights
+mooniezworld,Mooniez,robinhood,3,225,0.01333,0,0.0022399,ETH,4.99,14.98,MooniezHQ
+mypethooligan,My Pet Hooligan,ethereum,3,3260,0.00092,0,0.01099,ETH,24.5,73.51,mypethooligan
+nba-top-shot,NBA Top Shot,flow,3,15653,0.00019,0,7.99995,FLOW,,,NBATopShot
+nftoshis-2-0-7,NFToshis 2.0,base,3,1319,0.00227,0,0.011436,ETH,25.5,76.49,Toshi_base
+nodes-by-hunter,NODES,base,3,881,0.00341,0,0.006,ETH,13.38,40.13,gmhunterart
+nouns,Nouns,ethereum,3,500,0.006,1,1.489,ETH,3319.74,9959.22,nounsdao
+odd-otties-hyperevm,Odd Otties,hyperevm,3,1119,0.00268,0,0.2899939,HYPE,26.47,79.4,ottionhl
+onchain-gaias,onchain gaias,base,3,2220,0.00135,0,0.0140994,ETH,31.43,94.3,onchaingaias
+primeapeplanet-base,PrimeApePlanet,base,3,936,0.00321,0,0.014301,ETH,31.88,95.65,PrimeApePlanet
+project-aeon,Project AEON,ethereum,3,1178,0.00255,0,0.377,ETH,840.53,2521.58,ProjectAeon3333
+ronkeverse,Ronkeverse,ronin,3,1854,0.00162,0,695.0,RON,34.62,103.86,RonkeOnRon
+sloooths,Sloooths,ape_chain,3,1069,0.00281,1,78.9999999,APE,8.77,26.3,Sloooths
+the-bullpen-solana,The Bullpen,solana,3,731,0.0041,0,0.363729255,SOL,34.85,104.54,bullpen_nft
+the-ecstasy-of-maximals,THE ECSTASY OF MAXIMALS,shape,3,212,0.01415,1,0.0149999999999,ETH,33.44,100.33,shape
+the-weirdo-ghost-gang,The Weirdo Ghost Gang,ethereum,3,1812,0.00166,0,0.00899,ETH,20.04,60.13,WeirdoGhostGang
+thememes6529,The Memes by 6529,ethereum,3,10576,0.00028,0,0.0135,ETH,30.1,90.3,6529er
+trenchersonape,Trenchers On Ape,ape_chain,3,554,0.00542,0,57.3441285,APE,6.36,19.09,TrenchtownNFT
+trex-rexy,Rexy,arbitrum,3,1942,0.00154,0,0.0031404,ETH,7.0,21.0,TREX_chain
+variance-collection,Variance,somnia,3,3448,0.00087,0,8.2,SOMI,,,playvariance
+vrnouns,VRNouns,base,3,2549,0.00118,0,0.0179998,ETH,40.13,120.39,vrnouns
+wild-forest-units,Wild Forest Units,ronin,3,155788,2e-05,0,1.55,RON,0.08,0.23,playwildforest
+wiredonink,WIRED,ink,3,195,0.01538,0,0.33,ETH,735.74,2207.21,WiredonInk
+world-computer-netizens-megaeth,World Computer Netizens,megaeth,3,1349,0.00222,0,0.0126697,ETH,28.25,84.74,WCNetizens
+yield-field-deeds,Yield Field Deeds,robinhood,3,1209,0.00248,0,0.85,ETH,1895.08,5685.25,YieldFields_RH
+zards,Zards,ape_chain,3,920,0.00326,1,198.88,APE,22.07,66.21,ZardsNFT
+abstra-universe-abstract,Abstra Universe,abstract,2,4052,0.00049,0,0.0001,ETH,0.22,0.45,AbstraUniverse
+akidcalledbeast-legacy,a KID called BEAST [LEGACY],ethereum,2,2806,0.00071,0,0.04933889,ETH,110.0,220.0,akidcalledbeast
+alienfrensnft,alien frens,ethereum,2,5800,0.00034,0,0.012499999900000223,ETH,27.87,55.74,alienfrens
+alienonape,Alien on Ape,ape_chain,2,643,0.00311,1,34.99999899,APE,3.88,7.77,AlienOnApe
+apegang-ape,Ape Gang,ape_chain,2,1031,0.00194,0,73.0293357,APE,8.1,16.21,BasedApeGang
+apocalyptic-apes,Apocalyptic Apes,ethereum,2,3023,0.00066,0,0.00719,ETH,16.03,32.06,Fityeth
+asm-brains,ASM B.R.A.I.N.S.,ethereum,2,2820,0.00071,0,0.0012987,ETH,2.9,5.79,altstatemachine
+bald-brothers-hyperevm,bald bröthers,hyperevm,2,1777,0.00113,0,0.0495,HYPE,4.52,9.04,baldbrothers_
+based-minis,BASED MINIS,base,2,1490,0.00134,0,0.0067999,ETH,15.16,30.32,BasedMinis
+based-nouns,Based Nouns,base,2,1005,0.00199,0,0.0139498,ETH,31.1,62.2,basednouns
+based-onchain-punks,Based OnChain Punks,base,2,3141,0.00064,0,0.0034794,ETH,7.76,15.51,OnChainPunksNFT
+bodoggos,Bodoggos,solana,2,3279,0.00061,0,0.4,SOL,38.32,76.64,bodoggos
+bookgames,Book Games by VeeFriends,base,2,2040,0.00098,0,0.0549,ETH,122.4,244.8,veefriends
+capsulehouse,Capsule House,ethereum,2,3434,0.00058,0,0.0088,ETH,19.62,39.24,capsule_house
+cat-town-founder-collection,Cat Town | Founder Collection,base,2,283,0.00707,0,0.0198312,ETH,44.21,88.43,CatTownBase
+cets-solana,Cets,solana,2,3225,0.00062,0,0.39483,SOL,37.82,75.65,cetsfk
+chain-punks-nft,Chain Punks,ethereum,2,921,0.00217,0,0.00497,ETH,11.08,22.16,ChainPunksNFT
+chainzilla,ChainZilla,ape_chain,2,746,0.00268,0,9.8797099999999,APE,1.1,2.19,
+collector-crypt,Collector Crypt,solana,2,20037,0.0001,0,12.0,USDC,12.0,24.0,
+coolcats-x-reddit,Cool Cats x Reddit Collectible Avatars,polygon,2,2297,0.00087,0,0.00224999,WETH,5.02,10.03,coolcats
+courtyard-nft,Courtyard.io,polygon,2,134729,1e-05,0,5.55,USDC.e,,,Courtyard_io
+cyberkongz-vx,CyberKongz VX,ethereum,2,3530,0.00057,0,0.007,ETH,15.61,31.21,CyberKongz
+degen-ape,DEGEN,ape_chain,2,1763,0.00113,0,11.0,APE,1.22,2.44,
+doopies-solana,Doopies,solana,2,2018,0.00099,0,0.3538,SOL,33.89,67.79,doodles
+dourdarcels,DourDarcels,ethereum,2,3996,0.0005,0,0.0065339,ETH,14.57,29.13,DourDarcelsNFT
+eggryptomonster-1,EGGRYPTO Monsters,polygon,2,7160,0.00028,0,0.003,WETH,6.69,13.38,eggrypto
+fluf,FLUF World,ethereum,2,3097,0.00065,0,0.00541,ETH,12.06,24.12,flufworld
+footium-clubs,Footium Clubs,arbitrum,2,1720,0.00116,0,0.0069489999999999,ETH,15.49,30.99,Footium
+forgottenruneswizardscult,Forgotten Runes Wizards Cult,ethereum,2,2844,0.0007,0,0.06,ETH,133.77,267.54,forgottenrunes
+fresh-hell,FRESH HELL,ethereum,2,158,0.01266,0,4.949,ETH,11033.84,22067.69,XCOPYART
+galactic-geckos-solana,Galactic Geckos,solana,2,2813,0.00071,0,4.1413902,SOL,396.75,793.49,
+galaxyeggs9999,Galaxy-Eggs,ethereum,2,3743,0.00053,0,0.01398,ETH,31.17,62.34,galaxy_eggs
+genkai-ronin,Genkai,ronin,2,2776,0.00072,0,298.0,RON,14.84,29.69,
+halo-nodes,Halo Nodes,robinhood,2,202,0.0099,0,0.00458076,ETH,10.21,20.43,HaloNodes
+hamieverse-genesis-old,Hamieverse Legacy,abstract,2,210,0.00952,0,0.02969,ETH,66.19,132.39,hamieverse
+hv-mtl,HV-MTL Auxiliary Core,ethereum,2,6083,0.00033,0,0.0061498,ETH,13.71,27.42,HV_MTL
+kaoforms,Kaoforms,robinhood,2,346,0.00578,0,0.02,ETH,44.59,89.18,artmachinexyz
+killabears,KILLABEARS,ethereum,2,810,0.00247,0,0.0488,ETH,108.8,217.6,killabearsnft
+legend-of-breadio-loafarina-of-time,Legend Of Breadio: Loafarina Of Time,megaeth,2,1486,0.00135,0,0.00039,ETH,0.87,1.74,Tuteth_
+lil-bangers-,Lil' Bangers,base,2,1275,0.00157,0,0.0040988,ETH,9.14,18.28,vibezgm
+mad-lads,Mad Lads,solana,2,6156,0.00032,0,7.7989032,SOL,747.13,1494.27,MadLads
+megalio,Megalio,megaeth,2,707,0.00283,0,0.0024999999999,ETH,5.57,11.15,MegalioETH
+midevil-solana,MidEvil,solana,2,882,0.00227,0,0.35294508,SOL,33.81,67.62,MidEvilsNFT
+miggles-on-base,Miggles,base,2,1749,0.00114,0,0.0016421,ETH,3.66,7.32,MrMigglesOnBase
+mineboys,MineBoys,ape_chain,2,159,0.01258,0,262.8839008,APE,29.17,58.34,
+mudwater-packs,Mudwater Packs,solana,2,1669,0.0012,0,0.798,SOL,76.45,152.9,BoredApeYC
+nodepunk,NodePunks,base,2,2908,0.00069,0,0.000399999999,ETH,0.89,1.78,N0DEPunks
+official-moar-by-joan-cornella,"""MOAR"" by Joan Cornella",ethereum,2,2905,0.00069,0,0.012878,ETH,28.71,57.42,fwenclub
+officialsnoozies,Snoozies,base,2,831,0.00241,0,0.00453989999,ETH,10.12,20.24,snooziesNFT
+okcomputers,OK COMPUTERS,base,2,1501,0.00133,0,0.0300569,ETH,67.01,134.02,dailofrog
+otherside-wearables,Otherside Wearables,ape_chain,2,13929,0.00014,0,0.8,APE,0.09,0.18,OthersideMeta
+polygonapetheevolution,Polygon Ape: The Evolution,polygon,2,1918,0.00104,0,0.000698,WETH,1.56,3.11,0xPolygonApe
+psychedelics-anonymous-genesis,Psychedelics Anonymous,ethereum,2,3674,0.00054,0,0.0236108,ETH,52.64,105.28,psychanon
+puccaworld,Pucca World,base,2,1185,0.00169,0,0.00311763,ETH,6.95,13.9,official_pucca
+shellies-ink,Shellies,ink,2,1057,0.00189,0,0.0024858999998,ETH,5.54,11.08,Shellies_NFTs
+squink-108031948,Squink,ink,2,463,0.00432,1,0.0018039,ETH,4.02,8.04,squinkfun
+swatches-by-jvmi,swatches by jvmi,base,2,3341,0.0006,0,0.00148998999,ETH,3.32,6.64,jvmi_
+the-conmen-solana,The Conmen,solana,2,678,0.00295,0,0.0321,SOL,3.08,6.15,TheConmenNFT
+the-singularity-x-reddit-collectible-avatars,The Singularity x Reddit Collectible Avatars,polygon,2,1618811,0.0,0,0.42,WETH,936.39,1872.79,
+tinybasedfrogs,tiny based frogs,base,2,392,0.0051,0,0.03484,ETH,77.68,155.35,dailofrog
+trump-digital-trading-cards-series-2,Trump Digital Trading Cards Series 2,polygon,2,6892,0.00029,0,0.002796,WETH,6.23,12.47,CollectTrump
+tubby-cats,tubby cats,ethereum,2,7008,0.00029,0,0.0083,ETH,18.5,37.01,
+typical-tigers-apechain,Typical Tigers on Apechain,ape_chain,2,1205,0.00166,0,89.0,APE,9.88,19.75,TypicalTigerNFT
+voting-escrow-dust,Voting Escrow DUST,monad,2,1588,0.00126,0,16.97,MON,0.33,0.66,Neverland_Money
+wonderpals,WonderPals,ethereum,2,5425,0.00037,0,0.0063,ETH,14.05,28.09,wonderpals
+zkargos,zkArgos,ethereum,2,1802,0.00111,0,0.000393512,ETH,0.88,1.75,zkArgoseth
+1337-brians,1337 Brians,base,1,3165,0.00032,0,0.00162429771002,ETH,3.62,3.62,
+abstract-hotdogs-abstract,Abstract Hotdogs,abstract,1,1463,0.00068,0,0.000315,ETH,0.7,0.7,hotdogs_wtf
+abstract-pepes-abstract,Abstract Pepes,abstract,1,998,0.001,0,0.00075,ETH,1.67,1.67,Abstract_Pepes
+akutars,Akutars,ethereum,1,4789,0.00021,0,0.0100699,ETH,22.45,22.45,AkuDreams
+antonymgenesis,Antonym: GENESIS,ethereum,1,3803,0.00026,0,0.0009111,ETH,2.03,2.03,antonym_lab
+apes-on-apechain,Apes on Ape,ape_chain,1,1454,0.00069,0,94.9998402,APE,10.54,10.54,
+apesea,ApeSea,ape_chain,1,1130,0.00088,0,23.39882999,APE,2.6,2.6,
+audioglyphs,Audioglyphs,ethereum,1,2619,0.00038,0,0.003296,ETH,7.35,7.35,audioglyphs
+bad-bunnz-megaeth,Bad Bunnz,megaeth,1,504,0.00198,0,0.0117984,ETH,26.3,26.3,badbunnz_
+balloons-by-balloons,BALLOONS,ape_chain,1,834,0.0012,0,119.9997491,APE,13.32,13.32,balloonsonape
+bario-punks,Bario Punks,base,1,562,0.00178,0,0.0123342,ETH,27.5,27.5,BaseBario
+basepaint,BasePaint,base,1,34969,3e-05,0,0.00086995498713,ETH,1.94,1.94,basepaint_xyz
+bera-punks,Bera Punks,arbitrum,1,1800,0.00056,0,0.0001,ETH,0.22,0.22,Bera_Punks
 beratoners,BeraToners,bera_chain,1,3032,0.00033,0,2.83,BERA,,,BeratoneGame
-bigcoin-miners,Bigcoin Miners,abstract,1,2707,0.00037,0,6.5e-05,ETH,0.15,0.15,bigcoinmining
-billions-supermasks,Billions Supermasks,polygon,1,3530,0.00028,0,0.00079998999,WETH,1.86,1.86,billions_ntwk
-blazeentity,BlazeEntity,base,1,795,0.00126,0,0.00288,ETH,6.68,6.68,BradApeYuriClub
-boi-ink,Boi,ink,1,766,0.00131,0,0.006852961854,ETH,15.9,15.9,boi_market
-bored-ape-kennel-club,Bored Ape Kennel Club,ethereum,1,5141,0.00019,0,0.125329,ETH,290.86,290.86,boredapeyc
-bossbeauties,Boss Beauties,ethereum,1,5095,0.0002,0,0.008,ETH,18.57,18.57,BossBeauties
-boximus,Boximus,ape_chain,1,726,0.00138,0,481.9986835,APE,59.16,59.16,OthersideMeta
-bullas-5,bullas,bera_chain,1,1595,0.00063,0,53.9595183,BERA,,,TheBullas_
-claynosaurz,Claynosaurz,solana,1,2923,0.00034,0,6.4,SOL,643.78,643.78,
-clutch-puppies,Clutch Puppies,ape_chain,1,378,0.00265,0,243.9756,APE,29.94,29.94,OxSimpleFarmer
-coolpetsnft,Cool Pets NFT,ethereum,1,7991,0.00013,0,0.006799,ETH,15.78,15.78,
-crypto-phunks,CryptoPhunks,ethereum,1,2781,0.00036,0,0.036898,ETH,85.63,85.63,
-cryptocoven,Crypto Coven,ethereum,1,4833,0.00021,0,0.0083459,ETH,19.37,19.37,crypto_coven
-cryptojankyz,SUPERPLASTIC: Cryptojankyz,ethereum,1,5707,0.00018,0,0.0035,ETH,8.12,8.12,superplastic
-curiocardswrapper,My Curio Cards,ethereum,1,4961,0.0002,0,0.04099999,ETH,95.15,95.15,MyCurioCards
-cyberbrokers,CyberBrokers,ethereum,1,2740,0.00036,0,0.0262367,ETH,60.89,60.89,CyberBrokers_
-darknouns-1,DarkNOUNs,base,1,360,0.00278,0,0.0419394,ETH,97.33,97.33,basednouns
-deekay-motion-new-era-btc,DeeKay Motion - New Era BTC,base,1,15210,7e-05,0,0.00076,ETH,1.76,1.76,
-deeple-shape,DeePle,shape,1,765,0.00131,0,0.01549999876659,ETH,35.97,35.97,deekaymotion
-degens-base,Degens,base,1,310,0.00323,0,0.0108599,ETH,25.2,25.2,degentokenbase
-degods-eth,DeGods,ethereum,1,1279,0.00078,0,0.15711,ETH,364.61,364.61,DeGodsNFT
-dengs,Dengs,ape_chain,1,815,0.00123,0,300.0,APE,36.82,36.82,DENGSonApe
-derplets-abstract,Derplets,abstract,1,1588,0.00063,0,0.00064,ETH,1.49,1.49,derplets
-dippies,Dippies,ethereum,1,4966,0.0002,0,0.004949,ETH,11.49,11.49,Dippies
-dojo-kidz,Dojo Kidz,ape_chain,1,985,0.00102,0,45.0,APE,5.52,5.52,Dojo_Kidz
-dollzonape,DORUZU,ape_chain,1,704,0.00142,0,74.9401216,APE,9.2,9.2,DollzOnApe
-earthlings-vittoria,Earthlings,ethereum,1,664,0.00151,0,0.001796,ETH,4.17,4.17,amber_vittoria
-farmingseason,Farming Season,robinhood,1,821,0.00122,0,14.4,USDG,14.4,14.4,farmingseasonio
-fishing-frenzy-founders-pass,Fishing Frenzy Founders Pass,ronin,1,470,0.00213,0,450.0,RON,23.87,23.87,FishingFrenzyCo
-flyfish-club,Flyfish Club,ethereum,1,1344,0.00074,0,0.4377045,ETH,1015.8,1015.8,thevcrgroup
-forever-undead-2,Forever Undead,ape_chain,1,1587,0.00063,0,21.7269819,APE,2.67,2.67,fuonape
-foxfam,FoxFam,ethereum,1,3053,0.00033,1,0.007189,ETH,16.68,16.68,foxfamnft
-foxyfam,FoxyFam,ape_chain,1,622,0.00161,0,115.98,APE,14.23,14.23,foxyfam_
-fwair-pfps,FWAIR PFPs,ethereum,1,80,0.0125,0,1.12999998,ETH,2622.44,2622.44,token_works
-g-evols,GEVOLs,ethereum,1,3078,0.00032,0,0.00593,ETH,13.76,13.76,GEVOLsNFT
-galaxy-fight-club,Galaxy Fight Club,ethereum,1,2851,0.00035,0,0.00138999,ETH,3.23,3.23,GalaxyFight_NFT
-galaxy-habbos,The Galaxy Habbos,polygon,1,1627,0.00061,0,0.002599,WETH,6.03,6.03,TheSandboxGame
-gimboznft,Gimboz,ape_chain,1,197,0.00508,0,2689.99999999,APE,330.15,330.15,apechurch
-glitchybunnies,Glitchy Bunnies,megaeth,1,595,0.00168,0,0.001375,ETH,3.19,3.19,404bunnies
-glyphs,glyphs,base,1,1448,0.00069,0,0.00193999,ETH,4.5,4.5,based
-gods-solana,Gods,solana,1,1190,0.00084,0,0.377329273,SOL,37.96,37.96,TheFracture_
-heart-craft-by-snowfro-jordan-lyall,heart + craft by Snowfro + Jordan Lyall,arbitrum,1,8396,0.00012,0,0.0011999999998,ETH,2.78,2.78,JordanLyall
-hype-terminals,HYPE TERMINAL,hyperevm,1,647,0.00155,0,0.0119999,HYPE,1.09,1.09,HypeTerminals
-illiquid-hyperevm,Illiquid,hyperevm,1,1502,0.00067,0,0.0096999999998,HYPE,0.88,0.88,Illiquid_nft
-illumeownati,Illumeownati,hyperevm,1,948,0.00105,0,0.198,HYPE,17.91,17.91,Catbal
-infinitegarden,Infinite Garden,shape,1,1794,0.00056,0,0.003,ETH,6.96,6.96,lennyjpg
-inkbrokers-nft,Ink Brokers,ink,1,922,0.00108,0,0.003099979998,ETH,7.19,7.19,Brokers_on_Ink
-inkbunnies,INK Bunnies,ink,1,1207,0.00083,0,0.0028581,ETH,6.63,6.63,InkBunniesNFT
-inkysquad,InkySquad,ink,1,594,0.00168,0,0.0086167,ETH,20.0,20.0,SquidsOnInk
-jrny-club-official,JRNY CLUB,ethereum,1,4569,0.00022,0,0.0319038,ETH,74.04,74.04,JRNYCLUB
-jungle-freaks-genesis,JUNGLE FREAKS GENESIS,ethereum,1,2472,0.0004,0,0.0089997,ETH,20.89,20.89,JungleFreaksNFT
-kanpai-pandas,Kanpai Pandas,ethereum,1,2977,0.00034,0,0.018799,ETH,43.63,43.63,KanpaiPandas
-karafuru,Karafuru,ethereum,1,3187,0.00031,0,0.026276599999,ETH,60.98,60.98,KarafuruNFT
-lamborghini-fast-forworld-revuelto,Lamborghini Fast ForWorld Revuelto,base,1,1382,0.00072,0,0.01254,ETH,29.1,29.1,
-larvva-lads,Larvva Lads,base,1,4618,0.00022,0,0.00059683999,ETH,1.39,1.39,yougogirl_eth
-lil-nouns,Lil Nouns,ethereum,1,2324,0.00043,1,0.0162779,ETH,37.78,37.78,lilnounsdao
-locals-only-hyperevm,Locals Only by DEMI,hyperevm,1,246,0.00407,0,0.8199968699,HYPE,74.19,74.19,demi_hl
-memelandcaptainz,Memeland Captainz,ethereum,1,2967,0.00034,0,0.022997998999999998,ETH,53.37,53.37,Memeland
-memetic-traders-x-reddit-collectible-avatars,Memetic Traders x Reddit Collectible Avatars,polygon,1,4738,0.00021,0,0.052,WETH,120.68,120.68,
-meridian-by-matt-deslauriers,Meridian by Matt DesLauriers,ethereum,1,625,0.0016,0,2.22,ETH,5152.04,5152.04,
-metahero-generative,MetaHero: Generative Identities,ethereum,1,2274,0.00044,0,0.00233439999999,ETH,5.42,5.42,inhabitants_
-metasaurs-nft,Metasaurs by Dr. DMT,ethereum,1,4668,0.00021,0,0.0006037,ETH,1.4,1.4,metasaurs
-mimuonape,MIMU On Ape,ape_chain,1,919,0.00109,0,147.9904638,APE,18.16,18.16,mimuonape
-nacci-cartel-megaeth,Nacci Cartel,megaeth,1,256,0.00391,0,0.0249987,ETH,58.02,58.02,meganacci
+bigcoin-miners,Bigcoin Miners,abstract,1,2706,0.00037,0,6.5e-05,ETH,0.14,0.14,bigcoinmining
+billions-supermasks,Billions Supermasks,polygon,1,3528,0.00028,0,0.00079998999,WETH,1.78,1.78,billions_ntwk
+blazeentity,BlazeEntity,base,1,795,0.00126,0,0.00288,ETH,6.42,6.42,BradApeYuriClub
+boi-ink,Boi,ink,1,766,0.00131,0,0.006852961854,ETH,15.28,15.28,boi_market
+bored-ape-kennel-club,Bored Ape Kennel Club,ethereum,1,5143,0.00019,0,0.125999,ETH,280.92,280.92,boredapeyc
+bossbeauties,Boss Beauties,ethereum,1,5095,0.0002,0,0.008,ETH,17.84,17.84,BossBeauties
+boximus,Boximus,ape_chain,1,726,0.00138,0,481.5259951,APE,53.43,53.43,OthersideMeta
+bullas-5,bullas,bera_chain,1,1595,0.00063,0,53.95871,BERA,,,TheBullas_
+cambriaislands,Cambria Islands,ethereum,1,870,0.00115,0,0.0299,ETH,66.66,66.66,playcambria
+claynosaurz,Claynosaurz,solana,1,2922,0.00034,0,6.53663,SOL,626.21,626.21,
+clutch-puppies,Clutch Puppies,ape_chain,1,378,0.00265,0,246.44,APE,27.35,27.35,OxSimpleFarmer
+coolpetsnft,Cool Pets NFT,ethereum,1,7990,0.00013,0,0.006799,ETH,15.16,15.16,
+crawlers-by-slava-rybin,Crawlers by Slava Rybin,ethereum,1,373,0.00268,0,0.032,ETH,71.34,71.34,
+crypto-phunks,CryptoPhunks,ethereum,1,2782,0.00036,0,0.036897,ETH,82.26,82.26,
+cryptocoven,Crypto Coven,ethereum,1,4833,0.00021,0,0.0083399,ETH,18.59,18.59,crypto_coven
+cryptojankyz,SUPERPLASTIC: Cryptojankyz,ethereum,1,5707,0.00018,0,0.0035,ETH,7.8,7.8,superplastic
+curiocardswrapper,My Curio Cards,ethereum,1,4964,0.0002,0,0.033999,ETH,75.8,75.8,MyCurioCards
+cyberbrokers,CyberBrokers,ethereum,1,2753,0.00036,0,0.0199909,ETH,44.57,44.57,CyberBrokers_
+darknouns-1,DarkNOUNs,base,1,361,0.00277,0,0.0339975,ETH,75.8,75.8,basednouns
+deeple-shape,DeePle,shape,1,765,0.00131,0,0.01549999876439,ETH,34.56,34.56,deekaymotion
+degens-base,Degens,base,1,310,0.00323,0,0.0108399,ETH,24.17,24.17,degentokenbase
+degods-eth,DeGods,ethereum,1,1280,0.00078,0,0.164999,ETH,367.87,367.87,DeGodsNFT
+dengs,Dengs,ape_chain,1,815,0.00123,0,300.0,APE,33.29,33.29,DENGSonApe
+derplets-abstract,Derplets,abstract,1,1587,0.00063,0,0.00064,ETH,1.43,1.43,derplets
+dippies,Dippies,ethereum,1,4966,0.0002,0,0.004949,ETH,11.03,11.03,Dippies
+dojo-kidz,Dojo Kidz,ape_chain,1,985,0.00102,0,45.0,APE,4.99,4.99,Dojo_Kidz
+dollzonape,DORUZU,ape_chain,1,704,0.00142,0,74.9385561,APE,8.32,8.32,DollzOnApe
+farmingseason,Farming Season,robinhood,1,817,0.00122,0,8.24,USDG,8.24,8.24,farmingseasonio
+fishing-frenzy-founders-pass,Fishing Frenzy Founders Pass,ronin,1,470,0.00213,0,450.0,RON,22.42,22.42,FishingFrenzyCo
+flyfish-club,Flyfish Club,ethereum,1,1344,0.00074,0,0.4335539,ETH,966.61,966.61,thevcrgroup
+forever-undead-2,Forever Undead,ape_chain,1,1589,0.00063,0,21.720591,APE,2.41,2.41,fuonape
+foxfam,FoxFam,ethereum,1,3052,0.00033,1,0.00718,ETH,16.01,16.01,foxfamnft
+foxyfam,FoxyFam,ape_chain,1,622,0.00161,0,97.99999999,APE,10.87,10.87,foxyfam_
+fwair-pfps,FWAIR PFPs,ethereum,1,81,0.01235,0,1.12999998,ETH,2519.35,2519.35,token_works
+g-evols,GEVOLs,ethereum,1,3077,0.00032,0,0.005939,ETH,13.24,13.24,GEVOLsNFT
+galaxy-fight-club,Galaxy Fight Club,ethereum,1,2851,0.00035,0,0.00138999,ETH,3.1,3.1,GalaxyFight_NFT
+galaxy-habbos,The Galaxy Habbos,polygon,1,1628,0.00061,0,0.002599,WETH,5.79,5.79,TheSandboxGame
+gimboznft,Gimboz,ape_chain,1,195,0.00513,0,2699.0,APE,299.5,299.5,apechurch
+glitchybunnies,Glitchy Bunnies,megaeth,1,595,0.00168,0,0.0015586,ETH,3.47,3.47,404bunnies
+glyphs,glyphs,base,1,1448,0.00069,0,0.00193999,ETH,4.33,4.33,based
+gods-solana,Gods,solana,1,1190,0.00084,0,0.377329273,SOL,36.15,36.15,TheFracture_
+heart-craft-by-snowfro-jordan-lyall,heart + craft by Snowfro + Jordan Lyall,arbitrum,1,8396,0.00012,0,0.0011999999999,ETH,2.68,2.68,JordanLyall
+hype-terminals,HYPE TERMINAL,hyperevm,1,648,0.00154,0,0.0129998,HYPE,1.19,1.19,HypeTerminals
+illiquid-hyperevm,Illiquid,hyperevm,1,1503,0.00067,0,0.0096999999998,HYPE,0.89,0.89,Illiquid_nft
+illumeownati,Illumeownati,hyperevm,1,950,0.00105,0,0.248,HYPE,22.63,22.63,Catbal
+infinitegarden,Infinite Garden,shape,1,1793,0.00056,0,0.00358999999978,ETH,8.0,8.0,lennyjpg
+inkbrokers-nft,Ink Brokers,ink,1,922,0.00108,0,0.003099969999,ETH,6.91,6.91,Brokers_on_Ink
+inkbunnies,INK Bunnies,ink,1,1207,0.00083,0,0.0035437,ETH,7.9,7.9,InkBunniesNFT
+inkysquad,InkySquad,ink,1,594,0.00168,0,0.008296,ETH,18.5,18.5,SquidsOnInk
+jrny-club-official,JRNY CLUB,ethereum,1,4570,0.00022,0,0.033386,ETH,74.43,74.43,JRNYCLUB
+jungle-freaks-genesis,JUNGLE FREAKS GENESIS,ethereum,1,2472,0.0004,0,0.0089897,ETH,20.04,20.04,JungleFreaksNFT
+kanpai-pandas,Kanpai Pandas,ethereum,1,2987,0.00033,0,0.01806,ETH,40.26,40.26,KanpaiPandas
+karafuru,Karafuru,ethereum,1,3187,0.00031,0,0.022753999999,ETH,50.73,50.73,KarafuruNFT
+lamborghini-fast-forworld-revuelto,Lamborghini Fast ForWorld Revuelto,base,1,1381,0.00072,0,0.01254,ETH,27.96,27.96,
+larvva-lads,Larvva Lads,base,1,4618,0.00022,0,0.00059683998999,ETH,1.33,1.33,yougogirl_eth
+lil-nouns,Lil Nouns,ethereum,1,2323,0.00043,1,0.0162779,ETH,36.29,36.29,lilnounsdao
+locals-only-hyperevm,Locals Only by DEMI,hyperevm,1,246,0.00407,0,0.8099999,HYPE,73.93,73.93,demi_hl
+memelandcaptainz,Memeland Captainz,ethereum,1,2966,0.00034,0,0.022997999999999998,ETH,51.27,51.27,Memeland
+memetic-traders-x-reddit-collectible-avatars,Memetic Traders x Reddit Collectible Avatars,polygon,1,4738,0.00021,0,0.052,WETH,115.93,115.93,
+meridian-by-matt-deslauriers,Meridian by Matt DesLauriers,ethereum,1,625,0.0016,0,2.22,ETH,4949.51,4949.51,
+metahero-generative,MetaHero: Generative Identities,ethereum,1,2274,0.00044,0,0.00225759999999,ETH,5.03,5.03,inhabitants_
+metasaurs-nft,Metasaurs by Dr. DMT,ethereum,1,4668,0.00021,0,0.0006037,ETH,1.35,1.35,metasaurs
+mimuonape,MIMU On Ape,ape_chain,1,919,0.00109,0,114.9962766,APE,12.76,12.76,mimuonape
+nacci-cartel-megaeth,Nacci Cartel,megaeth,1,256,0.00391,0,0.0249983,ETH,55.73,55.73,meganacci
 neuronemesis,NeuroNemesis,somnia,1,1414,0.00071,0,3.39,SOMI,,,NeuroGuardians
-nomgar-units,Nomgar Units,ronin,1,1117,0.0009,0,0.1,USDC,0.1,0.1,
-ntrpygenesis,NTRPY,robinhood,1,620,0.00161,0,0.0020754,ETH,4.82,4.82,0xNTRPY
-nuddies2,Nuddies,solana,1,501,0.002,0,0.188,SOL,18.91,18.91,Nuddies_
-och-gacha-weapon,OCH WEAPON,abstract,1,2174,0.00046,0,0.000678,ETH,1.57,1.57,onchainheroes
-optichads,OptiChads 🔴✨💪,optimism,1,3048,0.00033,0,0.00036789,ETH,0.85,0.85,OptiChads
-otherdeed-expanded,Otherdeed Expanded,ethereum,1,11697,9e-05,0,0.061999,ETH,143.88,143.88,OthersideMeta
-paradox-by-javpixel,Paradox,base,1,672,0.00149,0,0.00363,ETH,8.42,8.42,
+nightcrew,nightcrew,shape,1,122,0.0082,0,0.0044999999964,ETH,10.03,10.03,desultor
+nomgar-units,Nomgar Units,ronin,1,1118,0.00089,0,0.1,USDC,0.1,0.1,
+ntrpygenesis,NTRPY,robinhood,1,619,0.00162,0,0.001722399999,ETH,3.84,3.84,0xNTRPY
+nuddies2,Nuddies,solana,1,501,0.002,0,0.136025348,SOL,13.03,13.03,Nuddies_
+och-gacha-weapon,OCH WEAPON,abstract,1,2171,0.00046,0,0.000678,ETH,1.51,1.51,onchainheroes
+optichads,OptiChads 🔴✨💪,optimism,1,3048,0.00033,0,0.00036789,ETH,0.82,0.82,OptiChads
+otherdeed-expanded,Otherdeed Expanded,ethereum,1,11703,9e-05,0,0.062,ETH,138.23,138.23,OthersideMeta
+paradox-by-javpixel,Paradox,base,1,672,0.00149,0,0.00363,ETH,8.09,8.09,
 parallel-haven,Parallel Haven,base,1,1420,0.0007,0,1.35e-05,ETH,0.03,0.03,ParallelTCG
-paris-hilton-avatars,Paris Hilton Avatars,polygon,1,3752,0.00027,0,0.00255,WETH,5.92,5.92,
-pawaverse,PAWAverse,abstract,1,1825,0.00055,0,0.0001,ETH,0.23,0.23,PAWAverse
-phantabear,PhantaBear,ethereum,1,4751,0.00021,0,0.02444999999999,ETH,56.74,56.74,EzekClub
-piggy-banks-nfts,Piggy Banks,robinhood,1,494,0.00202,0,0.0092999,ETH,21.58,21.58,SinjohDeFi
-polygonpunks,PolygonPunks - Official Collection,polygon,1,3197,0.00031,0,0.00274,WETH,6.36,6.36,Polygon_Punks
-profile-pictures,Profile Pictures,shape,1,191,0.00524,0,0.0119999999999,ETH,27.85,27.85,CreamyDreamy
-proof-collective,PROOF Collective,ethereum,1,780,0.00128,0,0.198798,ETH,461.36,461.36,proof_xyz
-pudgyrods,Pudgy Rods,ethereum,1,2894,0.00035,0,0.0717501,ETH,166.51,166.51,pudgypenguins
-punkism-5,Punkism,abstract,1,2735,0.00037,0,0.0001,ETH,0.23,0.23,smth_abstract
-purrpaws-hyperevm,PurrPaws,hyperevm,1,1154,0.00087,0,0.0389999999788,HYPE,3.53,3.53,PurPawsHL
-purrtardio-hyperevm,PURRTARDIO,hyperevm,1,1837,0.00054,0,0.058,HYPE,5.25,5.25,purrto10
+paris-hilton-avatars,Paris Hilton Avatars,polygon,1,3752,0.00027,0,0.00254,WETH,5.66,5.66,
+pawaverse,PAWAverse,abstract,1,1825,0.00055,0,0.0001,ETH,0.22,0.22,PAWAverse
+phantabear,PhantaBear,ethereum,1,4750,0.00021,0,0.02444999999999,ETH,54.51,54.51,EzekClub
+piggy-banks-nfts,Piggy Banks,robinhood,1,494,0.00202,0,0.0092998,ETH,20.73,20.73,SinjohDeFi
+profile-pictures,Profile Pictures,shape,1,191,0.00524,0,0.0119999999999,ETH,26.75,26.75,CreamyDreamy
+proof-collective,PROOF Collective,ethereum,1,780,0.00128,0,0.198798,ETH,443.22,443.22,proof_xyz
+pudgyrods,Pudgy Rods,ethereum,1,2896,0.00035,0,0.071750229108,ETH,159.97,159.97,pudgypenguins
+punkism-5,Punkism,abstract,1,2735,0.00037,0,0.0001,ETH,0.22,0.22,smth_abstract
+purrpaws-hyperevm,PurrPaws,hyperevm,1,1154,0.00087,0,0.0389999989786,HYPE,3.56,3.56,PurPawsHL
+purrtardio-hyperevm,PURRTARDIO,hyperevm,1,1836,0.00054,0,0.0595,HYPE,5.43,5.43,purrto10
 quills-adventure-somnia,Quills Adventure ,somnia,1,918,0.00109,0,65.77,SOMI,,,quillsadventure
-ragnarok-monsters,Ragnarok: Monster World - Ragmon,ronin,1,19908,5e-05,0,2.4,RON,0.13,0.13,
-readyplayer,Ready Player Guild,ape_chain,1,160,0.00625,0,139.909973,APE,17.17,17.17,notapunkscult
-ringers-by-dmitri-cherniak,Ringers by Dmitri Cherniak,ethereum,1,338,0.00296,0,7.5,ETH,17405.55,17405.55,dmitricherniak
-rogues-solana,Rogues,solana,1,726,0.00138,0,0.1595156,SOL,16.05,16.05,RoguesNFT
-ronin-name-service,Ronin Name Service,ronin,1,11054,9e-05,0,14.0,RON,0.74,0.74,
-ruyui,RUYUI,abstract,1,1965,0.00051,0,0.0104486,ETH,24.25,24.25,RuyuiStudios
-sabong-saga-genesis,Sabong Saga Genesis,ronin,1,455,0.0022,0,1800.0,RON,95.49,95.49,
-sandbox,The Sandbox LANDs,polygon,1,25501,4e-05,0,0.022567,ETH,52.37,52.37,thesandboxgame
-satori-by-roots,Satori,arbitrum,1,476,0.0021,0,0.0076112999999,ETH,17.66,17.66,onchainsatori
-sewerpass,Sewer Pass,ethereum,1,1586,0.00063,0,0.00039,ETH,0.91,0.91,farawaygg
-shredding-sassy-base,Shredding Sassy - Base,base,1,1291,0.00077,0,0.04874518,ETH,113.12,113.12,ShreddingSassy
-smb-gen3-solana,SMB Gen3,solana,1,3869,0.00026,0,2.80447,SOL,282.1,282.1,
-smol-brains,Smol Brains,arbitrum,1,2905,0.00034,0,0.0118,ETH,27.38,27.38,
-sneaky-vampire-syndicate,Sneaky Vampire Syndicate,ethereum,1,2572,0.00039,0,0.0028977,ETH,6.72,6.72,SVSNFT
-spazio-brothers,Spazio Brothers,hyperevm,1,959,0.00104,0,0.024,HYPE,2.17,2.17,SpazioBrothers
-statements,Statements,ethereum,1,84,0.0119,0,0.63,ETH,1462.07,1462.07,jackbutcher
-steadynftavax,Steady,avalanche,1,830,0.0012,0,8.98,AVAX,,,SteadyNFT_
-stornks,stornks,robinhood,1,401,0.00249,0,0.003757,ETH,8.72,8.72,burds69
-terraforms,Terraforms by Mathcastles,ethereum,1,1980,0.00051,0,0.2397979,ETH,556.51,556.51,mathcastles
-the-10k-squad-350905768,The 10k Squad,monad,1,1207,0.00083,0,1300.0,MON,27.08,27.08,the10kSquad
-the-art-of-seasons,The Art of Seasons,ethereum,1,2794,0.00036,0,0.0086987,ETH,20.19,20.19,DirtyRobotWorks
-the-crypto-chicks,Crypto.Chicks,ethereum,1,4151,0.00024,0,0.0040884789,ETH,9.49,9.49,NFTCryptoChicks
-the-fiendz,Fiendz,ape_chain,1,3392,0.00029,0,231.90999999,APE,28.46,28.46,
-the-misfits-order-solana,The Misfits Order,solana,1,394,0.00254,0,0.4796275,SOL,48.25,48.25,
-the-wolves,The Wolves,abstract,1,440,0.00227,0,0.003,ETH,6.96,6.96,thewolvesxyz
-thehumanoids,The Humanoids,ethereum,1,3767,0.00027,0,0.0057989,ETH,13.46,13.46,thehumanoids
-theknowers,The Knowers,arbitrum,1,1083,0.00092,0,0.00084,ETH,1.95,1.95,TheKnowersNFT
-thelittlesnft,the littles NFT,ethereum,1,4913,0.0002,0,0.0018997,ETH,4.41,4.41,thelittlesnft
-theminiminds,MINIMINDS,megaeth,1,696,0.00144,0,0.00082999999,ETH,1.93,1.93,theminiminds
-theshiboshis,THE SHIBOSHIS,ethereum,1,3229,0.00031,0,0.0258989,ETH,60.1,60.1,shibtoken
-tiny-hyper-cats-hyperevm,TinyHyperCats,hyperevm,1,769,0.0013,0,1.57,HYPE,142.04,142.04,tinyhypercats
-trencher-sol,Trencher,solana,1,300,0.00333,0,0.328792107,SOL,33.07,33.07,TrencherStudio
-trump-digital-trading-cards,Trump Digital Trading Cards,polygon,1,13486,7e-05,0,0.0163,WETH,37.83,37.83,CollectTrump
-valhalla,Valhalla,ethereum,1,2052,0.00049,0,0.0049999,ETH,11.6,11.6,valhalla
-vv-checks-originals,Checks - VV Originals,ethereum,1,1422,0.0007,0,0.1118155,ETH,259.49,259.49,jackbutcher
-winds-of-yawanawa,Winds of Yawanawa by Yawanawa and Refik Anadol,ethereum,1,545,0.00183,0,2.1,ETH,4873.55,4873.55,refikanadol
-world-of-women-galaxy,World of Women Galaxy,ethereum,1,10977,9e-05,0,0.0065999,ETH,15.32,15.32,worldofwomenxyz
-world-of-women-nft,World of Women,ethereum,1,5268,0.00019,0,0.073517058,ETH,170.61,170.61,worldofwomenxyz
-wrapped-cryptopunks,Wrapped Cryptopunks,ethereum,1,113,0.00885,0,39.0,ETH,90508.86,90508.86,arkgalleryDAO
-xcopy-editions,XCOPY editions 2019-22,ethereum,1,769,0.0013,0,1.59989,ETH,3712.93,3712.93,XCOPYART
-xeet-creator-cards,Xeet Creator Cards,abstract,1,2473,0.0004,0,0.0002,ETH,0.46,0.46,xeetdotai
+ragnarok-monsters,Ragnarok: Monster World - Ragmon,ronin,1,19910,5e-05,0,2.4,RON,0.12,0.12,
+readyplayer,Ready Player Guild,ape_chain,1,160,0.00625,0,139.9098431,APE,15.53,15.53,notapunkscult
+ringers-by-dmitri-cherniak,Ringers by Dmitri Cherniak,ethereum,1,337,0.00297,0,7.5,ETH,16721.33,16721.33,dmitricherniak
+rogues-solana,Rogues,solana,1,726,0.00138,0,0.156006,SOL,14.95,14.95,RoguesNFT
+ronen-cars-nft,Ronen Cars NFT,ronin,1,954,0.00105,0,0.968,RON,0.05,0.05,RonenCars
+ronin-name-service,Ronin Name Service,ronin,1,11058,9e-05,0,14.0,RON,0.7,0.7,
+ruyui,RUYUI,abstract,1,1963,0.00051,0,0.0104482,ETH,23.29,23.29,RuyuiStudios
+sabong-saga-genesis,Sabong Saga Genesis,ronin,1,456,0.00219,0,1800.0,RON,89.66,89.66,
+sandbox,The Sandbox LANDs,polygon,1,25499,4e-05,0,0.0222,ETH,49.5,49.5,thesandboxgame
+satori-by-roots,Satori,arbitrum,1,476,0.0021,0,0.0058585999999,ETH,13.06,13.06,onchainsatori
+sewerpass,Sewer Pass,ethereum,1,1586,0.00063,0,0.00038,ETH,0.85,0.85,farawaygg
+shredding-sassy-base,Shredding Sassy - Base,base,1,1291,0.00077,0,0.04845136,ETH,108.02,108.02,ShreddingSassy
+smb-gen3-solana,SMB Gen3,solana,1,3867,0.00026,0,2.63969,SOL,252.88,252.88,
+smol-brains,Smol Brains,arbitrum,1,2905,0.00034,0,0.0118,ETH,26.31,26.31,
+sneaky-vampire-syndicate,Sneaky Vampire Syndicate,ethereum,1,2571,0.00039,0,0.0028874,ETH,6.44,6.44,SVSNFT
+spazio-brothers,Spazio Brothers,hyperevm,1,959,0.00104,0,0.024,HYPE,2.19,2.19,SpazioBrothers
+statements,Statements,ethereum,1,87,0.01149,0,0.366,ETH,816.0,816.0,jackbutcher
+steadynftavax,Steady,avalanche,1,828,0.00121,0,8.98,AVAX,,,SteadyNFT_
+stornks,stornks,robinhood,1,401,0.00249,0,0.0035998,ETH,8.03,8.03,burds69
+terraforms,Terraforms by Mathcastles,ethereum,1,1980,0.00051,0,0.2395267,ETH,534.03,534.03,mathcastles
+the-10k-squad-350905768,The 10k Squad,monad,1,1207,0.00083,0,1299.99,MON,25.47,25.47,the10kSquad
+the-art-of-seasons,The Art of Seasons,ethereum,1,2794,0.00036,0,0.0086987,ETH,19.39,19.39,DirtyRobotWorks
+the-crypto-chicks,Crypto.Chicks,ethereum,1,4151,0.00024,0,0.0040878489,ETH,9.11,9.11,NFTCryptoChicks
+the-fiendz,Fiendz,ape_chain,1,3393,0.00029,0,231.9099998,APE,25.73,25.73,
+the-misfits-order-solana,The Misfits Order,solana,1,395,0.00253,0,0.4796275,SOL,45.95,45.95,
+the-wolves,The Wolves,abstract,1,440,0.00227,0,0.0026,ETH,5.8,5.8,thewolvesxyz
+thehumanoids,The Humanoids,ethereum,1,3767,0.00027,0,0.0057999,ETH,12.93,12.93,thehumanoids
+theknowers,The Knowers,arbitrum,1,1083,0.00092,0,0.00075,ETH,1.67,1.67,TheKnowersNFT
+thelittlesnft,the littles NFT,ethereum,1,4913,0.0002,0,0.0018347,ETH,4.09,4.09,thelittlesnft
+theminiminds,MINIMINDS,megaeth,1,696,0.00144,0,0.00082999999,ETH,1.85,1.85,theminiminds
+theshiboshis,THE SHIBOSHIS,ethereum,1,3227,0.00031,0,0.0319968888,ETH,71.34,71.34,shibtoken
+tiny-hyper-cats-hyperevm,TinyHyperCats,hyperevm,1,763,0.00131,0,2.25,HYPE,205.36,205.36,tinyhypercats
+tinyass-unicorns,tinyass unicorns,unichain,1,850,0.00118,0,0.0035,ETH,7.8,7.8,dailofrog
+trencher-sol,Trencher,solana,1,301,0.00332,0,0.3875205,SOL,37.12,37.12,TrencherStudio
+trump-digital-trading-cards,Trump Digital Trading Cards,polygon,1,13486,7e-05,0,0.01598,WETH,35.63,35.63,CollectTrump
+valhalla,Valhalla,ethereum,1,2052,0.00049,0,0.0049799,ETH,11.1,11.1,valhalla
+vv-checks-originals,Checks - VV Originals,ethereum,1,1422,0.0007,0,0.1043014,ETH,232.54,232.54,jackbutcher
+winds-of-yawanawa,Winds of Yawanawa by Yawanawa and Refik Anadol,ethereum,1,545,0.00183,0,2.09999999,ETH,4681.97,4681.97,refikanadol
+world-of-women-galaxy,World of Women Galaxy,ethereum,1,10975,9e-05,0,0.00628,ETH,14.0,14.0,worldofwomenxyz
+world-of-women-nft,World of Women,ethereum,1,5268,0.00019,0,0.073517058,ETH,163.91,163.91,worldofwomenxyz
+wrapped-cryptopunks,Wrapped Cryptopunks,ethereum,1,110,0.00909,0,39.0,ETH,86950.89,86950.89,arkgalleryDAO
+xcopy-editions,XCOPY editions 2019-22,ethereum,1,769,0.0013,0,1.59989,ETH,3566.97,3566.97,XCOPYART
+xeet-creator-cards,Xeet Creator Cards,abstract,1,2473,0.0004,0,0.0002,ETH,0.45,0.45,xeetdotai
 yeetard-nfts-bera,Yeetard NFTs,bera_chain,1,1358,0.00074,0,76.9999999999999,BERA,,,eatsleepyeet
-yoake-the-seven-deadly-sins-with-ban,YOAKE & The Seven Deadly Sins Anime Series with Ban,soneium,1,4386,0.00023,0,9e-05,ETH,0.21,0.21,
-zeeverse-zee,Zeeverse: Zee,arbitrum,1,4200,0.00024,0,8.000000001e-05,ETH,0.19,0.19,ZeeverseGame
-zerotohero,ZeroToHero,abstract,1,646,0.00155,0,0.0024994,ETH,5.8,5.8,zerotohero
+yoake-the-seven-deadly-sins-with-ban,YOAKE & The Seven Deadly Sins Anime Series with Ban,soneium,1,4386,0.00023,0,9e-05,ETH,0.2,0.2,
+zeeverse-zee,Zeeverse: Zee,arbitrum,1,4200,0.00024,0,8.000000001e-05,ETH,0.18,0.18,ZeeverseGame
+zerotohero,ZeroToHero,abstract,1,646,0.00155,0,0.0024988,ETH,5.57,5.57,zerotohero
